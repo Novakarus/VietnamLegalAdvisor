@@ -41,17 +41,17 @@ Defects must be empty or contain only minor items with severity and description;
 The top-level candidate_zip_sha256 must match the existing ZIP and its contents must match current plugin files. Package before behavioral execution and preserve the candidate ZIP with its evidence.
 These checks do not independently verify the truth or adequacy of recorded evidence.
 
-## Protocol v2 (bắt buộc từ vòng kiểm thử 4)
+## Protocol v2 (mandatory from test round 4)
 
-Protocol v2 bổ sung các điều kiện bên dưới. Các điều khoản ở trên vẫn áp dụng. Vòng 1–3 chạy theo quy trình cũ và **không đạt** Protocol v2 (xem kết quả của `tests/run_integrity.py`). Chúng vẫn là bằng chứng sơ bộ hợp lệ trong phạm vi đã ghi, nhưng không được dùng làm nghiệm thu chính thức.
+Protocol v2 adds the conditions below. The provisions above still apply. Rounds 1–3 ran under the old procedure and **do not meet** Protocol v2 (see the result of `tests/run_integrity.py`). They remain valid preliminary evidence within the scope recorded, but must not be used for formal acceptance.
 
-1. **Chặn truy xuất bằng kỹ thuật.** Ca OFFLINE phải chạy trong phiên không có công cụ mạng/duyệt web, không chỉ bị cấm bằng chỉ dẫn. Ghi cách đảm bảo vào `tool_policy.how` của manifest. Ca DOCUMENT_ONLY chỉ được đọc đúng các file được cấp phép.
-2. **Transcript nguyên bản.** Mỗi ca phải có transcript đầy đủ do host/nền tảng xuất ra (không phải bản tóm tắt do phiên chạy tự viết), kèm SHA-256 trong manifest. `tool_calls.md` chỉ là bản tóm tắt để đọc nhanh.
-3. **Định danh mô hình chính xác.** Ghi mã mô hình do host báo. "unknown" không được chấp nhận ở vòng chính thức.
-4. **Người chấm độc lập.** Người chấm AI phải khác họ mô hình (vendor) với bên chạy, và không được là chính phiên đã tạo câu trả lời. Chấm sơ bộ bằng AI không đủ để nghiệm thu; cần ít nhất một lượt rà soát của luật sư có chuyên môn (`grader.second_review.kind = human_lawyer`) cho các ca live.
-5. **Host thật.** Cài plugin qua host mục tiêu, xác minh phát hiện đủ 13 skill, định tuyến của skill điều phối, gọi trực tiếp skill chuyên môn và hành vi khi không có công cụ.
-6. **Ca live có đáp án.** Mỗi trong năm nhóm cốt lõi (nghiên cứu, hợp đồng, thẩm định dự án, cấu trúc giao dịch, hiệu lực) có ít nhất các ca dùng văn bản chính thức thật, đáp án do luật sư soạn, kèm ngày rà soát và nguồn. Ưu tiên văn bản đã sửa đổi hoặc thay thế, và lĩnh vực bảo hiểm cháy nổ/xây dựng. Không đóng băng luật hiện hành thành sự thật cố định.
-7. **Một ứng viên, một gói, một bản ghi.** SHA-256 của ZIP phải khớp ở manifest, `results.json` và thư mục lượt chạy. Không chuyển PASS từ phiên bản này sang phiên bản khác.
-8. **Kiểm tra trước khi chấm.** Chạy `python tests/run_integrity.py <thư_mục_lượt_chạy>` (thêm `--formal` cho nghiệm thu chính thức). Lượt chạy có lỗi FAIL không được dùng để tuyên bố PASS.
+1. **Technical blocking of retrieval.** OFFLINE cases must run in a session with no network/web-browsing tools, not merely be forbidden by instruction. Record how this is ensured in `tool_policy.how` of the manifest. DOCUMENT_ONLY cases may read only the files they are given permission to read.
+2. **Raw transcripts.** Every case must have a complete transcript exported by the host/platform (not a summary written by the running session), with a SHA-256 in the manifest. `tool_calls.md` is only a summary for quick reading.
+3. **Exact model identification.** Record the model ID reported by the host. "unknown" is not accepted in a formal round.
+4. **Independent grader.** The AI grader must be from a different vendor (model family) than the runner, and must not be the session that produced the answer. Preliminary AI grading is not enough for acceptance; at least one review by a lawyer with the relevant expertise is needed (`grader.second_review.kind = human_lawyer`) for the live cases.
+5. **Real host.** Install the plugin through the target host, verify that all 13 skills are discovered, the routing of the router skill, direct invocation of the specialist skills, and behavior when no tools are available.
+6. **Live cases with answer keys.** Each of the five core groups (research, contracts, project diligence, transaction structures, validity) has at least some cases using real official texts, with an answer key written by a lawyer, a review date and sources. Prefer texts that have been amended or replaced, and the fire/explosion and construction insurance field. Do not freeze current law as a permanent truth.
+7. **One candidate, one package, one record.** The ZIP's SHA-256 must match across the manifest, `results.json` and the run folder. Do not carry a PASS from one version to another.
+8. **Check before grading.** Run `python tests/run_integrity.py <run_folder>` (add `--formal` for formal acceptance). A run with FAIL errors must not be used to claim PASS.
 
-Mẫu manifest: `tests/templates/run_manifest.template.json`. Script chỉ kiểm tra bằng chứng đi kèm; nó không xác minh tính đúng đắn pháp lý của câu trả lời.
+Manifest template: `tests/templates/run_manifest.template.json`. The script only checks the accompanying evidence; it does not verify the legal correctness of the answers.

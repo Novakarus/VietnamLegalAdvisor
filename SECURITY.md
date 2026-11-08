@@ -1,47 +1,47 @@
 # Security Policy
 
-Chính sách này áp dụng cho nguồn plugin Vietnam Legal Advisor, website, công cụ đóng gói và quy trình GitHub Actions trong kho này. Đầu mối tiếp nhận: Thanh Nguyen.
+This policy applies to the Vietnam Legal Advisor plugin source, the website, the packaging tools and the GitHub Actions workflows in this repository. Point of contact: Thanh Nguyen.
 
 ## Supported Versions
 
-Chỉ phiên bản phát hành mới nhất được ưu tiên tiếp nhận bản sửa lỗi bảo mật. Khi có phiên bản mới thay thế, người dùng nên cập nhật; dự án không cam kết duy trì bản vá riêng cho các phiên bản cũ.
+Only the latest released version is prioritized for security fixes. When a newer version replaces it, users should update; the project does not commit to maintaining separate patches for old versions.
 
-| Phiên bản / thành phần | Hỗ trợ bảo mật |
+| Version / component | Security support |
 | --- | --- |
-| Plugin 0.70.0 — ứng viên, chưa công khai | :white_check_mark: |
-| Plugin trước 0.70.0 | :x: |
-| Website và công cụ trên nhánh `main` | :white_check_mark: |
+| Plugin 0.70.0 — candidate, not yet public | :white_check_mark: |
+| Plugins before 0.70.0 | :x: |
+| Website and tooling on the `main` branch | :white_check_mark: |
 
-“Hỗ trợ” có nghĩa là tiếp nhận, đánh giá và ưu tiên xử lý báo cáo phù hợp; không phải chứng nhận an toàn hoặc cam kết thời hạn khắc phục. Phiên bản 0.70.0 hiện là ứng viên, chưa công khai.
+"Supported" means that reports are received, assessed and handled with appropriate priority; it is not a safety certification or a commitment to a remediation deadline. Version 0.70.0 is currently a candidate and is not public.
 
 ## Reporting a Vulnerability
 
-**Vui lòng báo cáo riêng qua email: ntthanh912@gmail.com**, với tiêu đề `[Security] Vietnam Legal Advisor — mô tả ngắn`.
+**Please report privately by email: ntthanh912@gmail.com**, with the subject `[Security] Vietnam Legal Advisor — short description`.
 
-Không đăng lỗ hổng chưa được xử lý, thông tin đăng nhập hoặc dữ liệu nhạy cảm vào Issues, Pull Requests hay thảo luận công khai.
+Do not post unresolved vulnerabilities, credentials or sensitive data in Issues, Pull Requests or public discussions.
 
-Báo cáo nên gồm:
+A report should include:
 
-- Phiên bản plugin hoặc mã commit, thành phần và môi trường bị ảnh hưởng.
-- Mô tả vấn đề, điều kiện xảy ra và tác động có thể có.
-- Các bước tái hiện tối thiểu bằng dữ liệu giả lập.
-- Kết quả mong đợi và kết quả thực tế; bằng chứng đã che thông tin nhạy cảm.
-- Cách liên hệ và mong muốn được ghi nhận đóng góp, nếu có.
+- The plugin version or commit hash, and the affected component and environment.
+- A description of the issue, the conditions under which it occurs and its possible impact.
+- Minimal reproduction steps using simulated data.
+- Expected and actual results; evidence with sensitive information redacted.
+- How to contact you and whether you wish to be credited, if applicable.
 
-Các vấn đề cần báo cáo gồm tiết lộ dữ liệu hoặc bí mật; truy cập hay hành động không được phép; nội dung không đáng tin cậy khiến trợ lý vượt ranh giới được phép với tác động bảo mật cụ thể; mã độc hoặc can thiệp vào website, gói phát hành hay quy trình đóng gói.
+Issues that should be reported include disclosure of data or secrets; unauthorized access or actions; untrusted content that causes the assistant to cross permitted boundaries with a concrete security impact; and malicious code or interference with the website, release packages or packaging process.
 
-Lỗi trả lời pháp lý, thiếu nguồn hoặc lỗi giao diện có thể gửi qua Issues sau khi loại thông tin nhạy cảm. Nếu lỗi đồng thời gây tác động bảo mật, hãy dùng email riêng.
+Legal-answer errors, missing sources or interface bugs can be sent through Issues after removing sensitive information. If a bug also has a security impact, use the private email.
 
-**Quy trình phản hồi dự kiến:**
+**Expected response process:**
 
-- Mục tiêu xác nhận tiếp nhận trong **5 ngày làm việc**.
-- Mục tiêu cung cấp đánh giá ban đầu hoặc yêu cầu bổ sung trong **10 ngày làm việc**.
-- Với báo cáo đang được xử lý, mục tiêu cập nhật ít nhất mỗi **14 ngày**, kể cả khi chưa có bản sửa.
+- Target: acknowledge receipt within **5 working days**.
+- Target: provide an initial assessment or request more information within **10 working days**.
+- For a report being handled, target an update at least every **14 days**, even when there is no fix yet.
 
-Đây là các mốc mục tiêu của dự án do cá nhân duy trì, không phải thời hạn được bảo đảm. Nếu chưa nhận được xác nhận sau 5 ngày làm việc, bạn có thể gửi thư nhắc.
+These are targets for a personally maintained project, not guaranteed deadlines. If you have not received an acknowledgement after 5 working days, you may send a reminder.
 
-Nếu báo cáo được chấp nhận, Nhà phát hành sẽ trao đổi về phạm vi ảnh hưởng, biện pháp giảm thiểu, kế hoạch sửa và thời điểm công bố phù hợp. Nếu chưa đủ bằng chứng, báo cáo trùng hoặc không được xác nhận là lỗ hổng, Nhà phát hành sẽ giải thích lý do trong phạm vi có thể và tiếp nhận bằng chứng bổ sung.
+If a report is accepted, the Publisher will discuss the scope of impact, mitigations, the fix plan and an appropriate disclosure time. If the evidence is insufficient, the report is a duplicate or it is not confirmed as a vulnerability, the Publisher will explain the reason to the extent possible and will accept additional evidence.
 
-Chỉ kiểm tra trong phạm vi bạn có quyền thực hiện. Không truy cập dữ liệu của người khác, làm gián đoạn dịch vụ hoặc kiểm thử hệ thống bên thứ ba khi chưa được phép. Vấn đề thuộc nền tảng lưu trữ, GitHub hoặc nhà cung cấp mô hình cần được báo cáo thêm qua kênh bảo mật của bên tương ứng.
+Test only within the scope you are entitled to. Do not access other people's data, disrupt services or test third-party systems without permission. Issues belonging to the hosting platform, GitHub or the model provider should also be reported through the respective party's security channel.
 
-Dự án chưa có chương trình thưởng lỗi. Việc ghi nhận người báo cáo chỉ thực hiện khi có sự đồng ý.
+The project does not have a bug bounty program. Reporters are credited only with their consent.

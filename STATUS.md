@@ -1,50 +1,48 @@
-# Trạng thái dự án — nguồn duy nhất
+# Project Status — single source of truth
 
-Đây là nơi duy nhất ghi trạng thái hiện hành. Các file `CHANGES-*.md`, `releases/*/RELEASE.md`, `tests/runs/*` là hồ sơ lịch sử tại thời điểm tạo; nếu mâu thuẫn với file này thì file này đúng. `scripts/check_consistency.py` kiểm tra các số liệu dưới đây khớp với manifest, `release.json` và `tests/results.json`.
+This is the only place that records the current status. `history/CHANGES-*.md`, `releases/*/RELEASE.md` and `tests/runs/*` are historical records as of the time they were created; if they conflict with this file, this file prevails. `scripts/check_consistency.py` checks that the figures below match the manifests, `release.json` and `tests/results.json`.
 
-Phiên bản hiện hành: 0.70.0
-Trạng thái: CANDIDATE
-Sẵn sàng phát hành công khai: không
-Cập nhật: 2026-11-04
+Current version: 0.70.0
+Status: CANDIDATE
+Ready for public release: no
+Updated: 2026-11-08
 
-## Các trạng thái và điều kiện chuyển
+## Statuses and transition conditions
 
-| Trạng thái | Ý nghĩa | Điều kiện để vào |
+| Status | Meaning | Condition to enter |
 |---|---|---|
-| DRAFT | Đang sửa, chưa kiểm thử hành vi | Có thay đổi trong `plugin/` |
-| CANDIDATE | Đã đóng gói, chạy kiểm thử hành vi vòng mới | Tăng phiên bản, `validate.py` đạt, đóng gói ZIP và ghi SHA-256 |
-| FROZEN_LOCAL_RELEASE_CANDIDATE | ZIP đã kiểm thử được giữ nguyên byte | Đã có bản ghi kết quả và `release.json` |
-| ACCEPTED | Đủ điều kiện nghiệm thu, chưa công bố | Toàn bộ "cổng nghiệm thu" bên dưới |
-| RELEASED | Đã công bố công khai | ACCEPTED + Nhà phát hành duyệt Điều khoản và giấy phép |
+| DRAFT | Being edited; behavioral tests not yet run | There is a change in `plugin/` |
+| CANDIDATE | Packaged; a new round of behavioral tests is run | Version bumped, `validate.py` passes, ZIP packaged and SHA-256 recorded |
+| FROZEN_LOCAL_RELEASE_CANDIDATE | The tested ZIP is preserved byte for byte | A results record and `release.json` exist |
+| ACCEPTED | Meets the acceptance conditions, not yet published | All of the "acceptance gates" below |
+| RELEASED | Published | ACCEPTED + the Publisher approves the Terms and the license |
 
-Chỉ chuyển trạng thái bằng cách sửa file này cùng `release.json`. Không nâng trạng thái dựa trên chấm điểm AI sơ bộ.
+Change the status only by editing this file together with `release.json`. Do not raise the status on the basis of preliminary AI scoring.
 
-## Quy tắc phiên bản
+## Versioning rules
 
-1. Mọi thay đổi trong `plugin/` (kể cả chỉ sửa chỉ dẫn) tạo phiên bản mới và phải kiểm thử lại các ca bị ảnh hưởng cộng một ca đối chứng. Không mang PASS từ phiên bản trước sang.
-2. Thay đổi ngoài `plugin/` (tài liệu, script, giấy phép, website) không tăng phiên bản plugin và không làm đổi SHA-256 của gói đã đóng băng. Ghi vào lịch sử Git, không ghi vào `CHANGES-*.md`.
-3. `CHANGES-<phiên bản>.md` chỉ viết một lần tại thời điểm sửa và không sửa lại; thêm mục "Kết quả kiểm thử" ở bản ghi lịch sử khác nếu cần.
-4. Không đóng gói lại ZIP của phiên bản đã đóng băng. Muốn thay đổi gói, tạo phiên bản mới.
+1. Any change in `plugin/` (including an instruction-only edit) creates a new version, and the affected cases plus one control case must be retested. Do not carry a PASS over from a previous version.
+2. Changes outside `plugin/` (documentation, scripts, licenses, website) do not raise the plugin version and do not change the SHA-256 of a frozen package. Record them in the Git history, not in `history/CHANGES-*.md`.
+3. `CHANGES-<version>.md` is written once, at the time of the edit, and is not edited afterwards; add a "Test results" section in another historical record if needed.
+4. Do not repackage the ZIP of a frozen version. To change the package, create a new version.
 
-## Trạng thái bản 0.70.0
+## Status of version 0.70.0
 
-- Ứng viên (2026-11-04): Thêm `plugin/LICENSE.md` (thông báo giấy phép CC BY 4.0, có hiệu lực từ 2026-11-04). Không đổi nội dung kỹ năng. Xem `history/CHANGES-0.70.0.md`.
-- Đã đóng gói: `dist/Vietnam-Legal-Advisor-0.70.0.zip` (SHA-256 trong file `.sha256` cạnh nó). Kiểm tra tĩnh đạt.
-- Thay đổi sau vòng 4 (2026-11-08): chỉ sửa `plugin/LICENSE.md` (biểu trưng cũng CC BY 4.0 trong phạm vi Nhà phát hành có quyền); ZIP đóng gói lại, SHA-256 hiện tại `6c6ae79991c88ed8b86cdfe99bc5ab87ef8c8e6d5393bd64548ac92f49da9648`. Bằng chứng vòng 4 (và vòng 5 nếu có) chạy trên ZIP trước đó, SHA-256 `ebbd7e606fe3d4c0de6a74194ede4f4726b3e6d5607aed39fed37c001eedb839`, giữ ở `tests/runs/2026-11-04-round4/`. Hai ZIP chỉ khác file giấy phép; kỹ năng, hướng dẫn và manifest giống nhau. `tests/results.json` ghi rõ trong `post_test_changes`; `validate.py` đối chiếu từng file. Cần xác nhận lại trên host thật khi chạy vòng chính thức.
-- Kiểm thử hành vi: **chưa chạy** (22 ca NOT_RUN).
-- Nghiệm thu chính thức: chưa.
+- Candidate (2026-11-04): added `plugin/LICENSE.md` (a CC BY 4.0 license notice, effective 2026-11-04). Skill content unchanged. See `history/CHANGES-0.70.0.md`.
+- Packaged: `dist/Vietnam-Legal-Advisor-0.70.0.zip` (SHA-256 in the `.sha256` file next to it). Static checks pass.
+- Change after round 4 (2026-11-08): only `plugin/LICENSE.md` (the logo is also under CC BY 4.0 to the extent the Publisher holds rights; the notice was translated into English). Skill content, instructions and both manifests are unchanged. The ZIP was repackaged; the current SHA-256 is recorded in `tests/results.json` (`post_test_changes.current_zip_sha256`). The round 4 evidence ran on the earlier ZIP, SHA-256 `ebbd7e606fe3d4c0de6a74194ede4f4726b3e6d5607aed39fed37c001eedb839`, kept at `tests/runs/2026-11-04-round4/`. `validate.py` compares the two archives file by file and fails if any other file differs. This must be re-confirmed on a real host in the formal round (round 5 uses the current ZIP).
+- Behavioral tests: round 4 ran on 2026-11-04 (22/22 provisional PASS, AI-graded; see the Protocol v2 gap section below). Round 5 on a real host is in preparation and has not been graded.
+- Formal acceptance: not yet.
 
-## Bản 0.69.3 (đã gỡ khỏi repo, 2026-11-08)
+## Version 0.69.3 (removed from the repository, 2026-11-08)
 
-- Nhà phát hành quyết định gỡ gói, trang phát hành và báo cáo của 0.69.3 khỏi repo; chỉ giữ hồ sơ kiểm thử vòng 1–3 (do Codex thực hiện) làm lịch sử. ZIP đã đóng băng có SHA-256 `40120521e43173191ab4babbc93180445fef33fb819f9d24ed2c25fb31dd7fa6`.
-- Kiểm thử hành vi vòng 3: 22/22 PASS do AI chấm sơ bộ; kiểm tra tĩnh 109/109 (trước nhập hồ sơ) và 131/131 (sau nhập hồ sơ); hồi quy kỹ thuật 14/14. Hồ sơ ở `tests/history/0.69.3/round3-results.json` và `tests/runs/2026-10-21-round3/`.
+- The Publisher decided to remove the package, release page and report of 0.69.3 from the repository; only the round 1–3 test records (run by Codex) are kept as history. The frozen ZIP had SHA-256 `40120521e43173191ab4babbc93180445fef33fb819f9d24ed2c25fb31dd7fa6`.
+- Round 3 behavioral tests: 22/22 PASS, provisionally AI-graded; static checks 109/109 (before the record was imported) and 131/131 (after); technical regression 14/14. Records are at `tests/history/0.69.3/round3-results.json` and `tests/runs/2026-10-21-round3/`.
 
-## Khoảng cách so với Protocol v2
+## Gap against Protocol v2
 
-Vòng 4 (Claude, 2026-11-04) chạy lại bằng 22 phiên con Claude Code cô lập (một phiên mỗi ca; chỉ công cụ Read/Edit, không web/shell nên OFFLINE được chặn về kỹ thuật; mã mô hình `claude-sonnet-5-5` do host báo; transcript nguyên bản và SHA-256 theo từng ca; người chạy không được cấp `must_include`/`must_not`). Kết quả: 22/22 PASS sơ bộ; `run_integrity.py` còn FAIL 2 lỗi: (1) người chấm là Claude, cùng họ mô hình với bên chạy; (2) chưa chạy trên host sản phẩm thật với plugin đã cài. Ngoài ra vẫn thiếu luật sư rà soát và ca live có đáp án. Hạn chế: phiên con dùng prompt hệ thống của loại agent cấu hình status line; người điều phối đã từng thấy `cases.json`.
+Round 4 (Claude, 2026-11-04) was rerun with 22 isolated Claude Code subagent sessions (one session per case; Read/Edit tools only, no web or shell, so OFFLINE was enforced technically; model ID `claude-sonnet-5-5` as reported by the host; raw transcripts and a SHA-256 per case; the runner was not given `must_include`/`must_not`). Result: 22/22 provisional PASS; `run_integrity.py` still FAILs with 2 errors: (1) the grader is Claude, the same model family as the runner; (2) the plugin has not been run on a real production host with the plugin installed. A lawyer review and live cases with answer keys are also still missing. Limitations: the subagents used the system prompt of the agent type that configures the status line; the coordinator had previously seen `cases.json`.
 
-Vòng 3 (Codex):
+Round 3 (Codex):
 
-Kết quả chạy `python tests/run_integrity.py tests/runs/2026-10-21-round3` ngày 2026-11-03: **FAIL**. Vòng 3 không đạt vì không có `run_manifest.json`, không có mã mô hình chính xác, người chấm cùng họ mô hình với bên chạy (cả hai thuộc hệ Codex/OpenAI), chặn OFFLINE chỉ bằng chỉ dẫn, không chạy trên host thật, và không có transcript nguyên bản. ZIP ứng viên khớp SHA-256. Vòng 4 phải đạt Protocol v2 (xem `tests/EVALUATION.md`).
-
-
+Result of running `python tests/run_integrity.py tests/runs/2026-10-21-round3` on 2026-11-03: **FAIL**. Round 3 fails because there is no `run_manifest.json`, no exact model ID, the grader is in the same model family as the runner (both Codex/OpenAI), OFFLINE was enforced only by instruction, it did not run on a real host, and there are no raw transcripts. The candidate ZIP matches its SHA-256. Round 4 had to meet Protocol v2 (see `tests/EVALUATION.md`).

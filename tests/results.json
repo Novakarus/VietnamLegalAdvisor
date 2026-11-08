@@ -1527,8 +1527,8 @@
     "files": [
       "LICENSE.md"
     ],
-    "current_zip_sha256": "6c6ae79991c88ed8b86cdfe99bc5ab87ef8c8e6d5393bd64548ac92f49da9648",
+    "current_zip_sha256": "0458b5e0ee5c6fbe14c4a5401c9ff434c89c5ac090dcb679818e58002f322009",
     "date": "2026-11-08",
-    "reason": "Chỉ sửa plugin/LICENSE.md (cấp phép biểu trưng theo CC BY 4.0). Không đổi kỹ năng, hướng dẫn hay manifest. Bằng chứng vòng 4 chạy trên ZIP đã kiểm thử (candidate_zip_sha256)."
+    "reason": "Only plugin/LICENSE.md changed (logo also under CC BY 4.0; notice translated into English). No change to skills, instructions or manifests. Round 4 evidence ran on the tested ZIP (candidate_zip_sha256)."
   }
 }

@@ -11,15 +11,15 @@ venv/
 Thumbs.db
 .DS_Store
 
-# Bản sao điều khoản của bên thứ ba (thuộc bản quyền của họ): chỉ giữ cục bộ, chỉ đưa INDEX.md lên Git
+# Copies of third-party terms (their copyright): kept locally only; only INDEX.md goes to Git
 terms-archive/*
 !terms-archive/INDEX.md
 
-# Bản sao plugin cục bộ dùng để thử trên host (trùng plugin/)
+# Local copy of the plugin used for host tests (duplicates plugin/)
 tests/round5-local-marketplace/
 
-# Vòng 5 (chạy trên host thật) đang thực hiện, chưa chấm: chưa công khai
+# Round 5 (real-host run) in progress, not yet graded: not public
 tests/runs/2026-11-05-round5/
 
-# ZIP trong thư mục lượt chạy cũ chỉ để đối chiếu cục bộ (hash đã nằm trong manifest)
+# ZIPs in old run folders are for local comparison only (hashes are in the manifests)
 tests/runs/2026-10-*/Vietnam-Legal-Advisor-*.zip

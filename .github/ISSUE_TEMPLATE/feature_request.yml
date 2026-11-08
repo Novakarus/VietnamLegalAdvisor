@@ -1,10 +1,10 @@
-name: Đề xuất cải tiến
-description: Đề xuất tình huống và kết quả cần hỗ trợ
+name: Feature request
+description: Suggest a scenario and the result you need supported
 body:
   - type: textarea
     id: proposal
     attributes:
-      label: Nhu cầu và đề xuất
-      description: Không đưa hồ sơ khách hàng hoặc dữ liệu nhạy cảm.
+      label: Need and proposal
+      description: Do not include client files or sensitive data.
     validations:
       required: true

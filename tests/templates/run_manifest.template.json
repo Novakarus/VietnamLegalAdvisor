@@ -2,38 +2,38 @@
   "protocol": "v2",
   "round": 4,
   "candidate_version": "0.70.0",
-  "candidate_zip_sha256": "<sha256 của ZIP đã đóng gói trước khi chạy>",
-  "started_at": "<ISO 8601 +07:00>",
+  "candidate_zip_sha256": "<SHA-256 of the ZIP packaged before the run>",
+  "started_at": "<ISO 8601 with offset>",
   "host": {
-    "name": "<tên nền tảng/host thật>",
-    "version": "<phiên bản host>",
+    "name": "<name of the real platform/host>",
+    "version": "<host version>",
     "production_host": true,
     "plugin_installed_via_host": true,
     "skills_discovered": 13
   },
   "runner": {
-    "vendor": "<ví dụ openai | anthropic | google>",
-    "model_id": "<định danh mô hình chính xác do host báo, không ghi 'unknown'>"
+    "vendor": "<for example openai | anthropic | google>",
+    "model_id": "<exact model ID reported by the host; do not write 'unknown'>"
   },
   "tool_policy": {
     "offline_enforced": "technical",
-    "how": "<ví dụ: phiên chạy không có công cụ mạng/duyệt web; ghi cách xác minh>",
+    "how": "<for example: the session had no network/web-browsing tools; record how this was verified>",
     "document_only_files": ["tests/fixtures.md"]
   },
   "grader": {
     "kind": "ai",
-    "vendor": "<phải khác vendor của runner>",
-    "model_id": "<định danh mô hình chấm>",
+    "vendor": "<must differ from the runner's vendor>",
+    "model_id": "<grader model ID>",
     "second_review": {
       "kind": "human_lawyer",
-      "name_or_id": "<luật sư rà soát>",
+      "name_or_id": "<reviewing lawyer>",
       "reviewed_on": "<YYYY-MM-DD>"
     }
   },
   "answer_key": {
-    "applies_to": ["<case_id của ca live>"],
+    "applies_to": ["<case_id of the live case>"],
     "reviewed_on": "<YYYY-MM-DD>",
-    "sources": ["<URL hoặc số/ký hiệu văn bản chính thức>"]
+    "sources": ["<URL or number/reference of the official text>"]
   },
   "transcripts": {
     "R01": {"path": "transcripts/R01.jsonl", "sha256": "<sha256>"}

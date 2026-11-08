@@ -1,5 +1,5 @@
-# Đóng góp
+# Contributing
 
-Chào đón báo lỗi và đề xuất qua Issues. Nêu phiên bản, bước thực hiện, kết quả mong đợi và ví dụ đã che thông tin nhạy cảm. Không đăng hồ sơ khách hàng, mật khẩu hoặc dữ liệu cá nhân không cần thiết.
+Bug reports and suggestions through Issues are welcome. State the version, the steps taken, the expected result and an example with sensitive information redacted. Do not post client files, passwords or unnecessary personal data.
 
-Trước khi gửi nội dung nguồn qua Pull Request, hãy trao đổi với Nhà phát hành để thống nhất quyền sử dụng và phân phối phần đóng góp. Việc mở Issue hoặc gửi đề xuất không tự chuyển giao quyền tác giả. Chỉ gửi nội dung bạn có quyền cung cấp. Chấp nhận đóng góp không đồng nghĩa cấp phép phát hành lại toàn bộ bộ kỹ năng.
+Before submitting source content through a Pull Request, discuss it with the Publisher to agree on the rights to use and distribute the contribution. Opening an Issue or sending a suggestion does not transfer copyright. Submit only content you have the right to provide. Accepting a contribution does not mean permission to relicense the whole skill set.

@@ -1,29 +1,29 @@
-# Runbook: chạy 22 ca trên host thật (Protocol v2, mục 1, 2, 3, 5)
+# Runbook: run the 22 cases on a real host (Protocol v2, items 1, 2, 3, 5)
 
-Mục tiêu: khắc phục lỗi `host` (production_host=false). Plugin có định dạng Codex/OpenAI (`plugin/.codex-plugin`, `extensions.com.openai`), nên host mục tiêu là **Codex** (app/CLI/IDE). Runner = OpenAI; người chấm phải là hãng khác (Claude hoặc luật sư) để khắc phục lỗi `grader`.
+Goal: fix the `host` error (production_host=false). The plugin is in Codex/OpenAI format (`plugin/.codex-plugin`, `extensions.com.openai`), so the target host is **Codex** (app/CLI/IDE). Runner = OpenAI; the grader must be from a different vendor (Claude or a lawyer) to fix the `grader` error.
 
-## Chuẩn bị
-1. `python scripts/import_host_run.py prepare --run tests/runs/2026-11-05-round5` → tạo `prompts/<ID>.txt` và chép ZIP ứng viên.
-2. Giải nén ZIP 0.70.0 (đúng file trong `dist/`, SHA-256 `ebbd7e60…b839`) và cài vào Codex theo cơ chế plugin của host. Không sửa file plugin.
-3. Trong Codex: xác nhận host liệt kê đủ **13 skill** (chụp màn hình hoặc xuất danh sách). Ghi tên và phiên bản host (`codex --version` hoặc màn hình About).
+## Preparation
+1. `python scripts/import_host_run.py prepare --run tests/runs/2026-11-05-round5` → creates `prompts/<ID>.txt` and copies the candidate ZIP.
+2. Unzip the **current** candidate ZIP (the file in `dist/`; its SHA-256 is in `tests/results.json` under `post_test_changes.current_zip_sha256`) and install it in Codex through the host's plugin mechanism. Do not edit the plugin files. If `plugin/` changes again, repackage and use the new hash for the whole round.
+3. In Codex: confirm that the host lists all **13 skills** (screenshot or export the list). Record the host name and version (`codex --version` or the About screen).
 
-## Mỗi ca (22 ca)
-- Mở **phiên mới** (không dùng chung ngữ cảnh), cấu hình **không có công cụ web**: tắt web search và không cấp mạng cho sandbox (ví dụ `web_search = "disabled"` / sandbox không có network). Ghi cách tắt để điền `--offline-how`.
-- Dán nguyên nội dung `prompts/<ID>.txt`. Không dán `must_include`/`must_not`.
-- Ca R02, C01, D01, V01, V02 tham chiếu `tests/fixtures.md`: chỉ cấp file này (đặt trong thư mục làm việc); các ca khác không cấp tài liệu thêm.
-- Không chỉnh sửa hay nhắc lại câu hỏi. Mỗi ca một phiên.
+## Each case (22 cases)
+- Open a **new session** (do not share context), configured with **no web tools**: turn off web search and give the sandbox no network (for example `web_search = "disabled"` / a sandbox without network). Record how it was turned off to fill in `--offline-how`.
+- Paste the content of `prompts/<ID>.txt` as is. Do not paste `must_include`/`must_not`.
+- Cases R02, C01, D01, V01 and V02 refer to `tests/fixtures.md`: provide only this file (placed in the working directory); give the other cases no additional documents.
+- Do not edit or repeat the question. One session per case.
 
-## Xuất transcript
-Lấy file phiên nguyên bản của host (với Codex CLI/app thường là `~/.codex/sessions/<năm>/<tháng>/<ngày>/rollout-*.jsonl`). Đổi tên từng file thành `<ID>.jsonl` vào một thư mục (ví dụ `transcripts/`). Không mở và lưu lại bằng trình soạn thảo.
+## Export the transcripts
+Take the host's raw session file (for the Codex CLI/app usually `~/.codex/sessions/<year>/<month>/<day>/rollout-*.jsonl`). Rename each file to `<ID>.jsonl` in one folder (for example `transcripts/`). Do not open and re-save it in an editor.
 
-## Nhập và kiểm tra
+## Import and check
 ```
 python scripts/import_host_run.py import --run tests/runs/2026-11-05-round5 --transcripts transcripts \
-  --host-name Codex --host-version <phiên bản> --runner-vendor openai --skills-discovered 13 \
-  --offline-how "<cách đã tắt web>"
+  --host-name Codex --host-version <version> --runner-vendor openai --skills-discovered 13 \
+  --offline-how "<how web was turned off>"
 python tests/run_integrity.py tests/runs/2026-11-05-round5
 ```
-Lỗi `host` và `runner` sẽ hết. Bước chấm (người chấm khác hãng) và điền `grader` làm sau, rồi tạo `results.json` cho vòng này.
+The `host` and `runner` errors should disappear. Grading (a grader from a different vendor) and filling in `grader` come afterwards, then create the `results.json` for this round.
 
-## Lưu ý trung thực
-Kết quả vẫn là sơ bộ nếu chưa có luật sư và ca live có đáp án (mục 4, 6). Nếu host không xuất được transcript nguyên bản hoặc không tắt được web bằng kỹ thuật thì ca đó không đạt mục 1-2; ghi rõ, không điền thay.
+## Honesty note
+The result is still preliminary without a lawyer and live cases with answer keys (items 4 and 6). If the host cannot export a raw transcript or web cannot be turned off technically, that case does not meet items 1–2; record this plainly and do not fill it in.

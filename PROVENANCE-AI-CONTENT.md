@@ -1,51 +1,52 @@
-# Hồ sơ nội dung do AI hỗ trợ soạn
+# Record of AI-Assisted Content
 
-Cập nhật 2026-11-04 theo xác nhận của Nhà phát hành (Thanh Nguyen). Hồ sơ ghi sự kiện, không phải kết luận pháp lý.
+Updated 2026-11-08 per the Publisher's (Thanh Nguyen's) confirmation. This record states facts; it is not a legal conclusion.
 
-## Xác nhận của Nhà phát hành
+## Publisher's confirmation
 
-- Nội dung `plugin/`, `docs/`, `scripts/` và tài liệu liên quan chỉ được soạn bằng ChatGPT và Codex của OpenAI.
-- Chỉ dùng tài khoản cá nhân tại Việt Nam, gói ChatGPT Pro (xác nhận 2026-11-04). Không dùng tài khoản doanh nghiệp (Business, Enterprise) hay API.
-- Mức đóng góp (xác nhận 2026-11-04): Nhà phát hành tự viết theo sự hướng dẫn của ChatGPT/Codex.
+- The content of `plugin/`, `docs/`, `scripts/` and related documents was drafted only with OpenAI's ChatGPT and Codex.
+- Only a personal account in Vietnam on the ChatGPT Pro plan was used (confirmed 2026-11-04). No business account (Business, Enterprise) or API was used.
+- Contribution (confirmed 2026-11-04): the Publisher wrote the content under the guidance of ChatGPT/Codex.
 
-## Bổ sung: nội dung do Claude (Anthropic) soạn trong phiên làm việc 2026-11-02 đến 2026-11-04
+## Addendum: content drafted by Claude (Anthropic) in working sessions from 2026-11-02 to 2026-11-08
 
-Xác nhận "chỉ ChatGPT và Codex" ở trên không bao gồm các file dưới đây. Chúng được Claude (Anthropic) viết trong phiên làm việc này theo yêu cầu của Nhà phát hành, nên phải khai báo riêng:
+The "only ChatGPT and Codex" confirmation above does not cover the files below. They were written by Claude (Anthropic) in these working sessions at the Publisher's request, so they are declared separately:
 
-- Mã: `scripts/check_consistency.py`, `tests/run_integrity.py` (có dòng `SPDX-License-Identifier: Apache-2.0`).
-- Tài liệu: `STATUS.md`, `LICENSE.md`, `NOTICE`, `LICENSE-CC-BY-4.0.md`, `THIRD_PARTY_NOTICES.md`, `PROVENANCE-LOGO.md`, `PROVENANCE-AI-CONTENT.md`, phần "Protocol v2" cuối `tests/EVALUATION.md`, `tests/templates/run_manifest.template.json`, dòng cảnh báo đầu `history/CHANGES-0.69.2.md` và `history/CHANGES-0.69.3.md`, phần License và Status trong `README.md`, dòng mới trong `tests/README.md`.
-- Website: Điều 5 trong `docs/terms/index.html` và nội dung `docs/terms/source-license.html`.
-- Văn bản giấy phép công cộng chép nguyên văn: `LICENSE-Apache-2.0.txt` (từ gói giấy phép Debian `common-licenses`, SHA-256 `cfc7749b…3d30`) và `LICENSE-CC-BY-4.0.txt` (từ kho SPDX `license-list-data`, SHA-256 `d557539d…3744`). Đây là văn bản giấy phép chuẩn, không phải sáng tác.
+- Code: `scripts/check_consistency.py`, `scripts/import_host_run.py`, `tests/run_integrity.py`, and the edit to `scripts/validate.py` that skips the ZIP comparison when `dist/` is absent and compares the tested archive (`SPDX-License-Identifier: Apache-2.0` headers).
+- Documents: `STATUS.md`, `LICENSE.md`, `NOTICE`, `LICENSE-CC-BY-4.0.md`, `THIRD_PARTY_NOTICES.md`, `PROVENANCE-LOGO.md`, `PROVENANCE-AI-CONTENT.md`, `CHANGELOG.md`, the "Protocol v2" section at the end of `tests/EVALUATION.md`, `tests/HOST_RUNBOOK.md`, `tests/templates/run_manifest.template.json`, the warning line at the top of `history/CHANGES-0.69.2.md` and `history/CHANGES-0.69.3.md`, the License and Status sections of `README.md`, new lines in `tests/README.md`, and the English translation of the repository documents carried out on 2026-11-08.
+- Website: Article 5 in `docs/terms/index.html`, the content of `docs/terms/source-license.html`, and the English translation of the `docs/` pages.
+- Verbatim public license texts: `LICENSE-Apache-2.0.txt` (from the Debian `common-licenses` package, SHA-256 `cfc7749b…3d30`) and `LICENSE-CC-BY-4.0.txt` (from the SPDX `license-list-data` repository, SHA-256 `d557539d…3744`). These are standard license texts, not original writing.
 
-Điều khoản của Anthropic: tài khoản Claude là **Claude Pro** (cá nhân; xác nhận 2026-11-04), nên áp dụng Consumer Terms of Service (Audience: Individual). Đã đọc trực tiếp trang chính thức https://www.anthropic.com/legal/consumer-terms ngày 2026-11-04 bằng trình duyệt:
-- Effective: Oct 8, 2025. SHA-256 văn bản trang hiển thị (29.251 ký tự): `ef54655f279d4dafd599ef228237da3835aab02229ef178cc54f59500c60a4ac`. Đây là trang đang hiển thị ngày đọc; các phiên làm việc của Claude diễn ra ngày 2026-11-02 đến 2026-11-04, cùng giai đoạn này, nhưng chưa đối chiếu lịch sử phiên bản của trang ("See version history").
-- Mục về Inputs và Outputs (tóm tắt, không chép nguyên văn): trong phạm vi pháp luật cho phép, người dùng giữ quyền đối với Input; với điều kiện tuân thủ Điều khoản, Anthropic chuyển giao cho người dùng mọi quyền của mình (nếu có) đối với Outputs. Cũng nêu Outputs có thể không chính xác và người dùng không nên dựa vào mà không kiểm chứng.
-- Trang có nút "Download PDF" để lưu bản chính thức vào `terms-archive/`.
+Anthropic's terms: the Claude account is **Claude Pro** (personal; confirmed 2026-11-04), so the Consumer Terms of Service (Audience: Individual) apply. The official page https://www.anthropic.com/legal/consumer-terms was read directly in a browser on 2026-11-04:
+- Effective: Oct 8, 2025. SHA-256 of the displayed page text (29,251 characters): `ef54655f279d4dafd599ef228237da3835aab02229ef178cc54f59500c60a4ac`. This is the page as displayed on the day it was read; Claude's working sessions took place from 2026-11-02 to 2026-11-04, in the same period, but the page's version history ("See version history") has not been cross-checked.
+- The section on Inputs and Outputs (summary, not verbatim): to the extent permitted by law, the user retains rights in Input; subject to compliance with the Terms, Anthropic assigns to the user all of its rights (if any) in Outputs. It also states that Outputs may be inaccurate and that users should not rely on them without verification.
+- The page has a "Download PDF" button for saving the official copy into `terms-archive/`.
 
-## Điều khoản áp dụng (tài khoản cá nhân, ngoài EEA/Thụy Sĩ/Anh)
+## Applicable terms (personal account, outside the EEA/Switzerland/UK)
 
-- OpenAI Terms of Use, Effective 2026-01-01, hợp đồng với OpenAI OpCo, LLC. Bản lưu ngày 2026-10-16 14:11:08 UTC và hash: xem [PROVENANCE-LOGO.md](PROVENANCE-LOGO.md).
-- Trong phạm vi pháp luật cho phép, người dùng sở hữu Output và OpenAI chuyển giao mọi quyền của mình (nếu có) đối với Output. Output có thể không độc nhất; việc chuyển giao không bao gồm Output của người dùng khác hay Output của bên thứ ba.
-- Điều khoản nêu áp dụng cho ChatGPT, DALL·E và các dịch vụ khác của OpenAI dành cho cá nhân, và bao gồm Service Terms (Service Terms: bản cập nhật 2026-10-16).
-- **Service Terms:** https://openai.com/policies/service-terms/ . Trang in ngày 2026-11-04 ghi "Updated: October 16, 2026", nên phiên bản này có ngày cập nhật trùng ngày mốc 2026-10-16 (không cần bản Wayback; bản Wayback gần ngày đó chỉ là trang chặn HTTP 403). PDF: `terms-archive/openai-terms-2026-10-16.pdf` (10 trang), SHA-256 `c95c3001d8a56c5cacdb53fbab9054033ca65748b10295378f9ce88cd83678c2`. Hạn chế: đây là trang đang hiển thị, không phải bản chụp có dấu thời gian, nên chỉ chứng minh phiên bản cập nhật 2026-10-16 còn hiệu lực đến 2026-11-04.
-  - SHA-256 văn bản trang hiển thị (19.381 ký tự), đọc ngày 2026-11-04: `67b22b2b16e54279632410b2e2e71b40dce7cab85238c2fa9f9a602088312b61`
-  - Mục 4 "Codex and Code Generation" (tóm tắt, không chép nguyên văn): kết quả do tính năng sinh mã của dịch vụ, kể cả OpenAI Codex, có thể phải tuân theo giấy phép của bên thứ ba, kể cả giấy phép mã nguồn mở. Không có quy định riêng về quyền sở hữu Output của Codex trong mục này; quyền sở hữu Output theo Terms of Use ở trên.
+- OpenAI Terms of Use, Effective 2026-01-01, a contract with OpenAI OpCo, LLC. Wayback copy of 2026-10-16 14:11:08 UTC and hashes: see [PROVENANCE-LOGO.md](PROVENANCE-LOGO.md).
+- To the extent permitted by law, the user owns Output and OpenAI assigns all of its rights (if any) in Output. Output may not be unique; the assignment does not include other users' Output or third-party Output.
+- The terms state that they apply to ChatGPT, DALL·E and OpenAI's other services for individuals, and include the Service Terms (Service Terms: updated 2026-10-16).
+- **Service Terms:** https://openai.com/policies/service-terms/ . The page printed on 2026-11-04 reads "Updated: October 16, 2026", so this version's update date coincides with the 2026-10-16 reference date (no Wayback copy is needed; the Wayback copy near that date is only an HTTP 403 block page). PDF: `terms-archive/openai-terms-2026-10-16.pdf` (10 pages), SHA-256 `c95c3001d8a56c5cacdb53fbab9054033ca65748b10295378f9ce88cd83678c2`. Limitation: this is the page as displayed, not a time-stamped capture, so it proves only that the version updated 2026-10-16 was in force through 2026-11-04.
+  - SHA-256 of the displayed page text (19,381 characters), read on 2026-11-04: `67b22b2b16e54279632410b2e2e71b40dce7cab85238c2fa9f9a602088312b61`
+  - Section 4 "Codex and Code Generation" (summary, not verbatim): results from the service's code generation features, including OpenAI Codex, may be subject to third-party licenses, including open-source licenses. This section has no separate rule on ownership of Codex Output; ownership of Output is under the Terms of Use above.
 
-## Ý nghĩa đối với giấy phép (nhận định, không phải tư vấn pháp lý)
+## Meaning for the license (assessment, not legal advice)
 
-1. Theo điều khoản, Nhà phát hành là bên được chuyển giao quyền đối với Output, nên không có điều khoản nào của OpenAI (trong bản đã đọc) cấm việc cấp phép lại Output theo Apache 2.0 hoặc CC BY 4.0.
-2. Nhà phát hành chỉ cấp phép được những quyền mình thực sự có. Điều khoản dùng cụm "nếu có" và "trong phạm vi pháp luật cho phép", nên không bảo đảm Output được bảo hộ quyền tác giả. Nếu một phần không được bảo hộ thì giấy phép với phần đó không có nhiều ý nghĩa, nhưng cũng không gây hại.
-3. Output có thể giống Output của người khác và, riêng với Codex, theo Service Terms có thể phải tuân theo giấy phép bên thứ ba, kể cả mã nguồn mở. Rủi ro này chủ yếu với mã (`scripts/`, `tests/*.py`), vì Apache 2.0 không thể cấp quyền đối với đoạn mã mang giấy phép khác. Cần rà soát mã trước khi công bố (xem "Còn lại").
-4. Phần Nhà phát hành tự viết hoặc chỉnh sửa có ý nghĩa sáng tạo là phần dễ được bảo hộ nhất. Cần ghi lại mức đóng góp này.
+1. Under the terms, the Publisher is the assignee of rights in Output, so no OpenAI term (in the version read) prohibits relicensing Output under Apache 2.0 or CC BY 4.0.
+2. The Publisher can license only the rights actually held. The terms use "if any" and "to the extent permitted by law", so they do not guarantee that Output is protected by copyright. If part is unprotected, a license over that part means little, but it does no harm.
+3. Output may resemble other people's Output and, for Codex specifically, under the Service Terms may be subject to third-party licenses, including open source. This risk mainly concerns code (`scripts/`, `tests/*.py`), because Apache 2.0 cannot grant rights over a code fragment carrying another license. The code should be reviewed before publication (see "Remaining").
+4. Both providers' consumer terms restrict the user from using the services (Anthropic) or Output (OpenAI) to develop competing AI models (checked in the stored PDFs on 2026-11-08). Licensing the output under CC BY 4.0 does not lift that restriction for the Publisher; see `LICENSE.md`, section 3.
+5. The parts the Publisher wrote or edited with creative significance are the most likely to be protected. This level of contribution should be recorded.
 
-## Còn lại
+## Remaining
 
-- [x] PDF Terms of Use ngày 2026-10-16 đã lưu trong `terms-archive/` (xem `terms-archive/INDEX.md`).
-- [x] PDF OpenAI Service Terms đã lưu và đối chiếu: mục 4 "Codex and Code Generation" khớp với nội dung đã ghi.
-- [x] Rà soát mã do ChatGPT/Codex viết (`scripts/validate.py`, `scripts/package.py`, `tests/run_technical.py`, `tests/validate.py`): xem `THIRD_PARTY_NOTICES.md`. Đã làm 2026-11-04.
-- [x] Điều khoản Anthropic (Consumer Terms, tài khoản Claude Pro) đã đọc trên trang chính thức và ghi hash ở trên.
-- [x] PDF Consumer Terms đã lưu (`terms-archive/anthropic-terms.pdf`, 14 trang, SHA-256 `7222642462bf559fa450982aa75ad4c7d3c1ed5c24e6e1517d7b4cf9f22806d4`); câu "we assign to you all of our right, title, and interest—if any—in Outputs" đối chiếu khớp trong PDF.
+- [x] The Terms of Use PDF of 2026-10-16 is stored in `terms-archive/` (see `terms-archive/INDEX.md`).
+- [x] The OpenAI Service Terms PDF was stored and cross-checked: section 4 "Codex and Code Generation" matches what was recorded.
+- [x] Review of code written by ChatGPT/Codex (`scripts/validate.py`, `scripts/package.py`, `tests/run_technical.py`, `tests/validate.py`): see `THIRD_PARTY_NOTICES.md`. Done 2026-11-04.
+- [x] Anthropic's terms (Consumer Terms, Claude Pro account) were read on the official page and the hash recorded above.
+- [x] The Consumer Terms PDF was stored (`terms-archive/anthropic-terms.pdf`, 14 pages, SHA-256 `7222642462bf559fa450982aa75ad4c7d3c1ed5c24e6e1517d7b4cf9f22806d4`); the sentence "we assign to you all of our right, title, and interest—if any—in Outputs" was cross-checked in the PDF.
 
-## Vòng kiểm thử 4 (2026-11-04)
+## Test round 4 (2026-11-04)
 
-Toàn bộ `tests/runs/2026-11-04-round4/` do Claude tạo: câu trả lời và transcript do 22 phiên con Claude Code cô lập sinh ra; `evidence.json`, `results.json`, `run_manifest.json`, báo cáo do Claude điều phối viết và tự chấm (mô hình cấu hình `claude-sonnet-5-5`). Kết quả vòng 1–3 do Codex thực hiện, giữ nguyên. Hồ sơ thuộc nhóm không cấp phép (`tests/runs`).
+All of `tests/runs/2026-11-04-round4/` was created by Claude: the answers and transcripts were produced by 22 isolated Claude Code subagent sessions; `evidence.json`, `results.json`, `run_manifest.json` and the report were written by the coordinating Claude, which also graded them (configured model `claude-sonnet-5-5`). The round 1–3 results were produced by Codex and are kept unchanged. These records are licensed under CC BY 4.0 to the extent the Publisher holds rights (see `LICENSE.md`, section 3).

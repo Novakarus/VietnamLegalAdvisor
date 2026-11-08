@@ -1,35 +1,35 @@
-# Thông báo bên thứ ba
+# Third-Party Notices
 
-Cập nhật 2026-11-04; Nhà phát hành đã duyệt. Chưa phải xác nhận pháp lý.
+Updated 2026-11-08; approved by the Publisher. This is not a legal confirmation.
 
-## Thành phần phụ thuộc
+## Dependencies
 
-| Thành phần | Dùng ở đâu | Có được phân phối cùng plugin không | Giấy phép |
+| Component | Where used | Distributed with the plugin? | License |
 |---|---|---|---|
-| Pillow (`scripts/requirements.txt`: `Pillow>=11.0.0,<13`) | `scripts/validate.py` (kiểm tra ảnh PNG) | Không. Chỉ là phụ thuộc phát triển, không nằm trong `plugin/` | Giấy phép riêng của Pillow (kiểu HPND/MIT-CMU). Xem gói Pillow tại thời điểm cài đặt |
+| Pillow (`scripts/requirements.txt`: `Pillow>=11.0.0,<13`) | `scripts/validate.py` (PNG image checks) | No. A development dependency only, not part of `plugin/` | Pillow's own license (HPND / MIT-CMU style). See the Pillow package at install time |
 
-## Kết quả sàng lọc `plugin/`
+## Screening result for `plugin/`
 
-Tìm kiếm các từ khóa bản quyền, giấy phép, "third-party", "©" trong `plugin/` chỉ trả về một cụm từ pháp lý thông thường trong `investment-and-ma/SKILL.md` ("third-party consents") và file ảnh biểu trưng. Không tìm thấy mã hay văn bản có thông báo giấy phép khác. Đây là sàng lọc từ khóa, không phải rà soát nội dung.
+A search of `plugin/` for the keywords copyright, license, "third-party" and "©" returned only one ordinary legal phrase in `investment-and-ma/SKILL.md` ("third-party consents") and the logo image file. No code or text carrying another license notice was found. This is a keyword screen, not a content review.
 
-## Những điều chưa xác nhận (Nhà phát hành cần trả lời)
+## Items not yet confirmed (the Publisher needs to answer)
 
-1. **Biểu trưng** `vietnam-legal-advisor-icon-v4.png`: chi tiết nguồn gốc, lời nhắc, tài khoản cá nhân tại Việt Nam, điều khoản OpenAI ngày 2026-10-16 (bản lưu Wayback kèm hash) nằm trong [PROVENANCE-LOGO.md](PROVENANCE-LOGO.md). Do GPT-6 Astra tạo qua ChatGPT của OpenAI. Cấp phép CC BY 4.0 trong phạm vi Nhà phát hành có quyền.
-2. **Nội dung có hỗ trợ AI**: plugin được đóng gói cho nền tảng có manifest `com.openai`, và các lượt kiểm thử dùng subagent Codex. Cần xác nhận điều khoản của nhà cung cấp mô hình về quyền đối với đầu ra khi cấp phép lại.
-3. **Văn bản pháp luật Việt Nam**: plugin không đóng gói văn bản pháp luật (`knowledge-index.json` rỗng). Nếu sau này đóng gói, cần kiểm chứng quy định hiện hành về quyền tác giả đối với văn bản quy phạm pháp luật trước khi tuyên bố trạng thái.
-4. **Bằng chứng kiểm thử** (`tests/runs/`): chứa đầu ra mô hình và gói zip; cấp phép CC BY 4.0 trong phạm vi Nhà phát hành có quyền.
+1. **Logo** `vietnam-legal-advisor-icon-v4.png`: details of origin, prompt, personal account in Vietnam, and the OpenAI terms of 2026-10-16 (Wayback copy with hash) are in [PROVENANCE-LOGO.md](PROVENANCE-LOGO.md). Created by GPT-6 Astra through OpenAI's ChatGPT. Licensed under CC BY 4.0 to the extent the Publisher holds rights.
+2. **AI-assisted content**: the plugin is packaged for platforms with a `com.openai` manifest, and the test runs used Codex subagents. The model providers' terms on rights in output need to be confirmed when sublicensing.
+3. **Vietnamese legal texts**: the plugin does not package legal texts (`knowledge-index.json` is empty). If any are packaged later, the current rules on copyright in normative legal documents must be verified before any status is asserted.
+4. **Test evidence** (`tests/runs/`): contains model output and zip packages; licensed under CC BY 4.0 to the extent the Publisher holds rights.
 
-## Rà soát mã (2026-11-04)
+## Code review (2026-11-04)
 
-Đã đọc toàn bộ `scripts/validate.py` (189 dòng), `scripts/package.py` (49), `tests/run_technical.py` (52) và `tests/validate.py` (6), do ChatGPT/Codex soạn theo Nhà phát hành. Kết quả:
+Read in full: `scripts/validate.py` (189 lines), `scripts/package.py` (49), `tests/run_technical.py` (52) and `tests/validate.py` (6), written by ChatGPT/Codex under the Publisher's direction. Result:
 
-- Chỉ dùng thư viện chuẩn của Python và Pillow (qua API công khai). Logic gắn chặt với cấu trúc dự án (13 kỹ năng, 22 ca kiểm thử, manifest, SHA-256 của gói).
-- Có hai thủ thuật phổ biến, đều là cách viết thông dụng: mở ảnh bằng Pillow rồi `verify()` và tải lại để kiểm tra PNG; đóng gói ZIP với mốc thời gian cố định (1980-01-01) và quyền file cố định để ZIP tái lập được.
-- Không thấy tiêu đề bản quyền, ghi chú giấy phép, tên tác giả khác hay đoạn mã trông như sao chép nguyên khối.
+- Uses only the Python standard library and Pillow (through its public API). The logic is tightly bound to the project structure (13 skills, 22 test cases, manifests, package SHA-256).
+- There are two common techniques, both ordinary idioms: opening an image with Pillow, calling `verify()` and reloading to check a PNG; and packaging a ZIP with a fixed timestamp (1980-01-01) and fixed file permissions so the ZIP is reproducible.
+- No copyright headers, license notes, other author names or code that looks copied wholesale were found.
 
-Giới hạn: đây là đọc thủ công, không có công cụ so khớp mã nguồn mở. Không chứng minh được không có sự trùng hợp; chỉ cho thấy không có dấu hiệu rõ ràng. Mã do Claude viết (`scripts/check_consistency.py`, `tests/run_integrity.py`) không nằm trong rà soát này và được khai báo ở `PROVENANCE-AI-CONTENT.md`.
+Limitation: this was a manual read, without an open-source code-matching tool. It cannot prove there is no coincidence; it shows only that there is no obvious sign. Code written by Claude (`scripts/check_consistency.py`, `tests/run_integrity.py`, `scripts/import_host_run.py`) is not part of this review and is declared in `PROVENANCE-AI-CONTENT.md`.
 
-## Văn bản giấy phép chép nguyên văn
+## License texts reproduced verbatim
 
-- `LICENSE-Apache-2.0.txt`: bản của gói `common-licenses` (Debian), SHA-256 `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
-- `LICENSE-CC-BY-4.0.txt`: bản từ kho `spdx/license-list-data`, SHA-256 `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744`.
+- `LICENSE-Apache-2.0.txt`: the version from the Debian `common-licenses` package, SHA-256 `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+- `LICENSE-CC-BY-4.0.txt`: the version from the `spdx/license-list-data` repository, SHA-256 `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744`.

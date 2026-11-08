@@ -1,13 +1,13 @@
-# Giấy phép — Vietnam Legal Advisor
+# License — Vietnam Legal Advisor
 
 Copyright 2026 Thanh Nguyen.
 
-**Phiên bản 0.70.0. Có hiệu lực từ 2026-11-04 (ngày Nhà phát hành duyệt).**
+**Version 0.70.0. Effective from 2026-11-04 (the date the Publisher approved).**
 
-Nội dung của gói này (kỹ năng, hướng dẫn, mô tả) được cấp phép theo Creative Commons Attribution 4.0 International (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/ (toàn văn: https://creativecommons.org/licenses/by/4.0/legalcode). Cần ghi công Thanh Nguyen, ghi rõ nếu bạn đã sửa đổi, và không ngụ ý được Nhà phát hành bảo trợ.
+The content of this package (skills, instructions, descriptions) is licensed under the Creative Commons Attribution 4.0 International license (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/ (full text: https://creativecommons.org/licenses/by/4.0/legalcode). You must credit Thanh Nguyen, state if you have modified the material, and not imply that the Publisher endorses you.
 
-Biểu trưng `assets/vietnam-legal-advisor-icon-v4.png` cũng được cấp phép theo CC BY 4.0, trong phạm vi Nhà phát hành có quyền (quyền đối với hình ảnh do AI tạo ra có thể không tồn tại hoặc chưa rõ; xem `PROVENANCE-LOGO.md` trong kho nguồn). Không được cấp phép: quyền nhãn hiệu hay quyền sử dụng tên "Vietnam Legal Advisor" để ngụ ý bảo trợ, và mọi nội dung bên thứ ba. Gói không chứa văn bản pháp luật.
+The logo `assets/vietnam-legal-advisor-icon-v4.png` is also licensed under CC BY 4.0, to the extent the Publisher holds rights (rights in an AI-generated image may not exist or may be unclear; see `PROVENANCE-LOGO.md` in the source repository). Not licensed: trademark rights or the right to use the name "Vietnam Legal Advisor" to imply endorsement, and all third-party content. The package contains no legal texts.
 
-Phần mã nguồn công cụ trong kho (scripts, kiểm thử) theo Apache License 2.0 và không nằm trong gói này. Bản đồ giấy phép đầy đủ ở LICENSE.md trong kho nguồn.
+The tool source code in the repository (scripts, tests) is under the Apache License 2.0 and is not part of this package. The full license map is in LICENSE.md in the source repository.
 
-Một phần nội dung được soạn với sự hỗ trợ của công cụ AI. Kết quả của công cụ không được bảo đảm là đúng, đầy đủ hoặc còn hiệu lực và không thay thế đại diện pháp lý có giấy phép.
+Part of the content was drafted with the help of AI tools. The tools' output is not guaranteed to be correct, complete or current, and does not replace licensed legal representation.

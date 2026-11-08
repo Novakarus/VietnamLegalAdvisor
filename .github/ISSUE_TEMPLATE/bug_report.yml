@@ -1,22 +1,22 @@
-name: Báo lỗi
-description: Báo lỗi bằng ví dụ đã che thông tin nhạy cảm
+name: Bug report
+description: Report a bug with an example that has sensitive information redacted
 body:
   - type: markdown
     attributes:
-      value: Không đăng dữ liệu khách hàng, mật khẩu hoặc thông tin cá nhân không cần thiết.
+      value: Do not post client data, passwords or unnecessary personal information.
   - type: input
     id: version
     attributes:
-      label: Phiên bản plugin và nền tảng
+      label: Plugin version and platform
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label: Yêu cầu, bước thực hiện và kết quả thực tế
+      label: Request, steps taken and actual result
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
-      label: Kết quả mong đợi
+      label: Expected result

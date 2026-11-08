@@ -1,4 +1,4 @@
-> **LỊCH SỬ — không phải trạng thái hiện hành.** Ghi lại thời điểm chỉnh sửa. Trạng thái hiện hành nằm trong `STATUS.md`.
+> **HISTORY — not the current status.** Records the state at the time of the edit. The current status is in `STATUS.md`.
 
 # Candidate 0.69.2 — instruction fixes, not tested
 

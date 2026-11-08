@@ -8,6 +8,7 @@ Local candidate: Core Skill Router plus twelve specialist skills. Vietnamese is 
 - docs/: website, support, privacy, terms and website assets.
 - plugin/: manifests, assets and thirteen skills.
 - tests/: 22 behavioral specifications, fixtures and evaluation records.
+- history/: historical change records (not the current status).
 - scripts/: validation and packaging utilities.
 - dist/: generated ZIPs, excluded from Git.
 - tests/runs/: version-bound test reports and evidence for all three rounds.

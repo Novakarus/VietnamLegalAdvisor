@@ -1,6 +1,6 @@
-> **LỊCH SỬ — không phải trạng thái hiện hành.** Ghi lại thời điểm chỉnh sửa. Trạng thái hiện hành nằm trong `STATUS.md`.
+> **HISTORY — not the current status.** Records the state at the time of the edit. The current status is in `STATUS.md`.
 
-> Ghi chú: các câu "not tested" và "NOT_RUN" bên dưới đúng tại thời điểm viết (2026-10-20). Bản 0.69.3 sau đó đã chạy vòng kiểm thử 3 (2026-10-21, 22/22 PASS sơ bộ do AI chấm); xem `STATUS.md` và `releases/0.69.3/RELEASE.md`.
+> Note: the statements "not tested" and "NOT_RUN" below were true when written (2026-10-20). Version 0.69.3 later went through test round 3 (2026-10-21, 22/22 provisional PASS graded by AI); see `STATUS.md`.
 
 # Candidate 0.69.3 — Q01 clarification, not tested
 

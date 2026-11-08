@@ -74,8 +74,8 @@ def valid_pass(case, results, root, pkg, version):
     if not isinstance(digest, str) or not re.fullmatch(r'[0-9a-f]{64}', digest):
         return False
     if not archive.is_file():
-        # dist/ là sản phẩm dựng cục bộ, không nằm trong Git (xem .gitignore): môi trường CI không có ZIP.
-        # Bỏ qua phép so ZIP, nhưng báo cảnh báo; kiểm tra đầy đủ chạy được khi có ZIP.
+        # dist/ is a locally built product and is not in Git (see .gitignore): the CI environment has no ZIP.
+        # Skip the ZIP comparison but emit a warning; the full check runs when the ZIP is present.
         if archive.name not in ZIP_NOT_CHECKED:
             ZIP_NOT_CHECKED.append(archive.name)
         return True
@@ -89,7 +89,7 @@ def valid_pass(case, results, root, pkg, version):
             current = {p.relative_to(pkg).as_posix(): p for p in pkg.rglob('*') if p.is_file()}
             if len(z.namelist()) != len(current) or set(z.namelist()) != set(current):
                 return False
-            # Mọi file phải trùng ZIP đã kiểm thử, trừ các file đã ghi trong post_test_changes.
+            # Every file must match the tested ZIP, except the files listed in post_test_changes.
             if not all(z.read(n) == p.read_bytes() for n, p in current.items() if n not in changed):
                 return False
         if changed:
@@ -173,7 +173,7 @@ def validate(root=ROOT, write_report=True):
         elif str(results.get('formal_acceptance','')).startswith('BLOCKED'):
             warnings.append('Behavioral PASS is provisional AI-graded; formal acceptance is blocked by Protocol v2 gates (see tests/run_integrity.py).')
         if ZIP_NOT_CHECKED:
-            warnings.append('Chưa đối chiếu SHA-256/nội dung ZIP với bản ghi kiểm thử vì thiếu dist/' + ZIP_NOT_CHECKED[0] + ' (dist/ không nằm trong Git). Chạy lại cục bộ sau khi dựng ZIP để kiểm tra đầy đủ.')
+            warnings.append('The ZIP SHA-256/content was not compared with the test record because ' + ZIP_NOT_CHECKED[0] + ' is missing (dist/ is not in Git). Rerun locally after building the ZIP for the full check.')
         check('fixtures exist', (root/'tests/fixtures.md').is_file())
         docs = root/'docs'
         class Links(HTMLParser):
