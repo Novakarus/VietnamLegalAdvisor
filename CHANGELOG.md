@@ -2,7 +2,7 @@
 
 ## 0.70.0 — ứng viên (CANDIDATE), chưa công khai — 04/11/2026
 
-Đánh số lại từ 0.69.3 (đóng băng). Cập nhật giấy phép (Apache-2.0 cho mã, CC BY 4.0 cho tài liệu và nội dung plugin; logo không cấp phép), hồ sơ nguồn gốc nội dung AI và logo, lưu trữ điều khoản bên thứ ba. Kiểm thử Protocol v2 vòng 4: 22 phiên Claude cô lập, 22/22 PASS sơ bộ do AI chấm; `tests/run_integrity.py` còn 2 lỗi (người chấm cùng hãng, chưa chạy trên host thật), nên chưa nghiệm thu chính thức. Thêm `scripts/import_host_run.py` và `tests/HOST_RUNBOOK.md` cho vòng chạy trên host thật. `validate.py` bỏ qua phép so ZIP khi không có `dist/` (CI) và ghi cảnh báo. Website chỉ còn nguồn `docs/` (GitHub Pages phục vụ từ /docs); bỏ bản sao ở thư mục gốc, `sync_site.py` và workflow `release.yml`.
+Đánh số lại từ 0.69.3 (đóng băng). Cập nhật giấy phép (Apache-2.0 cho mã, CC BY 4.0 cho tài liệu và nội dung plugin; logo không cấp phép), hồ sơ nguồn gốc nội dung AI và logo, lưu trữ điều khoản bên thứ ba. Kiểm thử Protocol v2 vòng 4: 22 phiên Claude cô lập, 22/22 PASS sơ bộ do AI chấm; `tests/run_integrity.py` còn 2 lỗi (người chấm cùng hãng, chưa chạy trên host thật), nên chưa nghiệm thu chính thức. Thêm `scripts/import_host_run.py` và `tests/HOST_RUNBOOK.md` cho vòng chạy trên host thật. `validate.py` bỏ qua phép so ZIP khi không có `dist/` (CI) và ghi cảnh báo. Website chỉ còn nguồn `docs/` (GitHub Pages phục vụ từ /docs); bỏ bản sao ở thư mục gốc, `sync_site.py` và workflow `release.yml`. Gỡ bản 0.69.3 (gói, trang phát hành, báo cáo) khỏi repo; giữ hồ sơ kiểm thử vòng 1–3.
 
 ## 0.69.3 — cập nhật plugin 22/10/2026
 

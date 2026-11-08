@@ -10,7 +10,6 @@ Local candidate: Core Skill Router plus twelve specialist skills. Vietnamese is 
 - tests/: 22 behavioral specifications, fixtures and evaluation records.
 - scripts/: validation and packaging utilities.
 - dist/: generated ZIPs, excluded from Git.
-- releases/: preserved local release candidates and manifests.
 - tests/runs/: version-bound test reports and evidence for all three rounds.
 
 ## Commands
@@ -27,7 +26,7 @@ Canonical image: vietnam-legal-advisor-icon-v4.png. Packaging includes only plug
 
 ## Status
 
-Single source of truth: [STATUS.md](STATUS.md). Summary: version 0.70.0 is a packaged candidate (renumbered from 0.69.4 and 0.7.1 by the publisher; license notice added to the package; skill content unchanged); behavioral tests are not yet run for this version. Version 0.69.3 remains frozen in releases/0.69.3 with round-3 results (22/22 provisional AI PASS, not a legal acceptance). Formal acceptance and public-release approval are pending. Nothing was uploaded or deployed.
+Single source of truth: [STATUS.md](STATUS.md). Summary: version 0.70.0 is a packaged candidate (renumbered from 0.69.4 and 0.7.1 by the publisher; license notice added to the package; skill content unchanged); behavioral tests are not yet run for this version. Version 0.69.3 was removed from the repository on 2026-11-08; only its round 1-3 test records (run by Codex) are kept as history. Formal acceptance and public-release approval are pending. Nothing was uploaded or deployed.
 
 Local metadata does not confirm current hosted release or visibility. These scripts do not upload or deploy anything.
 

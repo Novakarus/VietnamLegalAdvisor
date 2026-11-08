@@ -33,11 +33,10 @@ Chỉ chuyển trạng thái bằng cách sửa file này cùng `release.json`. 
 - Kiểm thử hành vi: **chưa chạy** (22 ca NOT_RUN).
 - Nghiệm thu chính thức: chưa.
 
-## Bản 0.69.3 (đã đóng băng, lưu trữ)
+## Bản 0.69.3 (đã gỡ khỏi repo, 2026-11-08)
 
-- Giữ nguyên trong `releases/0.69.3/` (ZIP, SHA-256 `40120521e43173191ab4babbc93180445fef33fb819f9d24ed2c25fb31dd7fa6`) và `dist/`.
+- Nhà phát hành quyết định gỡ gói, trang phát hành và báo cáo của 0.69.3 khỏi repo; chỉ giữ hồ sơ kiểm thử vòng 1–3 (do Codex thực hiện) làm lịch sử. ZIP đã đóng băng có SHA-256 `40120521e43173191ab4babbc93180445fef33fb819f9d24ed2c25fb31dd7fa6`.
 - Kiểm thử hành vi vòng 3: 22/22 PASS do AI chấm sơ bộ; kiểm tra tĩnh 109/109 (trước nhập hồ sơ) và 131/131 (sau nhập hồ sơ); hồi quy kỹ thuật 14/14. Hồ sơ ở `tests/history/0.69.3/round3-results.json` và `tests/runs/2026-10-21-round3/`.
-- `release.json` của bản này ghi `FROZEN_LOCAL_RELEASE_CANDIDATE`, chưa sẵn sàng phát hành công khai, chưa tải lên hay triển khai.
 
 ## Khoảng cách so với Protocol v2
 

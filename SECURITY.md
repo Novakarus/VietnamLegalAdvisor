@@ -8,11 +8,11 @@ Chỉ phiên bản phát hành mới nhất được ưu tiên tiếp nhận b�
 
 | Phiên bản / thành phần | Hỗ trợ bảo mật |
 | --- | --- |
-| Plugin 0.69.3 — phiên bản hiện tại | :white_check_mark: |
-| Plugin trước 0.69.3 | :x: |
+| Plugin 0.70.0 — ứng viên, chưa công khai | :white_check_mark: |
+| Plugin trước 0.70.0 | :x: |
 | Website và công cụ trên nhánh `main` | :white_check_mark: |
 
-“Hỗ trợ” có nghĩa là tiếp nhận, đánh giá và ưu tiên xử lý báo cáo phù hợp; không phải chứng nhận an toàn hoặc cam kết thời hạn khắc phục. Phiên bản 0.69.3 hiện được đánh dấu là bản phát hành thử.
+“Hỗ trợ” có nghĩa là tiếp nhận, đánh giá và ưu tiên xử lý báo cáo phù hợp; không phải chứng nhận an toàn hoặc cam kết thời hạn khắc phục. Phiên bản 0.70.0 hiện là ứng viên, chưa công khai.
 
 ## Reporting a Vulnerability
 
