@@ -22,7 +22,7 @@ Rule of application: a more specific path prevails over a more general one; a fi
 1. The license applies only to what Thanh Nguyen owns or has the right to license. It does not cover third-party content, legal texts, public-domain content, input data or users' results.
 2. Components granted under another valid license remain subject to that license (see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)).
 3. Neither license grants trademark rights or the right to use the name "Vietnam Legal Advisor" or the Publisher's name to imply endorsement or that a copy is official. A modified version must state that it has been modified and must not claim to be official.
-4. The tool's output is not guaranteed to be correct, complete or current, and does not replace licensed legal representation. No disclaimer is made to the extent it would be unlawful. Governing law, competent courts, mandatory rights and language are as set out in the Terms of Use (English text, `docs/terms/index.html`).
+4. The tool's output is not guaranteed to be correct, complete or current, and does not replace licensed legal representation. No disclaimer is made to the extent it would be unlawful. Governing law, competent courts, mandatory rights and language are as set out in the Terms of Use (Vietnamese text, `docs/terms/vi/index.html`, which prevails; English translation, `docs/terms/index.html`).
 
 ## 3. Logo, test evidence and AI output; rights already granted
 
