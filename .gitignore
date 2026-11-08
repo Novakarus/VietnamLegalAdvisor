@@ -14,3 +14,6 @@ Thumbs.db
 # Bản sao điều khoản của bên thứ ba (thuộc bản quyền của họ): chỉ giữ cục bộ, chỉ đưa INDEX.md lên Git
 terms-archive/*
 !terms-archive/INDEX.md
+
+# Bản sao plugin cục bộ dùng để thử trên host (trùng plugin/)
+tests/round5-local-marketplace/

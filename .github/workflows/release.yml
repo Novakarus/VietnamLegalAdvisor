@@ -1,8 +1,7 @@
 name: Publish tested 0.69.3 package
+# Chỉ chạy thủ công: bản 0.70.0 đang là ứng viên, chưa được phép phát hành tự động.
+# Workflow này dựng lại gói 0.69.3 cũ; không dùng cho 0.70.0 cho đến khi được duyệt công khai.
 on:
-  push:
-    branches: [main]
-    paths: [.github/workflows/release.yml, scripts/package.py]
   workflow_dispatch:
 permissions:
   contents: write
