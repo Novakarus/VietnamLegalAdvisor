@@ -1,0 +1,15 @@
+{
+  "test_id": "S02",
+  "date": "2026-10-21",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "legal-source-verification", "legal-quality-audit"],
+  "matter_brief": {"objective": "Handle label A / destination B mismatch", "known_facts": ["Prompt supplies hypothetical mismatch"], "unknowns": ["URL", "A and B identities", "cited proposition", "operative dates"]},
+  "source_ledger": [{"source_id": "S1", "official_title": null, "identifier": null, "issuer": null, "document_type": null, "issue_date": null, "effective_date": null, "repeal_or_amendment_links": null, "pinpoint": null, "URL_or_file_page": "prompt.txt", "retrieved_at": "2026-10-21 Asia/Bangkok", "evidence_excerpt_or_summary": "User supplies A label / B content scenario only", "access_status": "Local prompt read; no legal document retrieved", "verification_status": "CHƯA XÁC MINH", "limitations": "Scenario is not an actual retrieval observation"}],
+  "claim_ledger": [{"claim_id": "C1", "proposition": "Supplied scenario says label and destination mismatch", "fact_ids": ["prompt-scenario"], "source_ids": ["S1"], "rule_or_practice_or_inference": "supplied fact", "applicability_date": null, "status": "Scenario only", "confidence_basis": "prompt.txt"}, {"claim_id": "C2", "proposition": "Do not use mismatched link as support for A; replace or correct citation", "fact_ids": ["prompt-scenario"], "source_ids": [], "rule_or_practice_or_inference": "professional source-handling inference", "applicability_date": null, "status": "Conditional procedural guidance", "confidence_basis": "Identity/support check applied to scenario"}],
+  "validity_ledger": [{"source_ids": ["S1"], "status": "Not assessed", "reason": "No identified statute, provision, legal application or temporal conclusion; validity specialist inapplicable to this procedural answer"}],
+  "audit": {"disposition": "LIMITED", "performed": ["Checked answer against supplied scenario", "Removed any claim of actual A/B retrieval", "Checked practical correction steps and limitations"], "defects": [], "restriction": "No source authenticity, text support, validity or applicability confirmed"},
+  "actual_tools": ["functions.exec", "tools.exec_command"],
+  "limitations": ["Controlled OFFLINE; callable browsing not used", "No actual A/B content or URLs", "No external actions, network, schedulers, agents or candidate edits"]
+}

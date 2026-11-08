@@ -1,0 +1,125 @@
+{
+  "protocol": "v2",
+  "round": 4,
+  "candidate_version": "0.70.0",
+  "candidate_zip_sha256": "ebbd7e606fe3d4c0de6a74194ede4f4726b3e6d5607aed39fed37c001eedb839",
+  "started_at": "2026-11-04T20:09:40+07:00",
+  "host": {
+    "name": "Claude Code (phiên con, plugin cài dưới dạng thư mục file)",
+    "version": "unknown",
+    "production_host": false,
+    "plugin_installed_via_host": false,
+    "skills_discovered": 0
+  },
+  "runner": {
+    "vendor": "anthropic",
+    "model_id": "claude-sonnet-5-5"
+  },
+  "tool_policy": {
+    "offline_enforced": "technical",
+    "how": "Mỗi ca chạy trong một phiên con riêng thuộc loại chỉ được cấp công cụ Read và Edit (không có WebSearch, WebFetch, Bash, lập lịch). Transcript nguyên bản xác nhận mỗi phiên chỉ gọi Read, và chỉ đọc file trong plugin/ hoặc tests/fixtures.md.",
+    "document_only_files": [
+      "tests/fixtures.md"
+    ]
+  },
+  "grader": {
+    "kind": "ai",
+    "vendor": "anthropic",
+    "model_id": "claude-sonnet-5-5"
+  },
+  "answer_key": {
+    "applies_to": [],
+    "reviewed_on": null,
+    "sources": []
+  },
+  "transcripts": {
+    "R01": {
+      "path": "evidence/R01/transcript.jsonl",
+      "sha256": "a490426880de11270826e5311367ca4ab7ad4829141b5f6965129ee18ed9134a"
+    },
+    "R02": {
+      "path": "evidence/R02/transcript.jsonl",
+      "sha256": "5fd0f52231fe716a343001bfcd7893d9e262f9633a02393267a39100cad7cdaa"
+    },
+    "R03": {
+      "path": "evidence/R03/transcript.jsonl",
+      "sha256": "1485e7cf02a32cb240c062fac74009a6c04633bbb698910531f7731025ba45d1"
+    },
+    "C01": {
+      "path": "evidence/C01/transcript.jsonl",
+      "sha256": "468ddbb8164ae364dcad8161f3a314dc6a513cfc0b0362613beb99fd1e079c62"
+    },
+    "C02": {
+      "path": "evidence/C02/transcript.jsonl",
+      "sha256": "c975df182ebbdbe31eb2c0c6987b676d15fb9769ae6cab8c4412b9c74860db82"
+    },
+    "C03": {
+      "path": "evidence/C03/transcript.jsonl",
+      "sha256": "8f90ac7b09d7067de6fd4f6c950a37a4f96316b13a3d5cf44a2ad58c65b1498b"
+    },
+    "D01": {
+      "path": "evidence/D01/transcript.jsonl",
+      "sha256": "956819312dc6997efe5376ac8be5660c79427a77dd68fc938664308f7da9bded"
+    },
+    "D02": {
+      "path": "evidence/D02/transcript.jsonl",
+      "sha256": "a87ac633a81b0259e09988d20cab217693fe2788599996f570578bb0095cdf0a"
+    },
+    "M01": {
+      "path": "evidence/M01/transcript.jsonl",
+      "sha256": "72f0228f2b84b513660b7950e90a630b47fe1eabb5445b80f3c9a125e8ed9470"
+    },
+    "M02": {
+      "path": "evidence/M02/transcript.jsonl",
+      "sha256": "63ee6457eb68a18a943e7d5b3384be5c108dcd0069e08a0233d2779f6de07b80"
+    },
+    "V01": {
+      "path": "evidence/V01/transcript.jsonl",
+      "sha256": "5e76c8c07aa974e5b7799471efa683be323b5fc12ec36d42602c426dca7e8b56"
+    },
+    "V02": {
+      "path": "evidence/V02/transcript.jsonl",
+      "sha256": "718a7567543e2c9da7bc4e50a2439d162361982007f97f7f3b7acfe689443d5f"
+    },
+    "V03": {
+      "path": "evidence/V03/transcript.jsonl",
+      "sha256": "86b47d3beaee48f9cd435acd00561b0fce5d8cf0f78639ed7b44832c90bda982"
+    },
+    "S01": {
+      "path": "evidence/S01/transcript.jsonl",
+      "sha256": "4b8cddff53c7d61f9006a41a3a7d11711ad44e69f76288fa6a2863da41bbe7e6"
+    },
+    "S02": {
+      "path": "evidence/S02/transcript.jsonl",
+      "sha256": "ed2b447acae24289c42fbd5be02bd2b29255c872432bbdd90c91c53a33cef8d4"
+    },
+    "G01": {
+      "path": "evidence/G01/transcript.jsonl",
+      "sha256": "f9ad7da77b52ad306c48761314b0a830b7cbbdf3f4077c078796ad225356fc72"
+    },
+    "F01": {
+      "path": "evidence/F01/transcript.jsonl",
+      "sha256": "1c6ac67b415f3b2412702e245440d88217b826630b50403f40868327cde0dec3"
+    },
+    "L01": {
+      "path": "evidence/L01/transcript.jsonl",
+      "sha256": "26b8c05830810027ec57fe0a125f96d7bcca9b61cefbc8893fbbb4123017460d"
+    },
+    "P01": {
+      "path": "evidence/P01/transcript.jsonl",
+      "sha256": "0bea8f8ce5b1ac160f4cc845348a306ee341bc103f621e8279f8205e64a0f599"
+    },
+    "Q01": {
+      "path": "evidence/Q01/transcript.jsonl",
+      "sha256": "441cb08c9e9da2441e841dd0c8619a15fe382a384858996976bf8ae0bf327d2d"
+    },
+    "O01": {
+      "path": "evidence/O01/transcript.jsonl",
+      "sha256": "fb6ff79645a3c1b5aa65fd1ee64c92e260b45b87c097b70be003cad210a8efa0"
+    },
+    "A01": {
+      "path": "evidence/A01/transcript.jsonl",
+      "sha256": "4da83ef3ce4e72ec87c03db3015d0305eaaddb7b034a79ccf20707959bb795e7"
+    }
+  }
+}

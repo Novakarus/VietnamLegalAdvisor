@@ -1,0 +1,13 @@
+{
+  "test_id": "F01",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "legal-document-drafting", "corporate-governance (limited authority issue spotting)", "legal-quality-audit"],
+  "source_ledger": [],
+  "claim_ledger": [{"claim_id":"C1","proposition":"User lacks signatory name, meeting date and voting result","fact_ids":["prompt.txt"],"source_ids":[],"rule_or_practice_or_inference":"supplied fact","applicability_date":null,"status":"supplied","confidence_basis":"Read prompt.txt"},{"claim_id":"C2","proposition":"Draft assumes internal enterprise resolution and leaves unknowns explicit","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"drafting assumption","applicability_date":null,"status":"conditional","confidence_basis":"No entity or resolution subject supplied"}],
+  "validity_ledger": [{"issue":"Legal basis, authority, passage and effectiveness","status":"CHƯA XÁC MINH","reason":"No primary text, charter, event date or meeting record supplied; controlled OFFLINE"}],
+  "tools": ["exec_command: local skill and prompt reads; local output writes"],
+  "limitations": ["No network or external action", "No legal source retrieved or verified", "Source and validity specialist checks inapplicable to the placeholder-only draft as no substantive rule or citation is asserted; affected legal conclusions expressly withheld", "Audit LIMITED; not an independent review", "No candidate repair or self-score"]
+}

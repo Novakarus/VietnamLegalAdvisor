@@ -1,0 +1,33 @@
+{
+  "test_id": "R02",
+  "date": "2026-10-20",
+  "model": "unknown",
+  "mode": "DOCUMENT_ONLY",
+  "observed_route": [
+    "plugin/skills/instructions/SKILL.md",
+    "plugin/skills/instructions/references/professional-protocol.md",
+    "plugin/skills/instructions/references/source-access.md",
+    "plugin/skills/vietnam-legal-research/SKILL.md",
+    "plugin/skills/legal-source-verification/SKILL.md",
+    "plugin/skills/legal-validity-verification/SKILL.md",
+    "plugin/skills/legal-quality-audit/SKILL.md"
+  ],
+  "matter_brief": {"objective":"Compare synthetic F-A and F-B", "applicability_date":"2030-02-15", "facts":"Only F-A and F-B synthetic excerpts used", "unknowns":["Actual filing date of any individual application"], "excluded":["C-01","D-01"]},
+  "source_ledger": [
+    {"source_id":"S-A","official_title":null,"identifier":"F-A","issuer":null,"document_type":"synthetic instrument excerpt","issue_date":"2030-01-01","effective_date":"2030-02-01","repeal_or_amendment_links":"S-B Article 1 replaces only Article 2","pinpoint":"F-A Articles 2 and 3","URL_or_file_page":"fixtures.md, F-A section; unpaginated","retrieved_at":"2026-10-20","evidence_excerpt_or_summary":"Applications require X and Y; records retained two years","access_status":"supplied file read","verification_status":"Text support checked within fixture only; public authenticity unverified","limitations":"Invented evaluation data, not Vietnamese law"},
+    {"source_id":"S-B","official_title":null,"identifier":"F-B","issuer":null,"document_type":"synthetic amendment excerpt","issue_date":"2030-02-10","effective_date":"2030-03-01","repeal_or_amendment_links":"Replaces only S-A Article 2","pinpoint":"F-B Articles 1 and 2","URL_or_file_page":"fixtures.md, F-B section; unpaginated","retrieved_at":"2026-10-20","evidence_excerpt_or_summary":"Adds Z by replacement of Article 2; pre-March applications continue under former Article 2","access_status":"supplied file read","verification_status":"Text support checked within fixture only; public authenticity unverified","limitations":"Invented evaluation data, not Vietnamese law"}
+  ],
+  "claim_ledger": [
+    {"claim_id":"C1","proposition":"On 15 February require X and Y, not Z under F-B","fact_ids":["review-date"],"source_ids":["S-A","S-B"],"rule_or_practice_or_inference":"synthetic rule and temporal application","applicability_date":"2030-02-15","status":"supported within fixture","confidence_basis":"Explicit effective dates and Article 2"},
+    {"claim_id":"C2","proposition":"Two-year retention continues; Article 3 not replaced","fact_ids":[],"source_ids":["S-A","S-B"],"rule_or_practice_or_inference":"synthetic rule and bounded inference","applicability_date":"2030-02-15","status":"supported within fixture","confidence_basis":"Expressly limited replacement and no supplied repeal of Article 3"},
+    {"claim_id":"C3","proposition":"From March 1 pre-March filings retain X/Y; later filings X/Y/Z","fact_ids":["filing-date-unknown"],"source_ids":["S-A","S-B"],"rule_or_practice_or_inference":"synthetic transition","applicability_date":"2030-03-01","status":"conditional for individual application","confidence_basis":"Explicit transition; individual filing date missing"}
+  ],
+  "validity_ledger": [
+    {"provision":"F-A Article 2 original","interval":"2030-02-01 through 2030-02-28, then preserved for pre-2030-03-01 filings","status_at_review":"applicable within fixture","evidence":["S-A","S-B"]},
+    {"provision":"F-B Article 1 replacement","interval":"from 2030-03-01 subject to transition","status_at_review":"issued but not yet effective","evidence":["S-B"]},
+    {"provision":"F-A Article 3","interval":"from 2030-02-01; no end supplied","status_at_review":"continues within fixture; no full repeal inferred","evidence":["S-A","S-B"]}
+  ],
+  "tools_actually_used": ["functions.exec orchestration", "tools.exec_command: PowerShell Get-Content, Set-Content"],
+  "limitations": ["No network or external actions performed", "No public law verification", "No full instruments or consolidated text supplied", "No URL or precedent claim to check", "Model identifier unavailable"],
+  "quality_audit": {"scope":"Internal consistency, all dispositive claims and dates checked against supplied excerpts; no independent reviewer","disposition":"LIMITED to synthetic fixture", "repairs_needed":[],"open_items":["Individual filing date if case-specific application requested"]}
+}

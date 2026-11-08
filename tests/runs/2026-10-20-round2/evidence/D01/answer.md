@@ -1,0 +1,21 @@
+Không. Hồ sơ D-01 hiện **không đủ để kết luận dự án đầy đủ pháp lý hoặc có quyền tài sản sạch**. Đây là kết quả thẩm định giới hạn trên dữ liệu giả định tại `fixtures.md`, mục D-01, ngày 20/10/2026 (Asia/Bangkok); không phải xác nhận theo pháp luật Việt Nam hiện hành.
+
+Bản đăng ký doanh nghiệp được mô tả là đã cung cấp nhưng chưa xác minh. Trong phiên này chỉ có mô tả đó, không có bản đăng ký để kiểm tra. Ngay cả xác thực được bản này, vẫn phải kiểm tra riêng chuỗi: tư cách/thẩm quyền doanh nghiệp → quyền đối với đất và tài sản → chấp thuận, giấy phép dự án → điều kiện triển khai, vận hành. Không thể suy ra toàn bộ chuỗi từ đăng ký doanh nghiệp.
+
+| Chứng cứ hiện có | Vấn đề và mức rủi ro pháp lý | Tác động thương mại | Việc cần làm / người phụ trách | Trạng thái |
+|---|---|---|---|---|
+| Mô tả bản đăng ký doanh nghiệp chưa xác minh | Chưa xác nhận tư cách, người đại diện, thẩm quyền giao dịch; mức độ chưa xác định | Nguy cơ giao dịch không đúng chủ thể hoặc thẩm quyền | Bên bán cung cấp bản và hồ sơ sở hữu, phê duyệt nội bộ; nhóm thẩm định đối chiếu đăng ký chính thức | Chưa xác minh |
+| Thiếu hồ sơ quyền sử dụng đất | Chưa đánh giá được quyền đất, thời hạn, mục đích sử dụng, thế chấp và hạn chế chuyển giao; khoảng trống trọng yếu | Có thể ảnh hưởng giá trị, khả năng nhận chuyển giao và tài trợ | Bên bán cung cấp hồ sơ đất, nghĩa vụ tài chính, bảo đảm; nhóm thẩm định đối chiếu cơ quan/đăng ký có thẩm quyền | Thiếu |
+| Thiếu chấp thuận dự án và giấy phép ngành | Chưa xác định đúng loại chấp thuận cần có và trình tự áp dụng; khoảng trống trọng yếu | Có thể trì hoãn hoặc cản trở triển khai | Bên bán cung cấp hồ sơ; nhóm pháp lý xác định theo ngành, địa điểm, quy mô và mốc triển khai | Thiếu |
+| Thiếu hồ sơ môi trường, xây dựng | Chưa xác định nghĩa vụ hoặc mức tuân thủ; khoảng trống trọng yếu | Có thể phát sinh chi phí khắc phục và chậm vận hành | Bên bán cung cấp hồ sơ tương ứng giai đoạn; nhóm pháp lý và kỹ thuật kiểm tra phạm vi, điều kiện và thực trạng | Thiếu |
+| Bên bán nói “không có tranh chấp”; không có tra cứu độc lập | Chỉ là tuyên bố của bên bán; chưa loại trừ tranh chấp hoặc quyền của bên thứ ba | Có thể phát sinh chi phí, gián đoạn và yêu cầu bồi thường | Bên bán cung cấp danh mục vụ việc, thông báo khiếu nại; bên mua tổ chức kiểm tra độc lập khi được phép | Chưa xác minh |
+
+Thiếu chứng cứ **không đồng nghĩa đã có vi phạm**. Mức nghiêm trọng thực tế và xác suất phát sinh chưa thể xác định; các khoảng trống về đất, chấp thuận và điều kiện triển khai là trọng yếu đối với quyết định đầu tư.
+
+Để hoàn tất thẩm định, trước hết cần xác định loại/ngành dự án, địa điểm, tài sản và chủ thể giao dịch, mua vốn hay mua dự án/tài sản, giai đoạn triển khai và các ngày phát sinh liên quan. Sau đó lập danh mục hồ sơ theo từng mắt xích; thu thập bản gốc hoặc bản có thể đối chiếu, kiểm tra với nguồn chính thức và rà soát cả nghĩa vụ tài chính, hợp đồng trọng yếu, lao động, bảo đảm và thuế trong phạm vi phù hợp. Những mục này chưa được cung cấp, không được hiểu là đã đạt yêu cầu.
+
+Về căn cứ pháp luật: chưa có văn bản pháp luật thực tế nào được cung cấp hoặc truy xuất. Cần lấy văn bản gốc chính thức phù hợp từng vấn đề, kiểm tra điều khoản, sửa đổi, bãi bỏ và chuyển tiếp tại từng mốc sự kiện rồi mới áp dụng. F-A/F-B là dữ liệu giả định không liên quan D-01, không được dùng làm luật Việt Nam. Vì vậy trình tự chấp thuận riêng của dự án và hiệu lực quy định áp dụng đều CHƯA XÁC MINH.
+
+Nếu đang chuẩn bị giao dịch, nên coi việc xác minh quyền tài sản, thẩm quyền và các chấp thuận trọng yếu là điểm chặn quyết định hoàn tất cho đến khi được làm rõ; bên bán chịu trách nhiệm cung cấp, bên mua/nhóm thẩm định kiểm tra trước quyết định ký hoặc hoàn tất tương ứng. Sau khi rõ hồ sơ, phân loại điều kiện tiên quyết, cam đoan, bồi thường, giữ lại/điều chỉnh giá và việc khắc phục sau hoàn tất theo mức rủi ro; không mặc nhiên cho rằng cam đoan hoặc bồi thường thay thế được quyền và giấy phép thiết yếu.
+
+**Kết quả: LIMITED.** Có thể xác định khoảng trống và kế hoạch kiểm tra; chưa thể đưa ý kiến pháp lý sạch, kết luận dự án bất hợp pháp, hoặc xác nhận đủ điều kiện chuyển giao/vận hành. Không có tra cứu công khai, xác thực giấy tờ hay kiểm tra thực địa trong phiên này.

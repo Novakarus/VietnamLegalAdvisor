@@ -1,0 +1,49 @@
+{
+  "test_id": "G01",
+  "date": "2026-11-04",
+  "timezone": "Asia/Bangkok",
+  "model": "claude-sonnet-5-5",
+  "runner": "Claude (phiên con Claude Code, một phiên riêng cho mỗi ca)",
+  "mode": "OFFLINE",
+  "actual_observed_route": [
+    "instructions",
+    "corporate-governance",
+    "legal-document-drafting",
+    "legal-source-verification",
+    "legal-validity-verification",
+    "legal-quality-audit"
+  ],
+  "self_reported_route": [
+    "instructions",
+    "corporate-governance",
+    "legal-document-drafting",
+    "legal-source-verification",
+    "legal-validity-verification",
+    "legal-quality-audit"
+  ],
+  "self_reported_mode": "OFFLINE",
+  "tools_available": [
+    "Read",
+    "Edit"
+  ],
+  "tools_called": [
+    "Read"
+  ],
+  "n_tool_calls": 8,
+  "files_read": [
+    "plugin/skills/instructions/SKILL.md",
+    "plugin/skills/instructions/references/professional-protocol.md",
+    "plugin/skills/instructions/references/source-access.md",
+    "plugin/skills/corporate-governance/SKILL.md",
+    "plugin/skills/legal-document-drafting/SKILL.md",
+    "plugin/skills/legal-source-verification/SKILL.md",
+    "plugin/skills/legal-validity-verification/SKILL.md",
+    "plugin/skills/legal-quality-audit/SKILL.md"
+  ],
+  "transcript_sha256": "f9ad7da77b52ad306c48761314b0a830b7cbbdf3f4077c078796ad225356fc72",
+  "limitations": [
+    "Người chạy và người chấm cùng họ mô hình (Claude)",
+    "Không chạy trên host sản phẩm thật; plugin được cài dưới dạng thư mục file",
+    "Phiên con thuộc loại có sẵn prompt hệ thống riêng của Claude Code (cấu hình status line), khác prompt của host sản phẩm"
+  ]
+}

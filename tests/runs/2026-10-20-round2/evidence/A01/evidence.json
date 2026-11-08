@@ -1,0 +1,15 @@
+{
+  "test_id": "A01",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "observed_route": ["plugin/skills/instructions/SKILL.md", "prompt.txt", "plugin/skills/instructions/references/professional-protocol.md", "plugin/skills/instructions/references/source-access.md", "plugin/skills/opposing-counsel-review/SKILL.md", "plugin/skills/legal-quality-audit/SKILL.md"],
+  "matter_brief": {"known": ["Yêu cầu phản biện phía đối lập, không có dữ kiện bất lợi"], "draft": null, "party": null, "event_date": null, "jurisdiction": null, "assumptions": ["Chỉ lập bản đồ giả thuyết, không kết luận vụ việc"]},
+  "source_ledger": [],
+  "claim_ledger": [{"claim_id":"H1","proposition":"Giả thuyết tiền đề chưa được chứng minh","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"conditional analytical hypothesis","applicability_date":null,"status":"hypothetical","confidence_basis":"not a factual assertion"},{"claim_id":"H2","proposition":"Giả thuyết phạm vi hoặc thời điểm áp dụng quy định cần kiểm tra","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"conditional analytical hypothesis","applicability_date":null,"status":"hypothetical","confidence_basis":"no legal source supplied"},{"claim_id":"H3","proposition":"Giả thuyết thiếu tài liệu bị suy thành vi phạm","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"conditional analytical hypothesis","applicability_date":null,"status":"hypothetical","confidence_basis":"not a violation finding"}],
+  "validity_ledger": [{"provision":null,"status":"not applicable to present hypothetical map","reason":"No specific legal provision or substantive legal conclusion; verification required before application"}],
+  "actual_tools": ["functions.exec", "tools.exec_command: PowerShell Get-Content", "tools.exec_command: PowerShell Set-Content"],
+  "limitations": ["No draft", "No adverse or supporting evidence", "No jurisdiction or event date", "Network prohibited; no retrieval attempted", "No merits conclusion or completed independent review"],
+  "quality_audit": {"disposition":"LIMITED","performed":"Checked conditional labeling, paired supporting and rebuttal evidence, absence of invented legal citations, separate legal and commercial uncertainties; all dispositive statements bounded by missing draft"}
+}

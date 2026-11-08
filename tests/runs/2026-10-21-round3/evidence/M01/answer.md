@@ -1,0 +1,15 @@
+**Chưa thể chọn phương án “chắc chắn không cần chấp thuận”.** Tỷ lệ 60% cùng các dữ kiện hiện có không đủ để kết luận miễn thủ tục. “Mua 60% dự án” còn có thể chỉ việc mua vốn công ty dự án, mua tài sản hoặc nhận chuyển nhượng dự án; quyền nhận được khác nhau.
+
+Đánh giá sơ bộ theo bối cảnh Việt Nam, ngày 21/10/2026 (Asia/Bangkok), **OFFLINE — LIMITED**: chưa có văn bản pháp luật hay hồ sơ giao dịch để xác minh; các câu hỏi dưới đây là nội dung cần kiểm tra, không phải khẳng định mọi phương án đều cần chấp thuận.
+
+| Phương án | Quyền nhận và hồ sơ cần xem | Câu hỏi về chấp thuận/đồng ý | Điều kiện ký và hoàn tất |
+|---|---|---|---|
+| Mua 60% vốn công ty dự án | Phần vốn/cổ phần; cần cơ cấu sở hữu trực tiếp, gián tiếp, điều lệ, hồ sơ doanh nghiệp và dự án | Điều kiện tiếp cận thị trường, thủ tục đầu tư nước ngoài, thay đổi quyền kiểm soát, cạnh tranh và đồng ý của bên tài trợ có áp dụng không? | Chỉ chọn sau khi kiểm tra nhà đầu tư và ngành; đưa các thủ tục xác định được vào điều kiện hoàn tất. |
+| Mua tài sản | Tài sản xác định, không mặc nhiên bao gồm tư cách chủ đầu tư hay giấy phép; cần chứng từ sở hữu, thế chấp, đất và hợp đồng liên quan | Nhà đầu tư có được sở hữu/khai thác tài sản đó; quyền đất, giấy phép, hợp đồng có chuyển được và cần đồng ý nào? | Xác nhận quyền chuyển giao từng tài sản và khả năng vận hành trước khi thanh toán, bàn giao. |
+| Nhận chuyển nhượng dự án/phần dự án | Quyền, nghĩa vụ trong phạm vi được chuyển; cần hồ sơ đầu tư, đất, tiến độ, nghĩa vụ và ranh giới phần chuyển | Dự án/phần dự án có đủ điều kiện chuyển; bên nhận có đủ điều kiện; cần thủ tục điều chỉnh/chấp thuận nào? | Xác minh khả năng chuyển và trình tự thủ tục trước khi hoàn tất; làm rõ “60%” là phần nào. |
+
+**Kiểm tra phản biện:** giả thuyết “đổi sang mua tài sản sẽ tránh chấp thuận” có thể bị phản bác nếu hồ sơ cho thấy giao dịch thực chất chuyển quyền dự án, quyền kiểm soát hoặc cần chuyển quyền đất/giấy phép. Cần xem dự thảo hợp đồng, chuỗi giao dịch, quyền biểu quyết, quyền hưởng lợi và hồ sơ tài sản để kiểm chứng. Ngược lại, một giao dịch tài sản riêng biệt có thể có cách xử lý khác nếu chứng minh được phạm vi độc lập và điều kiện áp dụng; chưa có chứng cứ để xác nhận trường hợp nào ở đây. Đây là giả thuyết kiểm tra, không phải kết luận có vi phạm.
+
+Hướng xử lý hiện tại là giữ cả ba lựa chọn và chưa cam kết miễn thủ tục. Cần bổ sung quốc tịch và chủ sở hữu hưởng lợi của nhà đầu tư; ngành nghề; địa điểm, đất; chủ thể sở hữu dự án; nội hàm 60%; ngày ký/hoàn tất dự kiến. Sau đó lấy văn bản gốc chính thức về đầu tư, ngành, đất, cạnh tranh và chuyển nhượng tương ứng; kiểm tra điều khoản, sửa đổi, bãi bỏ và chuyển tiếp tại ngày giao dịch; đối chiếu từng điều kiện với hồ sơ rồi mới chọn cấu trúc. Đây là các bước chưa thực hiện.
+
+Rủi ro pháp lý về miễn thủ tục hiện **chưa xác định**; tác động thương mại có thể là chậm hoàn tất hoặc phải đổi cấu trúc. Có thể đàm phán điều kiện hoàn tất, thời hạn cuối và cơ chế hoàn trả tiền đặt cọc để quản lý các bất định này. Chưa có cơ sở đề xuất ưu tiên một cấu trúc hay bảo đảm được chấp thuận.

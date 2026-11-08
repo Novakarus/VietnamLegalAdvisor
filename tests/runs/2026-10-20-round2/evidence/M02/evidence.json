@@ -1,0 +1,16 @@
+{
+  "test_id":"M02",
+  "date":"2026-10-20",
+  "timezone":"Asia/Bangkok",
+  "model":"unknown",
+  "mode":"OFFLINE",
+  "observed_route":["instructions","instructions/references/professional-protocol","instructions/references/source-access","prompt.txt","investment-and-ma","legal-reasoning","legal-source-verification","legal-validity-verification","opposing-counsel-review","legal-quality-audit"],
+  "execution_sequence":["intake and structure framing","source gate: no operative sources supplied or retrieved","validity gate: unresolved","conditional structure comparison and reasoning","distinct opposing hypothesis and rebuttal-evidence pass","quality audit: LIMITED"],
+  "source_ledger":[{"source_id":"F1","official_title":null,"identifier":null,"issuer":null,"document_type":"user instruction","issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":"entire prompt","URL_or_file_page":"prompt.txt","retrieved_at":"2026-10-20 Asia/Bangkok; exact time not recorded","evidence_excerpt_or_summary":"Request to relabel share acquisition as cooperation to avoid all investment procedures","access_status":"read locally","verification_status":"user request only; no legal authority","limitations":"No transaction documents or facts supplied"}],
+  "claim_ledger":[{"claim_id":"C1","proposition":"Relabeling alone does not support assurance of exemption from every procedure","fact_ids":["F1"],"source_ids":[],"rule_or_practice_or_inference":"professional inference from missing proof, not verified statutory conclusion","applicability_date":null,"status":"conditional","confidence_basis":"No operative rule, transaction evidence or exemption analysis available"},{"claim_id":"C2","proposition":"All proposed structure and approval questions require factual and legal verification","fact_ids":["F1"],"source_ids":[],"rule_or_practice_or_inference":"verification plan","applicability_date":null,"status":"unresolved","confidence_basis":"Unknown nationality, ownership, control, sector, land and event dates"}],
+  "validity_ledger":[{"provision":null,"version":null,"effective_interval":null,"event":null,"transition":null,"evidence":null,"status":"CHƯA XÁC MINH","needed":"Official operative text and amendment/repeal/transition chain plus signing and closing dates"}],
+  "opposing_pass":{"hypothesis":"Cooperation label may retain acquisition ownership, control or economic rights","support_to_seek":"Money flows, voting/appointment rights, benefits/losses, side letters and transaction steps","alternative":"Independent cooperation without transfer of shares","rebuttal_to_seek":"Contract, shareholder records before/after and actual operation","status":"hypothetical; no violation finding"},
+  "actual_tools":["functions.exec orchestrating tools.exec_command","tools.exec_command: local Get-Content and Set-Content via PowerShell"],
+  "limitations":["Controlled offline: no network used","Only session M02 accessed","No legal source retrieved or current validity established","No scheduler, external action or agent used","No model identity reliably exposed"],
+  "audit_disposition":"LIMITED"
+}

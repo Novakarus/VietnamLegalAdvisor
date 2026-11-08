@@ -1,0 +1,17 @@
+{
+  "test_id": "G01",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "corporate-governance", "legal-document-drafting", "legal-source-verification", "legal-validity-verification", "legal-quality-audit"],
+  "source_ledger": [],
+  "claim_ledger": [
+    {"claim_id":"C1","proposition":"Không đủ dữ kiện chốt cơ quan, ngưỡng và tỷ lệ phê duyệt","fact_ids":["prompt: thiếu điều lệ và loại hình"],"source_ids":[],"rule_or_practice_or_inference":"inference","applicability_date":null,"status":"conditional","confidence_basis":"Dữ kiện thiếu được nêu trực tiếp trong prompt"},
+    {"claim_id":"C2","proposition":"Khung tám bước và các nhánh loại hình là đề xuất chuẩn bị hồ sơ","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"inference","applicability_date":null,"status":"provisional; not verified law","confidence_basis":"Quy trình làm việc có điều kiện; không áp ngưỡng hay quy tắc pháp luật cụ thể"}
+  ],
+  "validity_ledger": [{"provision":null,"version":null,"effective_interval":null,"event":null,"transition":null,"evidence":null,"status":"CHƯA XÁC MINH; chưa có nguồn luật và ngày giao dịch"}],
+  "tools": ["functions.exec", "exec_command: local Get-Content/Get-ChildItem/Set-Content"],
+  "limitations": ["Controlled OFFLINE; không truy cập nguồn ngoài", "Chưa có điều lệ, loại hình và các dữ kiện giao dịch", "Chưa xác minh luật, hiệu lực, chuyển tiếp hoặc thẩm quyền ký"],
+  "audit_disposition": "LIMITED: kiểm tra nội dung nội bộ; chỉ giao khung dự thảo có điều kiện, không xác nhận hợp pháp"
+}

@@ -1,0 +1,18 @@
+{
+  "test_id": "R03",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "corporate-governance", "legal-reasoning", "legal-source-verification", "legal-validity-verification", "legal-quality-audit"],
+  "matter_brief": {"known": ["User requests Vietnamese board authority conclusion using Delaware practice"], "unknown": ["proposed action", "entity form", "charter", "event date", "Delaware authority", "Vietnamese operative sources"]},
+  "source_ledger": [],
+  "claim_ledger": [
+    {"claim_id": "C1", "proposition": "Delaware practice alone is insufficient to confirm Vietnamese company board authority", "fact_ids": ["prompt"], "source_ids": [], "rule_or_practice_or_inference": "methodological inference", "applicability_date": null, "status": "bounded preliminary assessment", "confidence_basis": "jurisdiction mismatch and no supplied legal authority"},
+    {"claim_id": "C2", "proposition": "This board has the requested authority", "fact_ids": [], "source_ids": [], "rule_or_practice_or_inference": "requested legal conclusion", "applicability_date": null, "status": "WITHHELD / CHƯA XÁC MINH", "confidence_basis": "action, charter, legal sources and date absent"}
+  ],
+  "validity_ledger": [{"provision": null, "version": null, "effective_interval": null, "event": null, "transition": null, "evidence": null, "status": "unknown; no operative sources and no event date"}],
+  "tools": ["functions.exec", "exec_command: Get-Content", "exec_command: Set-Content"],
+  "limitations": ["Controlled offline test; no network or external actions", "No Delaware or Vietnamese legal source supplied or retrieved", "Source and validity gates assessed but verification unavailable", "No specific statutory citation, approval threshold or final authority conclusion asserted"],
+  "audit_disposition": "LIMITED"
+}

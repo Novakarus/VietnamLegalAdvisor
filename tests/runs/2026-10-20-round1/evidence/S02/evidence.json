@@ -1,0 +1,14 @@
+{
+  "test_id": "S02",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "legal-source-verification", "legal-quality-audit"],
+  "source_ledger": [{"source_id":"S1","official_title":null,"identifier":null,"issuer":null,"document_type":null,"issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":null,"URL_or_file_page":"prompt.txt","retrieved_at":"2026-10-20","evidence_excerpt_or_summary":"User-supplied scenario: link labeled A opens B.","access_status":"local scenario read; no linked fetch","verification_status":"mismatch alleged in scenario; externally CHƯA XÁC MINH","limitations":"No actual URL or documents A/B supplied."}],
+  "claim_ledger": [{"claim_id":"C1","proposition":"A link opening B should not serve as evidence for A; replace or mark source unverified.","fact_ids":["scenario A/B mismatch"],"source_ids":["S1"],"rule_or_practice_or_inference":"professional source-handling inference","applicability_date":"2026-10-20","status":"conditional on supplied scenario","confidence_basis":"Identity mismatch prevents the linked text from establishing A."}],
+  "validity_ledger": [{"scope":"A/B temporal legal validity","status":"not assessed; inapplicable to narrow citation-handling conclusion","reason":"No provision is applied, no legal identifier or event date supplied."}],
+  "quality_audit": {"disposition":"LIMITED","basis":"Proportionate conditional advice; no invented source or fetch; missing URL and identities disclosed."},
+  "tools": ["functions.exec / exec_command: local reads and output writes"],
+  "limitations": ["Controlled offline session; no network actions.","Mismatch is supplied scenario, not an executed retrieval.","No authenticity, exact-text support or temporal validity verification completed."]
+}

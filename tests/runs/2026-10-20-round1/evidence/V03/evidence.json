@@ -1,0 +1,15 @@
+{
+  "test_id": "V03",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "legal-source-verification", "legal-validity-verification", "legal-quality-audit"],
+  "matter_brief": {"known": "User reports blog alleges repeal and repeal text cannot be opened", "unknown": ["instrument identity", "blog URL/text", "repeal instrument", "event date", "specific provision"], "assumption": "Vietnamese legal source and validity question"},
+  "source_ledger": [{"source_id":"S1","official_title":null,"identifier":null,"issuer":null,"document_type":"reported blog commentary","issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":null,"URL_or_file_page":null,"retrieved_at":null,"evidence_excerpt_or_summary":"Blog reportedly alleges repeal, as described in prompt.txt only","access_status":"not accessed; reported failure is hypothetical context","verification_status":"CHƯA XÁC MINH","limitations":"No blog or primary legal text supplied"}],
+  "claim_ledger": [{"claim_id":"C1","proposition":"Unidentified instrument has been repealed","fact_ids":["prompt.txt"],"source_ids":["S1"],"rule_or_practice_or_inference":"reported secondary assertion","applicability_date":null,"status":"CHƯA XÁC MINH","confidence_basis":"No operative repeal text or identity available"},{"claim_id":"C2","proposition":"Reported access failure cannot settle repeal or continued validity","fact_ids":["prompt.txt"],"source_ids":[],"rule_or_practice_or_inference":"evidentiary inference","applicability_date":null,"status":"bounded methodological conclusion","confidence_basis":"Neither primary text nor effective or transitional clauses provided"}],
+  "validity_ledger": [{"provision":null,"version":null,"effective_interval":null,"event":null,"transition":null,"evidence":"prompt report only","status":"unknown; partial/full repeal, underlying instruments and transitional applicability unverified"}],
+  "quality_audit": {"disposition":"LIMITED","checks":"Dispositive claims checked against absence of evidence; no statutory citations or verification claims; material open items disclosed"},
+  "tools": ["functions.exec -> exec_command: local reads of router, protocol, source-access, three specialist skills and prompt; local artifact write"],
+  "limitations": ["Controlled OFFLINE; no network or external action", "No primary text retrieved", "No actual search/fetch failure occurred", "No fixture read", "No final instrument validity conclusion"]
+}

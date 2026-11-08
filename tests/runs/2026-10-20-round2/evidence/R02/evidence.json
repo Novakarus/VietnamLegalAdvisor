@@ -1,0 +1,26 @@
+{
+  "test_id": "R02",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "DOCUMENT_ONLY",
+  "matter_brief": {"objective":"Compare fictional F-A and F-B", "applicability_date":"2030-02-15", "known_facts":"Only supplied synthetic instrument excerpts", "missing_facts":["Filing date of any particular application"], "assumptions":["No external law is applied"]},
+  "observed_route": ["read instructions/SKILL.md", "read prompt.txt", "read fixtures.md", "read instructions/references/professional-protocol.md", "read instructions/references/source-access.md", "read legal-validity-verification/SKILL.md", "read legal-source-verification/SKILL.md", "read legal-quality-audit/SKILL.md", "perform source text matching", "perform provision-level temporal comparison", "perform quality audit of dispositive claims"],
+  "source_ledger": [
+    {"source_id":"F-A","official_title":null,"identifier":"F-A","issuer":null,"document_type":"fictional instrument excerpt","issue_date":"2030-01-01","effective_date":"2030-02-01","repeal_or_amendment_links":["F-B Article 1 replaces only Article 2"],"pinpoint":"Articles 2 and 3","URL_or_file_page":"fixtures.md, F-A block","retrieved_at":"2026-10-20 Asia/Bangkok","evidence_excerpt_or_summary":"Application X and Y; retention two years","access_status":"read supplied file","verification_status":"matched synthetic supplied text only","limitations":"Not real law; no public authenticity verification"},
+    {"source_id":"F-B","official_title":null,"identifier":"F-B","issuer":null,"document_type":"fictional instrument excerpt","issue_date":"2030-02-10","effective_date":"2030-03-01","repeal_or_amendment_links":["Amends F-A Article 2 only"],"pinpoint":"Articles 1 and 2","URL_or_file_page":"fixtures.md, F-B block","retrieved_at":"2026-10-20 Asia/Bangkok","evidence_excerpt_or_summary":"X Y Z replaces Article 2; applications filed before March 1 continue under former Article 2","access_status":"read supplied file","verification_status":"matched synthetic supplied text only","limitations":"Not real law; no public authenticity verification"}
+  ],
+  "claim_ledger": [
+    {"claim_id":"C1","proposition":"On 2030-02-15 the old X Y requirement applies","fact_ids":[],"source_ids":["F-A","F-B"],"rule_or_practice_or_inference":"synthetic temporal inference","applicability_date":"2030-02-15","status":"supported within fixtures","confidence_basis":"Effective dates distinct from issue dates"},
+    {"claim_id":"C2","proposition":"Pre-March-1 filings keep former Article 2 after March 1","fact_ids":[],"source_ids":["F-B"],"rule_or_practice_or_inference":"synthetic express transition","applicability_date":"2030-03-01","status":"conditional on filing date","confidence_basis":"F-B Article 2"},
+    {"claim_id":"C3","proposition":"Article 3 retention remains within supplied universe","fact_ids":[],"source_ids":["F-A","F-B"],"rule_or_practice_or_inference":"synthetic scope inference","applicability_date":"2030-02-15","status":"supported within fixtures","confidence_basis":"Only Article 2 replaced; explicit no Article 3 repeal in fixture"}
+  ],
+  "validity_ledger": [
+    {"provision":"F-A Article 2 former","interval":"2030-02-01 through 2030-02-28 generally, continuing for pre-2030-03-01 filings","at_event":"applicable","transition":"filing date predicate"},
+    {"provision":"F-B Article 1 replacement","interval":"from 2030-03-01 subject to transition","at_event":"not yet effective"},
+    {"provision":"F-A Article 3","interval":"from 2030-02-01; no end supplied","at_event":"continues within supplied evidence","partial_vs_full":"Only Article 2 replaced","consolidation":"No consolidated text supplied"}
+  ],
+  "actual_tools": ["functions.exec orchestrating tools.exec_command", "tools.exec_command: PowerShell Get-Content", "tools.exec_command: PowerShell Set-Content"],
+  "audit": {"disposition":"LIMITED","scope":"All dispositive claims compared with supplied text; no real-law verification","unresolved":["Public authenticity not applicable to invented sources", "No specific application filing date"]},
+  "limitations": ["Controlled document-only task", "No network or outside action", "Synthetic evidence only", "No real Vietnamese-law authority", "No full or consolidated instrument supplied", "Time of retrieval recorded at date granularity only"]
+}

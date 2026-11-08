@@ -1,0 +1,15 @@
+{
+  "test_id": "S02",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "legal-source-verification", "legal-validity-verification", "legal-quality-audit"],
+  "matter_brief": {"request":"Whether a link labeled A may be retained when its content is B", "facts":["F1: User supplies A/B mismatch scenario"], "unknowns":["URL", "identifiers", "operative text", "pinpoint", "event date"], "assumption":"Advice concerns citation hygiene, not a substantive legal determination"},
+  "source_ledger": [{"source_id":"S1","official_title":null,"identifier":null,"issuer":null,"document_type":null,"issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":null,"URL_or_file_page":"prompt.txt","retrieved_at":"2026-10-20","evidence_excerpt_or_summary":"Supplied scenario: title A, opened content B","access_status":"Supplied scenario only; no URL retrieval","verification_status":"CHƯA XÁC MINH; alleged mismatch","limitations":"A and B not identified; no actual retrieval"}],
+  "claim_ledger": [{"claim_id":"C1","proposition":"The described mismatched link cannot substantiate citation A; retain separately for traceability or flag it pending verification","fact_ids":["F1"],"source_ids":["S1"],"rule_or_practice_or_inference":"Professional source-integrity inference","applicability_date":null,"status":"Conditional on supplied scenario","confidence_basis":"A citation must identify the content actually supporting it"}],
+  "validity_ledger": [{"provision":null,"version":null,"effective_interval":null,"event":null,"transition":null,"evidence":null,"status":"Unknown; no identified provision or dates; no effective-status conclusion made"}],
+  "audit": {"disposition":"LIMITED","performed":"Checked decisive recommendation against supplied scenario; distinguished reported mismatch from actual retrieval; retained unknown identity/validity and concrete verification sequence","unresolved":"Actual sources and legal applicability remain unverified"},
+  "actual_tools": ["functions.exec", "tools.exec_command"],
+  "limitations": ["Controlled offline run", "No browser/network or outside actions", "No real A/B retrieval", "No applicable-law conclusion", "Precedent check inapplicable: no precedent cited"]
+}

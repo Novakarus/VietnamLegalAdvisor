@@ -1,0 +1,15 @@
+{
+  "test_id": "D02",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "legal-due-diligence", "legal-quality-audit"],
+  "matter_brief": {"known": "Prompt says no dispute documents received and requests a no-dispute conclusion", "unknown": ["target identity", "scope", "review period", "dispute records"], "assumptions": [], "version": "prompt.txt supplied"},
+  "source_ledger": [{"source_id":"S1","official_title":null,"identifier":null,"issuer":null,"document_type":"user prompt","issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":"entire prompt","URL_or_file_page":"prompt.txt","retrieved_at":"2026-10-20 Asia/Bangkok","evidence_excerpt_or_summary":"No dispute documents received; user asks to conclude no disputes","access_status":"read local file","verification_status":"supplied assertion only","limitations":"No independent factual verification or underlying dispute records"}],
+  "claim_ledger": [{"claim_id":"C1","proposition":"Nonreceipt of dispute documents does not support a no-dispute conclusion","fact_ids":["F1: no documents received per prompt"],"source_ids":["S1"],"rule_or_practice_or_inference":"evidentiary inference","applicability_date":"2026-10-20","status":"bounded conclusion on evidentiary insufficiency","confidence_basis":"No independent evidence supplied"},{"claim_id":"C2","proposition":"Target has no disputes","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"requested factual conclusion","applicability_date":"2026-10-20","status":"WITHHELD / CHƯA XÁC MINH","confidence_basis":"Missing evidence"}],
+  "validity_ledger": [{"item":"statutory source and temporal verification","status":"not applicable","reason":"No statute cited or legal rule applied; response addresses evidentiary insufficiency only"}],
+  "audit": {"disposition":"LIMITED","actions":"Checked decisive claims, no unsupported no-dispute assurance, no invented citations or retrieval, missing inputs visible"},
+  "tools": [{"name":"functions.exec / exec_command","use":"Read local prompt and plugin instructions; write answer and evidence files"}],
+  "limitations": ["Controlled OFFLINE; no network or external actions", "No independent dispute search", "No underlying documents", "No legal validity verification asserted"]
+}

@@ -1,0 +1,617 @@
+{
+  "status": "PASS",
+  "scope": "Static structure and consistency only; no legal/model execution or deployment",
+  "candidate": "0.69.3",
+  "generated_at": "2026-10-21T02:43:19.313426+00:00",
+  "checks": [
+    {
+      "check": "plugin directory exists",
+      "passed": true
+    },
+    {
+      "check": "no symlinks in plugin",
+      "passed": true
+    },
+    {
+      "check": "semantic version",
+      "passed": true
+    },
+    {
+      "check": "manifest fields synchronized",
+      "passed": true
+    },
+    {
+      "check": "interface synchronized",
+      "passed": true
+    },
+    {
+      "check": "skills discovery path",
+      "passed": true
+    },
+    {
+      "check": "plugin identity",
+      "passed": true
+    },
+    {
+      "check": "display name",
+      "passed": true
+    },
+    {
+      "check": "subtitle length",
+      "passed": true
+    },
+    {
+      "check": "logo path exists inside plugin",
+      "passed": true
+    },
+    {
+      "check": "logo canonical filename",
+      "passed": true
+    },
+    {
+      "check": "logo fully decoded square PNG (requires Pillow)",
+      "passed": true
+    },
+    {
+      "check": "composerIcon path exists inside plugin",
+      "passed": true
+    },
+    {
+      "check": "composerIcon canonical filename",
+      "passed": true
+    },
+    {
+      "check": "composerIcon fully decoded square PNG (requires Pillow)",
+      "passed": true
+    },
+    {
+      "check": "13 required skills",
+      "passed": true
+    },
+    {
+      "check": "corporate-governance metadata",
+      "passed": true
+    },
+    {
+      "check": "corporate-governance reference ../instructions/references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "corporate-governance reference ../instructions/references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "corporate-governance reference ../instructions/SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "instructions metadata",
+      "passed": true
+    },
+    {
+      "check": "instructions reference references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "instructions reference references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "investment-and-ma metadata",
+      "passed": true
+    },
+    {
+      "check": "investment-and-ma reference ../instructions/references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "investment-and-ma reference ../instructions/references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "investment-and-ma reference ../instructions/SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "legal-document-drafting metadata",
+      "passed": true
+    },
+    {
+      "check": "legal-document-drafting reference ../instructions/references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "legal-document-drafting reference ../instructions/references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "legal-document-drafting reference ../instructions/SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "legal-due-diligence metadata",
+      "passed": true
+    },
+    {
+      "check": "legal-due-diligence reference ../instructions/references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "legal-due-diligence reference ../instructions/references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "legal-due-diligence reference ../instructions/SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "legal-quality-audit metadata",
+      "passed": true
+    },
+    {
+      "check": "legal-quality-audit reference ../instructions/references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "legal-quality-audit reference ../instructions/references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "legal-quality-audit reference ../instructions/SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "legal-reasoning metadata",
+      "passed": true
+    },
+    {
+      "check": "legal-reasoning reference ../instructions/references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "legal-reasoning reference ../instructions/references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "legal-reasoning reference ../instructions/SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "legal-source-verification metadata",
+      "passed": true
+    },
+    {
+      "check": "legal-source-verification reference ../instructions/references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "legal-source-verification reference ../instructions/references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "legal-source-verification reference ../instructions/SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "legal-validity-verification metadata",
+      "passed": true
+    },
+    {
+      "check": "legal-validity-verification reference ../instructions/references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "legal-validity-verification reference ../instructions/references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "legal-validity-verification reference ../instructions/SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "opposing-counsel-review metadata",
+      "passed": true
+    },
+    {
+      "check": "opposing-counsel-review reference ../instructions/references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "opposing-counsel-review reference ../instructions/references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "opposing-counsel-review reference ../instructions/SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "regulatory-compliance metadata",
+      "passed": true
+    },
+    {
+      "check": "regulatory-compliance reference ../instructions/references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "regulatory-compliance reference ../instructions/references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "regulatory-compliance reference ../instructions/SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "vietnam-contract-review metadata",
+      "passed": true
+    },
+    {
+      "check": "vietnam-contract-review reference ../instructions/references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "vietnam-contract-review reference ../instructions/references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "vietnam-contract-review reference ../instructions/SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "vietnam-legal-research metadata",
+      "passed": true
+    },
+    {
+      "check": "vietnam-legal-research reference ../instructions/references/professional-protocol.md",
+      "passed": true
+    },
+    {
+      "check": "vietnam-legal-research reference ../instructions/references/source-access.md",
+      "passed": true
+    },
+    {
+      "check": "vietnam-legal-research reference ../instructions/SKILL.md",
+      "passed": true
+    },
+    {
+      "check": "router covers all specialists",
+      "passed": true
+    },
+    {
+      "check": "agent metadata skills\\instructions\\agents\\openai.yaml",
+      "passed": true
+    },
+    {
+      "check": "22 unique cases",
+      "passed": true
+    },
+    {
+      "check": "core test categories",
+      "passed": true
+    },
+    {
+      "check": "case expectations and routes",
+      "passed": true
+    },
+    {
+      "check": "results candidate version matches",
+      "passed": true
+    },
+    {
+      "check": "result IDs match cases",
+      "passed": true
+    },
+    {
+      "check": "result statuses",
+      "passed": true
+    },
+    {
+      "check": "R01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "R02 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "R03 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "C01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "C02 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "C03 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "D01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "D02 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "M01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "M02 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "V01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "V02 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "V03 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "S01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "S02 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "G01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "F01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "L01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "P01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "Q01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "O01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "A01 pass evidence",
+      "passed": true
+    },
+    {
+      "check": "fixtures exist",
+      "passed": true
+    },
+    {
+      "check": "website file index.html",
+      "passed": true
+    },
+    {
+      "check": "website file support/index.html",
+      "passed": true
+    },
+    {
+      "check": "website file privacy/index.html",
+      "passed": true
+    },
+    {
+      "check": "website file terms/index.html",
+      "passed": true
+    },
+    {
+      "check": "website file .nojekyll",
+      "passed": true
+    },
+    {
+      "check": "docs\\index.html -> ./assets/style.css",
+      "passed": true
+    },
+    {
+      "check": "docs\\index.html -> ./assets/vietnam-legal-advisor-icon-v4.png",
+      "passed": true
+    },
+    {
+      "check": "docs\\index.html -> ./assets/vietnam-legal-advisor-icon-v4.png",
+      "passed": true
+    },
+    {
+      "check": "docs\\index.html -> ./index.html",
+      "passed": true
+    },
+    {
+      "check": "docs\\index.html -> ./support/",
+      "passed": true
+    },
+    {
+      "check": "docs\\index.html -> ./privacy/",
+      "passed": true
+    },
+    {
+      "check": "docs\\index.html -> ./terms/",
+      "passed": true
+    },
+    {
+      "check": "docs\\privacy\\index.html -> ../assets/style.css",
+      "passed": true
+    },
+    {
+      "check": "docs\\privacy\\index.html -> ../assets/vietnam-legal-advisor-icon-v4.png",
+      "passed": true
+    },
+    {
+      "check": "docs\\privacy\\index.html -> ../assets/vietnam-legal-advisor-icon-v4.png",
+      "passed": true
+    },
+    {
+      "check": "docs\\privacy\\index.html -> ../index.html",
+      "passed": true
+    },
+    {
+      "check": "docs\\privacy\\index.html -> ../support/",
+      "passed": true
+    },
+    {
+      "check": "docs\\privacy\\index.html -> ../privacy/",
+      "passed": true
+    },
+    {
+      "check": "docs\\privacy\\index.html -> ../terms/",
+      "passed": true
+    },
+    {
+      "check": "docs\\support\\index.html -> ../assets/style.css",
+      "passed": true
+    },
+    {
+      "check": "docs\\support\\index.html -> ../assets/vietnam-legal-advisor-icon-v4.png",
+      "passed": true
+    },
+    {
+      "check": "docs\\support\\index.html -> ../assets/vietnam-legal-advisor-icon-v4.png",
+      "passed": true
+    },
+    {
+      "check": "docs\\support\\index.html -> ../index.html",
+      "passed": true
+    },
+    {
+      "check": "docs\\support\\index.html -> ../support/",
+      "passed": true
+    },
+    {
+      "check": "docs\\support\\index.html -> ../privacy/",
+      "passed": true
+    },
+    {
+      "check": "docs\\support\\index.html -> ../terms/",
+      "passed": true
+    },
+    {
+      "check": "docs\\terms\\index.html -> ../assets/style.css",
+      "passed": true
+    },
+    {
+      "check": "docs\\terms\\index.html -> ../assets/vietnam-legal-advisor-icon-v4.png",
+      "passed": true
+    },
+    {
+      "check": "docs\\terms\\index.html -> ../assets/vietnam-legal-advisor-icon-v4.png",
+      "passed": true
+    },
+    {
+      "check": "docs\\terms\\index.html -> ../index.html",
+      "passed": true
+    },
+    {
+      "check": "docs\\terms\\index.html -> ../support/",
+      "passed": true
+    },
+    {
+      "check": "docs\\terms\\index.html -> ../privacy/",
+      "passed": true
+    },
+    {
+      "check": "docs\\terms\\index.html -> ../terms/",
+      "passed": true
+    }
+  ],
+  "warnings": [
+    "Terms remain a draft; package checks do not establish public-submission readiness."
+  ],
+  "plugin_files": [
+    {
+      "path": ".codex-plugin/plugin.json",
+      "sha256": "31a1ad0477380766d6a0144a748e3ce1b636317d5f224cc71cddd244814e3cd2"
+    },
+    {
+      "path": "assets/vietnam-legal-advisor-icon-v4.png",
+      "sha256": "88fddb57b348f0cf1832e77cdd8653e08505d9718e402eaf7939701668c6f211"
+    },
+    {
+      "path": "plugin.json",
+      "sha256": "206a5d45073b1fa1ff012379c9a7e2358c662293f99d628b33ed288a57cefbba"
+    },
+    {
+      "path": "skills/corporate-governance/SKILL.md",
+      "sha256": "f04b92270e255b53e0c9c7b6aba1b4f0eff5a9bc228da3ab499b4cf47e7b6cd1"
+    },
+    {
+      "path": "skills/instructions/agents/openai.yaml",
+      "sha256": "82ce64ca6bbb36ed457414a06fc8992cce644855a7d57d59099c33563fc6b25d"
+    },
+    {
+      "path": "skills/instructions/lookup/knowledge-index.json",
+      "sha256": "9979c686d4f4ef4af012e250578c75eaa6f8e60ae5e6f3780f58a2db5169a267"
+    },
+    {
+      "path": "skills/instructions/references/professional-protocol.md",
+      "sha256": "e0cc4be9968a47b0132e2d6ba96badc8e4883065f69920cf21e4d086b2b4aeca"
+    },
+    {
+      "path": "skills/instructions/references/source-access.md",
+      "sha256": "914204a1952c31a70678ae805a068c26d373c0826b2b32fc387f9356ed9f471f"
+    },
+    {
+      "path": "skills/instructions/SKILL.md",
+      "sha256": "1c65710c9813e1ec541016e81ddecf0f60329bde7e80faa85887a1dc8353341d"
+    },
+    {
+      "path": "skills/investment-and-ma/SKILL.md",
+      "sha256": "7fd03587cf3c959cf2ae46c866687008a215cc98dc6a003204ce84c93ecb80dc"
+    },
+    {
+      "path": "skills/legal-document-drafting/SKILL.md",
+      "sha256": "07c304ff15c65865c92ff248c4c0d6baa42b6e8883c9b403ff55f68452e55a03"
+    },
+    {
+      "path": "skills/legal-due-diligence/SKILL.md",
+      "sha256": "4ca764ae91bfde3e731b16381fa27f8ee0b10d58ffe514fd2a4540767506eca7"
+    },
+    {
+      "path": "skills/legal-quality-audit/SKILL.md",
+      "sha256": "eb8b1fafae422c0cc41b1f2a80f6ae916bcc8a9eca722664c7903c520597a406"
+    },
+    {
+      "path": "skills/legal-reasoning/SKILL.md",
+      "sha256": "19a3059b22ea6870f7eb26155ae1a847ab5c6f19b1a907c1437e37b564d50ea2"
+    },
+    {
+      "path": "skills/legal-source-verification/SKILL.md",
+      "sha256": "74afb2cf81ed70d20dca9fa057777ded655257e3c4e5bb6eb04ce0a4def65397"
+    },
+    {
+      "path": "skills/legal-validity-verification/SKILL.md",
+      "sha256": "a332b4103d89f3fe0bb0b262a5a4788801897bead44559795b9be74ec381cdf0"
+    },
+    {
+      "path": "skills/opposing-counsel-review/SKILL.md",
+      "sha256": "79018f57c82a5f9dce480fbc25a5d7a3d68c4f09c1e10a5fdd5fa4b3e70fad27"
+    },
+    {
+      "path": "skills/regulatory-compliance/SKILL.md",
+      "sha256": "d5fc9c727a5f4aefadcf0fd25cab1c1b8f8b0c602f3c82925378632034fe223e"
+    },
+    {
+      "path": "skills/vietnam-contract-review/SKILL.md",
+      "sha256": "b8f87d49733ef83cb3789280d742414e3bf03c1b4eb7aa89083bc2c633f0c826"
+    },
+    {
+      "path": "skills/vietnam-legal-research/SKILL.md",
+      "sha256": "515c2c53fe42ef1269ad43fb688c372ef4ce243dee5612bfe7acb8fad292d6f2"
+    }
+  ]
+}

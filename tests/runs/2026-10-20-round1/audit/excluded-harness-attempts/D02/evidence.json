@@ -1,0 +1,80 @@
+{
+  "test_id": "D02",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "DOCUMENT_ONLY",
+  "observed_route": [
+    "instructions",
+    "instructions/references/professional-protocol.md",
+    "instructions/references/source-access.md",
+    "legal-due-diligence",
+    "legal-reasoning",
+    "legal-quality-audit"
+  ],
+  "matter_brief": {
+    "objective": "Assess requested no-dispute conclusion",
+    "known_facts": [
+      "No dispute materials received per prompt"
+    ],
+    "unknowns": [
+      "Target identity and perimeter",
+      "Transaction date",
+      "Dispute inventory",
+      "Actual dispute status"
+    ],
+    "document_version": "supplied fixtures.md, no version stated"
+  },
+  "source_ledger": [],
+  "claim_ledger": [
+    {
+      "claim_id": "C1",
+      "proposition": "No dispute materials received does not establish absence of disputes",
+      "fact_ids": [
+        "prompt_no_documents"
+      ],
+      "source_ids": [],
+      "rule_or_practice_or_inference": "evidentiary inference",
+      "applicability_date": "2026-10-20",
+      "status": "bounded conclusion",
+      "confidence_basis": "Absence of materials supplies no independent confirmation"
+    }
+  ],
+  "validity_ledger": [
+    {
+      "subject": "Statutory source identity and temporal validity",
+      "status": "NOT_APPLICABLE",
+      "reason": "No statutory proposition applied; answer evaluates evidentiary sufficiency only. F-A and F-B unrelated fictional instruments not used."
+    }
+  ],
+  "tools": [
+    {
+      "name": "functions.exec / exec_command",
+      "use": "Read session-local instructions and inputs; write answer and evidence logs"
+    }
+  ],
+  "quality_audit": {
+    "disposition": "LIMITED",
+    "checks_performed": [
+      "Dispositive claims compared with supplied evidence",
+      "No invented legal authority or independent verification",
+      "Open factual gaps and commercial impact retained"
+    ],
+    "remaining_limitation": "Underlying absence of disputes cannot be established"
+  },
+  "limitations": [
+    "No network or external actions",
+    "No independent registers inspected",
+    "No source authenticity or current law verification",
+    "No title or dispute-free opinion"
+  ],
+  "input_provenance": {
+    "correction": "Harness clarified fixtures were not referenced by prompt. D-01 facts removed; recommendations are hypothetical next steps.",
+    "extra_input_read_but_excluded": [
+      "fixtures.md"
+    ],
+    "used_for_answer": [
+      "prompt.txt"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "test_id":"Q01",
+  "date":"2026-10-21",
+  "timezone":"Asia/Bangkok",
+  "model":"unknown",
+  "mode":"OFFLINE",
+  "actual_observed_route":["instructions","legal-source-verification","legal-quality-audit"],
+  "route_execution":"Read router and shared references; read both specialists; compared supplied verification claim against supplied Search-unavailability fact; performed bounded source audit and final quality audit. No substantive legal application or validity verification was performed because no law, event date or advice was supplied.",
+  "matter_brief":{"objective":"Audit official-source retrieval assertion","known_facts":["Scenario states advice claims official sources were researched","Scenario states log records Search unavailable"],"unknowns":["Actual advice and log","Alternative retrieval evidence","Citations","Matter date"]},
+  "source_ledger":[{"source_id":"S1","official_title":null,"identifier":null,"issuer":null,"document_type":"supplied scenario","issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":"prompt.txt, sole sentence","URL_or_file_page":"prompt.txt","retrieved_at":"2026-10-21; exact time not recorded","evidence_excerpt_or_summary":"Advice asserts official research; log says Search unavailable","access_status":"local file read","verification_status":"scenario supplied facts only","limitations":"Underlying advice and log not supplied; no official legal source retrieved"}],
+  "claim_ledger":[{"claim_id":"C1","proposition":"Official-source research occurred","fact_ids":["scenario assertion"],"source_ids":["S1"],"rule_or_practice_or_inference":"reported claim","applicability_date":null,"status":"CHƯA XÁC MINH","confidence_basis":"No retrieval or inspected-text evidence"},{"claim_id":"C2","proposition":"Search unavailability alone does not exclude another retrieval method","fact_ids":["scenario Search unavailable"],"source_ids":["S1"],"rule_or_practice_or_inference":"evidentiary inference","applicability_date":null,"status":"bounded inference","confidence_basis":"No evidence supplied about other methods"}],
+  "validity_ledger":[{"source_id":null,"provision":null,"event_date":null,"status":"not assessed","reason":"No legal provision or event supplied; no substantive legal conclusion issued"}],
+  "defects":[{"location":"Unspecified advice passage asserting official research","evidence_status":"unsupported","severity":"potential critical; critical if confirmed false","classification_rule":"False verification, if confirmed, is critical (lỗi cấp critical).","missing_evidence":"Advice version, original log, alternative access evidence, source text and timing","release_restriction":"LIMITED; no READY or verified release pending substantiation or correction"}],
+  "repair_cycle":"One targeted repair sequence provided; cannot re-audit absent underlying evidence",
+  "actual_tools":["functions.exec wrapping tools.exec_command: local PowerShell reads and artifact writes"],
+  "limitations":["Controlled offline; no network used","Scenario tool statements are supplied facts, not actual tool results","No actual official retrieval","No exact model identity exposed","No parent questions or external actions"]
+}

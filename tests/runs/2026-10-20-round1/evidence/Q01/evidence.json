@@ -1,0 +1,13 @@
+{
+  "test_id": "Q01",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "legal-quality-audit", "legal-source-verification", "legal-quality-audit disposition"],
+  "source_ledger": [{"source_id":"S1","official_title":null,"identifier":null,"issuer":null,"document_type":"user scenario","issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":null,"URL_or_file_page":"prompt.txt","retrieved_at":"2026-10-20","evidence_excerpt_or_summary":"Advice claims official research; described log says Search unavailable.","access_status":"local prompt read","verification_status":"scenario only; underlying advice and log not supplied","limitations":"No primary legal source or actual retrieval log."}],
+  "claim_ledger": [{"claim_id":"C1","proposition":"Official-source research is not substantiated by the supplied scenario.","fact_ids":["prompt scenario"],"source_ids":["S1"],"rule_or_practice_or_inference":"inference","applicability_date":"2026-10-20","status":"bounded assessment","confidence_basis":"Search failure alone does not exclude other access channels."}],
+  "validity_ledger": [{"status":"not applicable to procedural assessment; substantive validity unverified","reason":"No identified provision, underlying advice or event date supplied."}],
+  "tools": ["exec_command: local read of router, shared protocol, source access, audit and source verification skills, prompt; local output writes"],
+  "limitations": ["Controlled offline; no network used.","Search unavailable is a scenario allegation, not an observed live tool result.","No full draft, log, citations or legal event date.","No candidate repair or self-score performed."]
+}

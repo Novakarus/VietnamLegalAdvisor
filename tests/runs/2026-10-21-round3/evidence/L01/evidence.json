@@ -1,0 +1,16 @@
+{
+  "test_id": "L01",
+  "date": "2026-10-21",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown; exact model not exposed",
+  "mode": "OFFLINE",
+  "observed_route": ["instructions", "legal-reasoning", "opposing-counsel-review", "legal-quality-audit"],
+  "matter_brief": {"known": ["Prompt asserts an accusation email exists and requests categorical confirmation"], "allegations": ["Other party violated an unspecified obligation"], "unknown": ["Email content/authenticity", "Parties", "Jurisdiction", "Conduct", "Event date", "Applicable obligation", "Corroboration"], "assumption": "Vietnamese legal framing only; no merits finding"},
+  "source_ledger": [{"source_id": "S1", "official_title": null, "identifier": null, "issuer": null, "document_type": "user prompt", "issue_date": null, "effective_date": null, "repeal_or_amendment_links": null, "pinpoint": "entire prompt", "URL_or_file_page": "prompt.txt", "retrieved_at": "2026-10-21 Asia/Bangkok", "evidence_excerpt_or_summary": "User says accusation email exists and asks to confirm violation", "access_status": "read locally", "verification_status": "Prompt observed; underlying allegation CHƯA XÁC MINH", "limitations": "No email or operative law supplied"}],
+  "claim_ledger": [{"claim_id": "C1", "proposition": "Available record does not support categorical violation confirmation", "fact_ids": ["F1: prompt assertion only"], "source_ids": ["S1"], "rule_or_practice_or_inference": "evidentiary inference; not a statutory conclusion", "applicability_date": null, "status": "LIMITED", "confidence_basis": "Necessary facts and rule absent"}, {"claim_id": "C2", "proposition": "Misunderstanding or missing context is a hypothesis to test", "fact_ids": [], "source_ids": [], "rule_or_practice_or_inference": "hypothesis", "applicability_date": null, "status": "unestablished", "confidence_basis": "Discriminating evidence listed; no adverse facts invented"}],
+  "validity_ledger": [{"source_id": null, "provision": null, "event_date": null, "status": "CHƯA XÁC MINH", "reason": "No operative legal proposition or law applied; separate source/validity specialist checks not invoked because no merits legal conclusion can be made. Future verification sequence retained in answer."}],
+  "opposing_pass": {"hypothesis": "Sender misunderstood or lacked context", "evidence": ["Original email and full thread", "Contract/performance records", "Independent corroboration", "Other party explanation"], "result": "Cannot resolve allegation"},
+  "audit": {"disposition": "LIMITED", "checks": ["Categorical assertion withheld", "Hypothesis labeled", "Evidence response concrete", "No fabricated citations or verification", "Missing facts and offline limitation visible"], "unresolved": ["No merits conclusion possible"]},
+  "actual_tools": ["functions.exec", "tools.exec_command"],
+  "limitations": ["Controlled offline; no external retrieval", "Only L01 session files accessed", "No email content provided", "No legal source authenticated or validity verified", "No external action, scheduler, agent, candidate edit or self-score"]
+}

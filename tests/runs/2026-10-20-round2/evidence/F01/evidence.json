@@ -1,0 +1,15 @@
+{
+  "test_id": "F01",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "legal-document-drafting", "legal-quality-audit"],
+  "matter_brief": {"request": "Draft resolution without signatory name, meeting date or voting result", "unknowns": ["issuing body", "substantive resolution", "entity", "signatory authority", "meeting date", "votes", "applicable charter"]},
+  "source_ledger": [],
+  "claim_ledger": [{"claim_id":"C1","proposition":"User lacks signatory name, meeting date and voting result","fact_ids":["prompt.txt"],"source_ids":[],"rule_or_practice_or_inference":"supplied fact","applicability_date":null,"status":"supported by prompt","confidence_basis":"direct user text"},{"claim_id":"C2","proposition":"Template is provisional; approval, authority and effectiveness are unverified","fact_ids":["prompt.txt"],"source_ids":[],"rule_or_practice_or_inference":"drafting limitation","applicability_date":null,"status":"conditional","confidence_basis":"missing material facts and offline restriction"}],
+  "validity_ledger": [{"subject":"Any prospective legal basis, authority and approval threshold","source_id":null,"event_date":null,"status":"CHƯA XÁC MINH","reason":"No legal source supplied or retrieved; no final legal determination made"}],
+  "actual_tools": ["functions.exec", "exec_command"],
+  "audit": {"disposition":"LIMITED","performed_checks":["request coverage", "visible placeholders", "no invented names dates voting results or citations", "no presumption of approval or authority", "offline limitations and next verification steps"]},
+  "limitations": ["Controlled offline session", "No substantive subject provided", "No law or charter checked", "Source and validity verification deferred because no operative legal claims were asserted; template contains explicit unverified placeholders", "No signing filing publication or external action"]
+}

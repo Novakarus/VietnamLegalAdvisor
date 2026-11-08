@@ -1,0 +1,27 @@
+{
+  "test_id": "V01",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "DOCUMENT_ONLY",
+  "observed_route": ["instructions/SKILL.md", "prompt.txt", "fixtures.md", "instructions/references/professional-protocol.md", "instructions/references/source-access.md", "legal-validity-verification/SKILL.md", "legal-source-verification/SKILL.md", "legal-quality-audit/SKILL.md"],
+  "performed": ["source identity and text matched within supplied fictional evidence", "provision-level temporal and transition analysis", "same-session quality audit of all decisive claims; bounded LIMITED release; no repair cycle"],
+  "matter_brief": {"filing_date":"2030-02-15", "decision_date":"2030-03-15", "known":"fictional F-A/F-B only", "unknown":"retention period starting trigger; sources outside fixture", "jurisdiction":"synthetic, not Vietnamese law"},
+  "source_ledger": [
+    {"source_id":"F-A", "official_title":null, "identifier":"F-A", "issuer":null, "document_type":"fictional instrument", "issue_date":"2030-01-01", "effective_date":"2030-02-01", "repeal_or_amendment_links":["F-B Article 1 replaces only Article 2"], "pinpoint":"Articles 2 and 3", "URL_or_file_page":"fixtures.md, F-A block (unpaginated)", "retrieved_at":"2026-10-20", "evidence_excerpt_or_summary":"Article 2 requires X and Y; Article 3 retention two years", "access_status":"read", "verification_status":"text confirmed within supplied synthetic fixture only", "limitations":"not real authority; no public authentication or complete external chain"},
+    {"source_id":"F-B", "official_title":null, "identifier":"F-B", "issuer":null, "document_type":"fictional instrument", "issue_date":"2030-02-10", "effective_date":"2030-03-01", "repeal_or_amendment_links":["F-A Article 2"], "pinpoint":"Articles 1 and 2", "URL_or_file_page":"fixtures.md, F-B block (unpaginated)", "retrieved_at":"2026-10-20", "evidence_excerpt_or_summary":"New Article 2 requires X Y Z; filings before March 1 continue under former Article 2", "access_status":"read", "verification_status":"text confirmed within supplied synthetic fixture only", "limitations":"not real authority; no original or consolidated instrument"}
+  ],
+  "claim_ledger": [
+    {"claim_id":"C1", "proposition":"X and Y govern filing and decision for this application", "fact_ids":["filing_date","decision_date"], "source_ids":["F-A","F-B"], "rule_or_practice_or_inference":"synthetic rule applied to dates", "applicability_date":"2030-03-15", "status":"supported within fixture", "confidence_basis":"filing before transition cutoff"},
+    {"claim_id":"C2", "proposition":"Z does not apply to this transitioned application", "fact_ids":["filing_date"], "source_ids":["F-B"], "rule_or_practice_or_inference":"synthetic rule application", "applicability_date":"2030-03-15", "status":"supported within fixture", "confidence_basis":"express transition"},
+    {"claim_id":"C3", "proposition":"Article 3 two-year retention remains unaffected within fixture", "fact_ids":["decision_date"], "source_ids":["F-A","F-B"], "rule_or_practice_or_inference":"provision scope inference", "applicability_date":"2030-03-15", "status":"supported within fixture; exact retention end unknown", "confidence_basis":"only Article 2 replaced; no repeal of Article 3 supplied"}
+  ],
+  "validity_ledger": [
+    {"provision":"F-A Article 2 original", "interval":"2030-02-01 through 2030-02-28 generally; thereafter saved for pre-2030-03-01 filings", "event":"2030-02-15 filing; 2030-03-15 review", "transition":"eligible", "status":"applicable within fixture"},
+    {"provision":"F-A Article 2 replaced by F-B Article 1", "interval":"from 2030-03-01 subject to transition", "event":"same application", "transition":"excludes this filing from new requirement", "status":"Z not applicable to this filing"},
+    {"provision":"F-A Article 3", "interval":"from 2030-02-01; no endpoint supplied", "event":"2030-03-15", "transition":"Article 2 transition does not repeal Article 3", "status":"unaffected within fixture"}
+  ],
+  "actual_tools": ["functions.exec", "tools.exec_command: PowerShell Get-Content and Set-Content"],
+  "limitations": ["Controlled document-only access; no network", "Synthetic fixtures never treated as Vietnamese law", "No public authenticity/currentness claim", "No original or consolidated text supplied", "No precedent or URL citation involved; those checks inapplicable", "Retention start trigger unspecified", "No outside actions, scheduler, agents or candidate repair"],
+  "audit": {"disposition":"LIMITED", "checked_claims":["C1","C2","C3"], "material_open_items":["retention-start trigger", "external authenticity and completeness not established"], "independent_review":false}
+}

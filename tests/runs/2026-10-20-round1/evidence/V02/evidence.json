@@ -1,0 +1,145 @@
+{
+  "test_id": "V02",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "DOCUMENT_ONLY",
+  "actual_observed_route": [
+    "instructions",
+    "legal-validity-verification",
+    "legal-source-verification",
+    "legal-validity-verification (application of already loaded instructions)",
+    "legal-quality-audit"
+  ],
+  "matter_brief": {
+    "objective": "Whether Article 3 F-A survives Article 2-only replacement",
+    "facts": "Synthetic fixtures F-A/F-B",
+    "unknowns": [
+      "event date",
+      "filing date"
+    ],
+    "assumption": "Only supplied synthetic instruments considered"
+  },
+  "source_ledger": [
+    {
+      "source_id": "S1",
+      "official_title": "Fictional Instrument A",
+      "identifier": "F-A",
+      "issuer": null,
+      "document_type": "synthetic fixture",
+      "issue_date": "2030-01-01",
+      "effective_date": "2030-02-01",
+      "repeal_or_amendment_links": [
+        "F-B replaces Article 2 only"
+      ],
+      "pinpoint": "Articles 2–3",
+      "URL_or_file_page": "fixtures.md, F-A paragraphs",
+      "retrieved_at": "2026-10-20 Asia/Bangkok",
+      "evidence_excerpt_or_summary": "X,Y; retain record two years",
+      "access_status": "supplied file read",
+      "verification_status": "Matched supplied synthetic text only",
+      "limitations": "Not real authority; authenticity/current law not applicable"
+    },
+    {
+      "source_id": "S2",
+      "official_title": "Fictional Instrument B",
+      "identifier": "F-B",
+      "issuer": null,
+      "document_type": "synthetic fixture",
+      "issue_date": "2030-02-10",
+      "effective_date": "2030-03-01",
+      "repeal_or_amendment_links": [
+        "F-A Article 2"
+      ],
+      "pinpoint": "Articles 1–2",
+      "URL_or_file_page": "fixtures.md, F-B paragraphs",
+      "retrieved_at": "2026-10-20 Asia/Bangkok",
+      "evidence_excerpt_or_summary": "Replace only A Article 2; pre-March filings use former Article 2",
+      "access_status": "supplied file read",
+      "verification_status": "Matched supplied synthetic text only",
+      "limitations": "No consolidated text supplied; no external verification"
+    }
+  ],
+  "claim_ledger": [
+    {
+      "claim_id": "C1",
+      "proposition": "A Article 3 survives B partial replacement from A effective date",
+      "fact_ids": [
+        "fixture: no repeal of Article 3"
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "rule_or_practice_or_inference": "inference from synthetic scope",
+      "applicability_date": "from 2030-02-01, conditional on supplied record",
+      "status": "supported within fixtures",
+      "confidence_basis": "B expressly replaces only Article 2"
+    },
+    {
+      "claim_id": "C2",
+      "proposition": "No fixture operative at review date",
+      "fact_ids": [
+        "review date 2026-10-20"
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "rule_or_practice_or_inference": "temporal comparison",
+      "applicability_date": "2026-10-20",
+      "status": "supported within fixtures",
+      "confidence_basis": "Both effective dates in 2030"
+    },
+    {
+      "claim_id": "C3",
+      "proposition": "Old Article 2 retained for eligible pre-March filings; Article 3 untouched",
+      "fact_ids": [],
+      "source_ids": [
+        "S2"
+      ],
+      "rule_or_practice_or_inference": "synthetic transition",
+      "applicability_date": "2030-03-01",
+      "status": "conditional; filing date missing",
+      "confidence_basis": "Express transition limited to Article 2"
+    }
+  ],
+  "validity_ledger": [
+    {
+      "provision": "F-A Article 3",
+      "interval": "2030-02-01 onward within supplied record",
+      "transition": "none altering Article 3 supplied",
+      "status": "conditional synthetic survival"
+    },
+    {
+      "provision": "F-A Article 2 former",
+      "interval": "2030-02-01 to before 2030-03-01; transition thereafter for eligible earlier filings",
+      "status": "conditional on filing"
+    },
+    {
+      "provision": "F-A Article 2 as replaced",
+      "interval": "from 2030-03-01 subject to transition",
+      "status": "future synthetic"
+    },
+    {
+      "provision": "all fixtures at review",
+      "interval": "2026-10-20",
+      "status": "not yet effective in hypothetical timeline"
+    }
+  ],
+  "tools": [
+    "exec_command: read supplied files and skill texts",
+    "apply_patch: save answer and evidence artifacts"
+  ],
+  "limitations": [
+    "No network used or external action taken",
+    "No public authenticity or current Vietnamese law verification",
+    "No event/filing date",
+    "URL and precedent checks inapplicable: no URL or precedent cited",
+    "Underlying fixtures considered; no consolidated text supplied"
+  ],
+  "quality_audit": {
+    "disposition": "LIMITED",
+    "checks": "All dispositive claims matched fixtures and future-date comparison; synthetic nature and missing dates disclosed; no independent reviewer claimed"
+  }
+}

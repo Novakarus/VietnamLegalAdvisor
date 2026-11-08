@@ -1,26 +1,62 @@
 {
+  "generated_at": "2026-10-21T09:43:26.357918+07:00",
   "version": "0.69.3",
-  "scope": "20 original tested plugin files; plugin/LICENSE.md is separately published documentation",
-  "files": {
-    ".codex-plugin/plugin.json": "31a1ad0477380766d6a0144a748e3ce1b636317d5f224cc71cddd244814e3cd2",
-    "assets/vietnam-legal-advisor-icon-v4.png": "88fddb57b348f0cf1832e77cdd8653e08505d9718e402eaf7939701668c6f211",
-    "plugin.json": "206a5d45073b1fa1ff012379c9a7e2358c662293f99d628b33ed288a57cefbba",
-    "skills/corporate-governance/SKILL.md": "f04b92270e255b53e0c9c7b6aba1b4f0eff5a9bc228da3ab499b4cf47e7b6cd1",
-    "skills/instructions/agents/openai.yaml": "82ce64ca6bbb36ed457414a06fc8992cce644855a7d57d59099c33563fc6b25d",
-    "skills/instructions/lookup/knowledge-index.json": "9979c686d4f4ef4af012e250578c75eaa6f8e60ae5e6f3780f58a2db5169a267",
-    "skills/instructions/references/professional-protocol.md": "e0cc4be9968a47b0132e2d6ba96badc8e4883065f69920cf21e4d086b2b4aeca",
-    "skills/instructions/references/source-access.md": "914204a1952c31a70678ae805a068c26d373c0826b2b32fc387f9356ed9f471f",
-    "skills/instructions/SKILL.md": "1c65710c9813e1ec541016e81ddecf0f60329bde7e80faa85887a1dc8353341d",
-    "skills/investment-and-ma/SKILL.md": "7fd03587cf3c959cf2ae46c866687008a215cc98dc6a003204ce84c93ecb80dc",
-    "skills/legal-document-drafting/SKILL.md": "07c304ff15c65865c92ff248c4c0d6baa42b6e8883c9b403ff55f68452e55a03",
-    "skills/legal-due-diligence/SKILL.md": "4ca764ae91bfde3e731b16381fa27f8ee0b10d58ffe514fd2a4540767506eca7",
-    "skills/legal-quality-audit/SKILL.md": "eb8b1fafae422c0cc41b1f2a80f6ae916bcc8a9eca722664c7903c520597a406",
-    "skills/legal-reasoning/SKILL.md": "19a3059b22ea6870f7eb26155ae1a847ab5c6f19b1a907c1437e37b564d50ea2",
-    "skills/legal-source-verification/SKILL.md": "74afb2cf81ed70d20dca9fa057777ded655257e3c4e5bb6eb04ce0a4def65397",
-    "skills/legal-validity-verification/SKILL.md": "a332b4103d89f3fe0bb0b262a5a4788801897bead44559795b9be74ec381cdf0",
-    "skills/opposing-counsel-review/SKILL.md": "79018f57c82a5f9dce480fbc25a5d7a3d68c4f09c1e10a5fdd5fa4b3e70fad27",
-    "skills/regulatory-compliance/SKILL.md": "d5fc9c727a5f4aefadcf0fd25cab1c1b8f8b0c602f3c82925378632034fe223e",
-    "skills/vietnam-contract-review/SKILL.md": "b8f87d49733ef83cb3789280d742414e3bf03c1b4eb7aa89083bc2c633f0c826",
-    "skills/vietnam-legal-research/SKILL.md": "515c2c53fe42ef1269ad43fb688c372ef4ce243dee5612bfe7acb8fad292d6f2"
-  }
+  "scope": "All release files except this manifest and its checksum",
+  "files": [
+    {
+      "path": "Bang-chung-kiem-thu-lan-3.zip",
+      "bytes": 1377702,
+      "sha256": "eabd86fcc8bd10f6b3dabdcf2eeff92e8803589eeb94b1eb6398c6ad2c7c2048"
+    },
+    {
+      "path": "Bao-cao-kiem-thu-lan-3.md",
+      "bytes": 10571,
+      "sha256": "972071f479a5a58cfec1b1c3861cddee52bf56c7b39608423f2b862af4aa3b92"
+    },
+    {
+      "path": "post-import-validation.json",
+      "bytes": 16469,
+      "sha256": "c7950104e3df0ee0c9ffa52141629c365fc312abeba1eccb700fceabfc50625c"
+    },
+    {
+      "path": "release.json",
+      "bytes": 1266,
+      "sha256": "b73571ff4ac9e84e1e5d335518233573d3b25d6daabb37da0f0a9c80e79a59fc"
+    },
+    {
+      "path": "RELEASE.md",
+      "bytes": 2377,
+      "sha256": "e05fbbbad3e26befe9aefd28c0e4a5d09b5fb64d07ff477c5cac5b2ce5f4f553"
+    },
+    {
+      "path": "round3-results.json",
+      "bytes": 55057,
+      "sha256": "e992bd006f0821745920d777c16269fafd48ccc4b03e911e001c9ddb96f9e5dd"
+    },
+    {
+      "path": "round3-technical-results.json",
+      "bytes": 6036,
+      "sha256": "66939e5dec3087f3551cd263c4c82645f797ab59f6ca7bdc2e15fa4dfdbf2c54"
+    },
+    {
+      "path": "round3-validation.json",
+      "bytes": 14937,
+      "sha256": "3f5d308afdb3551e885f100249bea43f312af73256b2269d1dfdab8f2fb342ae"
+    },
+    {
+      "path": "Vietnam-Legal-Advisor-0.69.3-source.zip",
+      "bytes": 6733211,
+      "sha256": "3034ba708799f704640a2b06e23119e8ef36c9a32fb35b63be1bfbf9d257dfbc"
+    },
+    {
+      "path": "Vietnam-Legal-Advisor-0.69.3.zip",
+      "bytes": 1267585,
+      "sha256": "40120521e43173191ab4babbc93180445fef33fb819f9d24ed2c25fb31dd7fa6"
+    },
+    {
+      "path": "Vietnam-Legal-Advisor-0.69.3.zip.sha256",
+      "bytes": 100,
+      "sha256": "e386fa148a2ea775a0940b90feede80513e0402ca1fbe24cf76687e3ae3f599c"
+    }
+  ]
 }

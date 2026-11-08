@@ -1,7 +1,16 @@
+# Local deployment artifacts
 dist/
-work/
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+# Local secrets and OS files
 .env
 .env.*
-__pycache__/
-*.pyc
+Thumbs.db
 .DS_Store
+
+# Bản sao điều khoản của bên thứ ba (thuộc bản quyền của họ): chỉ giữ cục bộ, chỉ đưa INDEX.md lên Git
+terms-archive/*
+!terms-archive/INDEX.md

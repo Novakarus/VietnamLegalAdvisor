@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "gpt-20c5e24b4c10dd0e31dd8b7cb4f7bfe6",
+  "version": "0.70.0",
+  "description": "Modular Vietnamese legal research, review, drafting and verification for professional teams.",
+  "author": {
+    "name": "Thanh Nguyen"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [
+          "skills"
+        ],
+        "category": "Education & Research",
+        "composerIcon": "./assets/vietnam-legal-advisor-icon-v4.png",
+        "defaultPrompt": [
+          "Thủ tục đăng ký hộ kinh doanh cá thể như thế nào?",
+          "Luật quy định ra sao về hợp đồng lao động thời vụ?",
+          "Tôi có bị phạt nếu chậm đăng ký khai sinh không?"
+        ],
+        "developerName": "Thanh Nguyen",
+        "displayName": "Vietnam Legal Advisor",
+        "logo": "./assets/vietnam-legal-advisor-icon-v4.png",
+        "longDescription": "A modular legal assistant focused on Vietnamese law for lawyers, in-house counsel, investors and business leaders. Routes research, validity checks, contract review, due diligence, drafting, reasoning, adversarial review, governance, investment and M&A, compliance, source verification and quality audit. Responds in Vietnamese by default. Uses available search tools for on-demand verification and discloses unavailable sources; no automatic legal updates or standalone legal database are included.",
+        "shortDescription": "Vietnamese legal workflows"
+      }
+    }
+  }
+}

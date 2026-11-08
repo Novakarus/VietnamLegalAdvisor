@@ -1,0 +1,15 @@
+{
+  "test_id": "V03",
+  "date": "2026-10-21",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown; exact model not exposed",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "legal-source-verification", "legal-validity-verification", "legal-quality-audit"],
+  "matter_brief": {"known": "Prompt reports a blog claiming repeal and inability to open repeal instrument.", "scenario_not_actual_tool_result": true, "unknown": ["document identity", "provision", "blog URL/text", "repeal instrument", "event date"], "jurisdiction_assumption": "Vietnam"},
+  "source_ledger": [{"source_id":"S1","official_title":null,"identifier":null,"issuer":null,"document_type":"secondary commentary reported by prompt","issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":null,"URL_or_file_page":"prompt.txt","retrieved_at":"2026-10-21 Asia/Bangkok; exact time not recorded","evidence_excerpt_or_summary":"Blog allegedly says instrument repealed; operative repeal text unavailable in scenario.","access_status":"blog not supplied or retrieved; scenario report only","verification_status":"CHƯA XÁC MINH","limitations":"No legal text or identifiers."}],
+  "claim_ledger": [{"claim_id":"C1","proposition":"Unidentified instrument has been repealed","fact_ids":["prompt_report"],"source_ids":["S1"],"rule_or_practice_or_inference":"reported secondary claim","applicability_date":null,"status":"CHƯA XÁC MINH","confidence_basis":"No operative source text."},{"claim_id":"C2","proposition":"Fetch failure alone does not establish repeal or continuing validity","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"evidentiary inference","applicability_date":null,"status":"bounded methodological conclusion","confidence_basis":"Access and legal effect are distinct."}],
+  "validity_ledger": [{"provision":null,"version":null,"effective_interval":null,"event":null,"transition":null,"evidence":"S1 only","status":"unknown","partial_vs_full_repeal":"unverified","consolidation_vs_underlying":"unverified","needed":"Original and repeal instruments, amendments, effective and transition clauses, event date."}],
+  "audit": {"disposition":"LIMITED","performed":"Checked categorical repeal/continuing-validity claims, dates, citations, useful verification sequence and disclosure of missing sources. No legal identifiers or URLs invented.","unresolved":"Decisive primary texts and event date absent; no verified legal conclusion released.","repair":"Retain uncertainty and provide specific retrieval and provision-level checks."},
+  "actual_tools": ["functions.exec wrapping tools.exec_command: read local router and prompt", "functions.exec wrapping tools.exec_command: read shared protocol/access and three specialist files", "functions.exec wrapping tools.exec_command: write answer.md, evidence.json, tool_calls.md"],
+  "limitations": ["Controlled offline invocation; no network used.","No actual blog fetch attempted; failure is supplied scenario.","No official authority retrieved.","No external actions, agents, schedulers, candidate edits or self-score."]
+}

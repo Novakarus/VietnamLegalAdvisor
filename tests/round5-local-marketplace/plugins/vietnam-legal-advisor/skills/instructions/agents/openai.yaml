@@ -1,0 +1,7 @@
+{
+  "interface": {
+    "display_name": "Vietnam Legal Advisor",
+    "short_description": "Route and verify Vietnamese legal work",
+    "default_prompt": "Use $instructions to assess my Vietnamese legal matter and select the relevant legal skills."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "test_id": "R01",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "observed_route": ["instructions/SKILL.md", "prompt.txt", "instructions/references/professional-protocol.md", "instructions/references/source-access.md", "legal-reasoning/SKILL.md", "vietnam-legal-research/SKILL.md", "legal-source-verification/SKILL.md", "legal-validity-verification/SKILL.md", "legal-quality-audit/SKILL.md"],
+  "matter_brief": {"known": ["User reports no rule found on one unspecified website"], "assumed": ["Vietnamese law"], "unknown": ["Activity X", "website", "search scope", "event date", "location", "sector"], "review_date": "2026-10-20"},
+  "source_ledger": [],
+  "claim_ledger": [
+    {"claim_id": "C1", "proposition": "A search miss on one website cannot establish absence of applicable law", "fact_ids": ["prompt.txt"], "source_ids": [], "rule_or_practice_or_inference": "evidentiary inference", "applicability_date": null, "status": "limited methodological conclusion", "confidence_basis": "Search scope and completeness are unspecified"},
+    {"claim_id": "C2", "proposition": "Whether law regulates X remains unresolved", "fact_ids": ["prompt.txt"], "source_ids": [], "rule_or_practice_or_inference": "inference", "applicability_date": null, "status": "CHƯA XÁC MINH", "confidence_basis": "No activity description or operative legal texts"}
+  ],
+  "validity_ledger": [{"provision": null, "version": null, "effective_interval": null, "event": null, "transition": null, "evidence": null, "status": "unknown; no identified provision or event date"}],
+  "performed_steps": ["Separated reported search miss from requested conclusion", "Tested alternative explanation of incomplete search or terminology", "Provided concrete future verification sequence", "Source gate: no sources supplied or retrieved; no authority verified", "Validity gate: unresolved because no provision and no event date", "Quality audit: retained limited conclusion and explicit offline limits"],
+  "actual_tools": ["functions.exec", "tools.exec_command"],
+  "limitations": ["Controlled offline execution", "No website or legal text accessed", "No source authenticity or validity verified", "No exhaustive research", "No legal conclusion that X is or is not regulated"],
+  "audit_disposition": "LIMITED"
+}

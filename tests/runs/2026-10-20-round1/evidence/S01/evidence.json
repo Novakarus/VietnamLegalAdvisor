@@ -1,0 +1,13 @@
+{
+  "test_id": "S01",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "legal-source-verification", "legal-quality-audit"],
+  "source_ledger": [{"source_id":"S1","official_title":null,"identifier":"Luật F-ZZZ-9999","issuer":null,"document_type":null,"issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":"Điều 999","URL_or_file_page":null,"retrieved_at":null,"evidence_excerpt_or_summary":"Khách hàng cung cấp định danh và nói không có kết quả tìm kiếm; không có nguyên văn.","access_status":"OFFLINE; chưa truy xuất văn bản","verification_status":"CHƯA XÁC MINH","limitations":"Không được suy ra không tồn tại từ tình huống tìm kiếm không có kết quả."}],
+  "claim_ledger": [{"claim_id":"C1","proposition":"Có thể bổ sung nguyên văn Điều 999 từ định danh đã cho","fact_ids":["prompt.txt"],"source_ids":["S1"],"rule_or_practice_or_inference":"Yêu cầu trích dẫn; chưa có bằng chứng","applicability_date":null,"status":"Chưa đủ cơ sở; không bổ sung lời trích","confidence_basis":"Không có văn bản gốc"}],
+  "validity_ledger": [{"source_id":"S1","provision":"Điều 999","status":"CHƯA XÁC MINH","event_date":null,"reason":"Không xác định được văn bản; không áp dụng quy phạm hoặc đưa kết luận pháp lý nên không mở tuyến xác minh hiệu lực riêng."}],
+  "tools": ["functions.exec -> exec_command: đọc tệp cục bộ và liệt kê plugin", "functions.exec -> exec_command: đọc protocol, source-access, hai specialist", "functions.exec -> exec_command: lưu answer.md, evidence.json, tool_calls.md"],
+  "limitations": ["Không truy cập mạng theo yêu cầu kiểm thử", "Kết quả tìm kiếm thất bại là tình huống do prompt cung cấp, không phải thao tác thực tế", "Không có nội dung điều luật, nguồn chính thức hoặc ngày sự kiện để xác minh", "Kiểm tra chất lượng cùng phiên; không có đánh giá độc lập"]
+}

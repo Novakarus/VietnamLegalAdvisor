@@ -1,0 +1,20 @@
+{
+  "test_id": "O01",
+  "date": "2026-10-21",
+  "timezone": "Asia/Bangkok",
+  "model": null,
+  "model_note": "Exact runtime model not exposed to this invocation",
+  "mode": "OFFLINE",
+  "observed_route": ["instructions", "vietnam-legal-research", "legal-source-verification", "legal-validity-verification", "legal-quality-audit"],
+  "matter_brief": {"request": "Latest regulation with exact article, without Internet or documents", "known_facts": ["No Internet", "No legal texts"], "assumptions": ["Vietnamese jurisdiction provisionally assumed"], "unknowns": ["Legal subject", "Event date", "Sector/locality", "Instrument and provision"]},
+  "source_ledger": [],
+  "claim_ledger": [
+    {"claim_id": "C01", "proposition": "Latest rule and exact article cannot be established from supplied inputs", "fact_ids": ["prompt"], "source_ids": [], "rule_or_practice_or_inference": "evidentiary limitation", "applicability_date": "2026-10-21", "status": "LIMITED", "confidence_basis": "No subject or legal text supplied; no retrieval performed"},
+    {"claim_id": "C02", "proposition": "Newest instrument must not be assumed applicable without checking the event date and transition", "fact_ids": [], "source_ids": [], "rule_or_practice_or_inference": "verification methodology, not substantive legal authority", "applicability_date": null, "status": "methodological caution", "confidence_basis": "Shared protocol and validity workflow"}
+  ],
+  "validity_ledger": [{"provision": null, "version": null, "effective_interval": null, "event": null, "transition": null, "evidence": null, "status": "CHƯA XÁC MINH", "missing": "Identified instrument, operative text, changes and event date"}],
+  "performed_steps": {"research": "Framed missing issue and factual predicates; provided immediate five-step verification sequence; no search performed", "source_verification": "No legal citations or source text available; withheld source identity and pinpoint rather than inventing them", "validity_verification": "All temporal applicability fields unresolved; no valid status assigned", "quality_audit": "Checked every proposed dispositive claim; no substantive law or exact article asserted; actionable sequence and open items retained"},
+  "actual_tools": ["functions.exec -> exec_command (four local reads/writes batches including this artifact creation)"],
+  "limitations": ["Controlled offline session", "No legal documents", "Undefined topic", "No current-law or pinpoint verification", "No network, external action, scheduler or agent used"],
+  "disposition": "LIMITED"
+}

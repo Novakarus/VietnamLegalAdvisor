@@ -1,11 +1,13 @@
-# Giấy phép nguồn — Vietnam Legal Advisor
+# Giấy phép — Vietnam Legal Advisor
 
-Phiên bản 1.0. Công bố và có hiệu lực từ ngày 22/10/2026. Nhà phát hành: Thanh Nguyen.
+Copyright 2026 Thanh Nguyen.
 
-1. Phạm vi: áp dụng cho bộ kỹ năng trong `plugin/`, website trong `docs/`, tài liệu, kịch bản và tài sản do Nhà phát hành sở hữu hoặc có quyền cấp phép trong kho này. Thành phần bên thứ ba, văn bản pháp luật, nội dung thuộc phạm vi công cộng, dữ liệu đầu vào và kết quả của người sử dụng không mặc nhiên thuộc phạm vi giấy phép này.
-2. Quyền sử dụng: cho phép xem, tải, sao chép, cài đặt, sử dụng, lưu dự phòng và sửa đổi nội bộ, kể cả để phục vụ công việc thương mại. Quyền sử dụng kết quả cho công việc thương mại không phải quyền phân phối lại bộ kỹ năng. Việc sử dụng kết quả còn phụ thuộc quyền đối với đầu vào, quyền bên thứ ba và điều kiện nền tảng áp dụng.
-3. GitHub: quyền xem và fork kho công khai theo Điều khoản dịch vụ GitHub được bảo lưu; không yêu cầu email chấp thuận cho các hành vi nằm trong phạm vi quyền đó. Giấy phép này không thu hẹp quyền đã được cấp hợp pháp hoặc quyền bắt buộc theo pháp luật.
-4. Phân phối lại: ngoài các quyền nêu trên, trước khi phát hành, bán hoặc cung cấp cho người khác toàn bộ hay một phần bộ kỹ năng, bản sao plugin hoặc bản sửa đổi chứa các thành phần đó, phải email ntthanh912@gmail.com và nhận chấp thuận bằng văn bản qua email của Thanh Nguyen. Yêu cầu cần nêu phiên bản, thành phần, hình thức, đối tượng nhận và mục đích. Gửi yêu cầu hoặc không được trả lời không phải chấp thuận.
-5. Điều kiện: giữ thông báo quyền và giấy phép; chỉ phân phối trong phạm vi được chấp thuận; không tự nhận bản sửa đổi là bản chính thức hoặc được bảo trợ. Giấy phép này không cấp quyền sử dụng nhãn hiệu để gây nhầm lẫn về nguồn gốc. Quyền đối với phần đóng góp hoặc thành phần bên thứ ba tuân theo giấy phép tương ứng.
-6. Giới hạn: không bảo đảm đầu ra luôn đúng, độc quyền hoặc không xâm phạm quyền bên thứ ba; không có miễn trừ trách nhiệm trái pháp luật. Luật Việt Nam; tranh chấp tại Tòa án có thẩm quyền theo pháp luật; quyền bắt buộc được bảo lưu. Ngôn ngữ chính thức là tiếng Việt. Điều khoản sử dụng tại https://novakarus.github.io/VietnamLegalAdvisor/terms/ quy định thêm về sử dụng sản phẩm.
-7. Đây là giấy phép riêng cho nguồn công khai có điều kiện, không phải tuyên bố cấp phép mã nguồn mở. Không áp dụng hồi tố để thu hẹp quyền đã cấp hợp pháp. Bản giấy phép mới phải ghi phiên bản và ngày hiệu lực.
+**Phiên bản 0.70.0. Có hiệu lực từ 2026-11-04 (ngày Nhà phát hành duyệt).**
+
+Nội dung của gói này (kỹ năng, hướng dẫn, mô tả) được cấp phép theo Creative Commons Attribution 4.0 International (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/ (toàn văn: https://creativecommons.org/licenses/by/4.0/legalcode). Cần ghi công Thanh Nguyen, ghi rõ nếu bạn đã sửa đổi, và không ngụ ý được Nhà phát hành bảo trợ.
+
+Không được cấp phép: biểu trưng `assets/vietnam-legal-advisor-icon-v4.png` (nhãn nhận diện của dự án), tên "Vietnam Legal Advisor", và mọi nội dung bên thứ ba. Gói không chứa văn bản pháp luật.
+
+Phần mã nguồn công cụ trong kho (scripts, kiểm thử) theo Apache License 2.0 và không nằm trong gói này. Bản đồ giấy phép đầy đủ ở LICENSE.md trong kho nguồn.
+
+Một phần nội dung được soạn với sự hỗ trợ của công cụ AI. Kết quả của công cụ không được bảo đảm là đúng, đầy đủ hoặc còn hiệu lực và không thay thế đại diện pháp lý có giấy phép.

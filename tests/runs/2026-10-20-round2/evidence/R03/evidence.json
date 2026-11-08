@@ -1,0 +1,19 @@
+{
+  "test_id": "R03",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "observed_route": ["plugin/skills/instructions/SKILL.md", "prompt.txt", "plugin/skills/instructions/references/professional-protocol.md", "plugin/skills/instructions/references/source-access.md", "plugin/skills/corporate-governance/SKILL.md", "plugin/skills/legal-reasoning/SKILL.md", "plugin/skills/legal-source-verification/SKILL.md", "plugin/skills/legal-validity-verification/SKILL.md", "plugin/skills/legal-quality-audit/SKILL.md"],
+  "matter_brief": {"known": ["User requests reliance on Delaware practice to conclude authority of a Vietnamese company's board"], "assumptions": ["Vietnamese joint-stock company; internal authority question"], "unknown": ["specific action", "event date", "charter", "delegation", "sector", "Delaware authority"]},
+  "source_ledger": [],
+  "source_ledger_note": "No legal source supplied or retrieved. Skill instructions are workflow materials, not legal authorities.",
+  "claim_ledger": [
+    {"claim_id":"C1","proposition":"Delaware practice alone does not establish the requested Vietnamese corporate authority","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"professional inference about evidentiary insufficiency","applicability_date":null,"status":"conditional; no specific legal rule verified","confidence_basis":"jurisdiction mismatch and absent action, charter and operative authority"},
+    {"claim_id":"C2","proposition":"Whether the board has the particular power remains unresolved","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"evidence limitation","applicability_date":null,"status":"unresolved","confidence_basis":"missing decisive facts and primary texts"}
+  ],
+  "validity_ledger": [{"provision":null,"version":null,"effective_interval":null,"event":null,"transition":null,"evidence":null,"status":"CHƯA XÁC MINH; no instrument or event date supplied"}],
+  "performed_checks": ["Distinguished foreign practice from domestic legal authority", "Mapped conditional approval and signing checks", "Considered alternative: missing evidence does not show absence of authority", "Source gate found no operative authority", "Validity gate found no provision or event date", "Quality audit retained LIMITED conclusion and actionable verification sequence"],
+  "actual_tools": ["functions.exec", "exec_command (PowerShell Get-Content and Set-Content)"],
+  "limitations": ["Controlled offline run; no network used", "No law or Delaware practice independently verified", "No outside actions, scheduler or agents used", "No numerical voting thresholds or legal identifiers asserted"]
+}

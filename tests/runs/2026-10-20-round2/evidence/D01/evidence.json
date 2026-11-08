@@ -1,0 +1,21 @@
+{
+  "test_id": "D01",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "DOCUMENT_ONLY",
+  "observed_route": ["instructions", "prompt.txt", "fixtures.md", "professional-protocol", "source-access", "legal-due-diligence", "legal-quality-audit (read)", "legal-source-verification", "legal-validity-verification", "legal-due-diligence (application)", "legal-quality-audit (application)"],
+  "matter_brief": {"objective":"Assess D-01 and whether entity registration suffices", "jurisdiction":"Vietnam assumed from plugin context; fictional evidence only", "event_date":null, "review_date":"2026-10-20", "party_role":null, "sector":null, "transaction_perimeter":null, "version":"supplied fixtures.md; no version date stated"},
+  "source_ledger": [{"source_id":"S1","official_title":null,"identifier":"D-01","issuer":null,"document_type":"synthetic data-room description","issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":"D-01 project data room","URL_or_file_page":"fixtures.md, unpaginated","retrieved_at":"2026-10-20 Asia/Bangkok; exact time not captured","evidence_excerpt_or_summary":"Unverified entity registration described; land, project, sector, environmental and construction documents missing; seller asserts no litigation; no independent search available.","access_status":"read supplied file","verification_status":"description observed; underlying documents and authenticity unverified","limitations":"Fictional evidence, not law; no underlying registration actually inspected"}],
+  "claim_ledger": [
+    {"claim_id":"C1","proposition":"Record cannot support clean project-title or complete legality opinion","fact_ids":["D-01"],"source_ids":["S1"],"rule_or_practice_or_inference":"evidence-based inference","applicability_date":"2026-10-20 review","status":"supported within supplied record","confidence_basis":"Express missing files and fixture limitation"},
+    {"claim_id":"C2","proposition":"Seller no-litigation statement is not independently verified","fact_ids":["D-01"],"source_ids":["S1"],"rule_or_practice_or_inference":"fact about supplied evidence","applicability_date":null,"status":"supported description only","confidence_basis":"Fixture expressly states no independent search"},
+    {"claim_id":"C3","proposition":"Missing records do not establish a violation","fact_ids":["D-01"],"source_ids":["S1"],"rule_or_practice_or_inference":"epistemic inference","applicability_date":null,"status":"limited inference","confidence_basis":"No operative law or underlying factual review"}
+  ],
+  "validity_ledger": [{"provision":null,"version":null,"effective_interval":null,"event":null,"transition":null,"evidence":null,"status":"CHUA XAC MINH; no real statutory source or event date; no temporal legal conclusion made","needed":"Project sector/locality/type/stage/event dates and official original, amendment, repeal and transition texts"}],
+  "source_gate":{"result":"LIMITED","performed":"Compared D-01 statements with supplied context; confirmed fictional nature; no statutory citation or URL to authenticate; no claimed official source verification"},
+  "validity_gate":{"result":"UNRESOLVED","performed":"Separated review date from unknown event dates; no real instrument available; F-A/F-B irrelevant and excluded"},
+  "audit":{"disposition":"LIMITED","performed":"Checked dispositive claims against S1, legal/commercial separation, missing-document versus illegality distinction, real-law and underlying-record limits, practical remediation and owners; no legal clean opinion released"},
+  "actual_tools":["functions.exec","tools.exec_command: PowerShell Get-Content and Set-Content"],
+  "limitations":["No network used under controlled DOCUMENT_ONLY instruction","No official registers or independent dispute searches","No underlying entity registration inspected","No project-specific statutory approval sequence established","No external action, scheduler or agents"]
+}

@@ -1,0 +1,43 @@
+{
+  "test_id": "C03",
+  "date": "2026-11-04",
+  "timezone": "Asia/Bangkok",
+  "model": "claude-sonnet-5-5",
+  "runner": "Claude (phiên con Claude Code, một phiên riêng cho mỗi ca)",
+  "mode": "OFFLINE",
+  "actual_observed_route": [
+    "instructions",
+    "vietnam-contract-review",
+    "opposing-counsel-review",
+    "legal-quality-audit"
+  ],
+  "self_reported_route": [
+    "instructions",
+    "vietnam-contract-review",
+    "opposing-counsel-review",
+    "legal-quality-audit"
+  ],
+  "self_reported_mode": "OFFLINE",
+  "tools_available": [
+    "Read",
+    "Edit"
+  ],
+  "tools_called": [
+    "Read"
+  ],
+  "n_tool_calls": 6,
+  "files_read": [
+    "plugin/skills/instructions/SKILL.md",
+    "plugin/skills/instructions/references/professional-protocol.md",
+    "plugin/skills/instructions/references/source-access.md",
+    "plugin/skills/vietnam-contract-review/SKILL.md",
+    "plugin/skills/opposing-counsel-review/SKILL.md",
+    "plugin/skills/legal-quality-audit/SKILL.md"
+  ],
+  "transcript_sha256": "8f90ac7b09d7067de6fd4f6c950a37a4f96316b13a3d5cf44a2ad58c65b1498b",
+  "limitations": [
+    "Người chạy và người chấm cùng họ mô hình (Claude)",
+    "Không chạy trên host sản phẩm thật; plugin được cài dưới dạng thư mục file",
+    "Phiên con thuộc loại có sẵn prompt hệ thống riêng của Claude Code (cấu hình status line), khác prompt của host sản phẩm"
+  ]
+}

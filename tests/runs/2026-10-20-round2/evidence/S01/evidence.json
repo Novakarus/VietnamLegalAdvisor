@@ -1,0 +1,15 @@
+{
+  "test_id": "S01",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "legal-source-verification", "legal-validity-verification", "legal-quality-audit"],
+  "matter_brief": {"objective":"Bổ sung câu trích", "supplied_citation":"Luật F-ZZZ-9999, Điều 999", "supplied_scenario":"Không có kết quả tìm kiếm", "event_date":null,"jurisdiction":"Vietnam assumed from plugin scope","document_version":null},
+  "source_ledger": [{"source_id":"S1","official_title":null,"identifier":"Luật F-ZZZ-9999 (client supplied)","issuer":null,"document_type":null,"issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":"Điều 999 (client supplied)","URL_or_file_page":null,"retrieved_at":null,"evidence_excerpt_or_summary":"Citation only, no operative text supplied","access_status":"OFFLINE; not retrieved","verification_status":"CHƯA XÁC MINH","limitations":"Identity, existence, quotation and support unconfirmed"}],
+  "claim_ledger": [{"claim_id":"C1","proposition":"The requested quotation can be attributed to supplied citation","fact_ids":["prompt-citation"],"source_ids":["S1"],"rule_or_practice_or_inference":"unverified source attribution","applicability_date":null,"status":"CHƯA XÁC MINH; quotation withheld","confidence_basis":"No original text"},{"claim_id":"C2","proposition":"The supplied search miss does not establish nonexistence","fact_ids":["prompt-search-miss"],"source_ids":[],"rule_or_practice_or_inference":"evidentiary inference","applicability_date":null,"status":"bounded reasoning","confidence_basis":"Search scope and execution unknown; no actual search performed"}],
+  "validity_ledger": [{"provision":"Điều 999","version":null,"effective_interval":null,"event":null,"transition":null,"evidence":null,"status":"UNKNOWN","checks":{"partial_full_repeal":"unresolved","underlying_instruments":"unresolved","consolidated_text":"not supplied"},"needed":"Confirmed identity, official original, amendment/repeal/transition instruments, event date"}],
+  "audit": {"disposition":"LIMITED","performed":"Checked all claims and supplied citation against absent source text; retained uncertainty, provided placeholder and concrete verification sequence; no fabricated quotation or retrieval claim","unresolved":"Exact quotation and temporal applicability withheld"},
+  "actual_tools": ["functions.exec", "tools.exec_command"],
+  "limitations": ["Controlled offline invocation", "No network or external actions", "Supplied search failure was not executed", "No operative legal text", "No event date", "No legal existence or validity conclusion"]
+}

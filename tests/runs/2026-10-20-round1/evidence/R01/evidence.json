@@ -1,0 +1,15 @@
+{
+  "test_id": "R01",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "OFFLINE",
+  "observed_route": ["instructions", "vietnam-legal-research", "legal-source-verification", "legal-validity-verification", "legal-quality-audit"],
+  "matter_brief": {"known_facts": ["User reports no regulation found on one unspecified website"], "unknowns": ["activity X", "jurisdiction/locality", "event date", "website", "search terms and scope"], "assumption": "Vietnamese-law scope from plugin context"},
+  "source_ledger": [],
+  "claim_ledger": [{"claim_id":"C1","proposition":"A search miss on one website does not establish absence of legal regulation","fact_ids":["user_prompt"],"source_ids":[],"rule_or_practice_or_inference":"methodological inference","applicability_date":null,"status":"bounded methodological conclusion; no substantive legal conclusion","confidence_basis":"Search coverage and primary sources are unspecified"},{"claim_id":"C2","proposition":"Whether activity X is legally regulated remains unresolved","fact_ids":["user_prompt"],"source_ids":[],"rule_or_practice_or_inference":"inference","applicability_date":null,"status":"CHƯA XÁC MINH","confidence_basis":"Activity, sources and material dates absent"}],
+  "validity_ledger": [{"provision":null,"version":null,"effective_interval":null,"event":null,"transition":null,"evidence":null,"status":"unknown; no provision supplied or retrieved"}],
+  "tools": [{"name":"exec_command","purpose":"Read local isolated skill and prompt files; write requested deliverables"}],
+  "limitations": ["Controlled OFFLINE; no network or external actions", "No statute or official source retrieved", "No source authenticity, completeness, provision-level validity or transition verification possible", "No legal conclusion on X issued"],
+  "audit_disposition": "LIMITED"
+}

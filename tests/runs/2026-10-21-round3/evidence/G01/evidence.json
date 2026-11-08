@@ -1,0 +1,116 @@
+{
+  "test_id": "G01",
+  "date": "2026-10-21",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown; exact model not exposed",
+  "mode": "OFFLINE",
+  "observed_route": [
+    "instructions",
+    "corporate-governance",
+    "legal-document-drafting",
+    "legal-source-verification",
+    "legal-validity-verification",
+    "legal-quality-audit"
+  ],
+  "matter_brief": {
+    "assumptions": [
+      "Vietnamese entity context"
+    ],
+    "objective": "Draft related-party transaction approval flow",
+    "unknowns": [
+      "legal form",
+      "charter",
+      "ownership",
+      "transaction parties and value",
+      "event dates",
+      "signatory authority"
+    ],
+    "known_facts": [
+      "No charter or legal form supplied"
+    ]
+  },
+  "source_ledger": [
+    {
+      "verification_status": "request observed, not legal authority",
+      "effective_date": null,
+      "pinpoint": "entire prompt",
+      "limitations": "No statutes or corporate documents supplied",
+      "issuer": null,
+      "retrieved_at": "2026-10-21 Asia/Bangkok; exact time not recorded",
+      "source_id": "S1",
+      "identifier": "prompt.txt",
+      "evidence_excerpt_or_summary": "Request approval flow for related-party transaction; legal form and charter not supplied",
+      "issue_date": null,
+      "URL_or_file_page": "prompt.txt",
+      "document_type": "user request",
+      "repeal_or_amendment_links": null,
+      "access_status": "local read",
+      "official_title": null
+    }
+  ],
+  "claim_ledger": [
+    {
+      "rule_or_practice_or_inference": "scope limitation",
+      "status": "LIMITED",
+      "fact_ids": [
+        "no charter",
+        "no legal form"
+      ],
+      "confidence_basis": "Directly missing material inputs",
+      "source_ids": [
+        "S1"
+      ],
+      "applicability_date": null,
+      "proposition": "Final competent body, voting requirements and signatory cannot be established from supplied facts",
+      "claim_id": "C1"
+    },
+    {
+      "rule_or_practice_or_inference": "professional draft recommendation, not verified statutory mandate",
+      "status": "conditional",
+      "fact_ids": [],
+      "confidence_basis": "Governance workflow; exact rules deliberately unresolved",
+      "source_ids": [],
+      "applicability_date": null,
+      "proposition": "Proposed intake-conflict-authority-approval-signature-records flow",
+      "claim_id": "C2"
+    }
+  ],
+  "validity_ledger": [
+    {
+      "transition": null,
+      "status": "CHƯA XÁC MINH",
+      "event": null,
+      "evidence": null,
+      "needed": "Official operative texts and amendment/repeal/transition chain; event dates; entity form and charter",
+      "version": null,
+      "provision": "related-party definition, approval body, thresholds, voting, representation",
+      "effective_interval": null
+    }
+  ],
+  "audit": {
+    "unresolved": [
+      "Authority and charter versus mandatory law",
+      "Temporal applicability",
+      "Correct approval document and signatory"
+    ],
+    "performed": [
+      "Checked all decisive claims against missing source/validity evidence",
+      "Removed numeric thresholds and statutory citations",
+      "Checked draft fields and signatory distinction",
+      "Checked requested flow and conditional entity branches provided"
+    ],
+    "disposition": "LIMITED"
+  },
+  "actual_tools": [
+    "functions.exec orchestrating tools.exec_command: local read and listing",
+    "functions.exec orchestrating tools.exec_command: local skill reads",
+    "functions.exec orchestrating tools.exec_command: write output files",
+    "functions.exec orchestrating tools.exec_command: confirm output files"
+  ],
+  "limitations": [
+    "Controlled offline; no browsing despite potentially available tool definitions",
+    "No external actions or agents",
+    "No statute identity, text or validity verified",
+    "No independent review or legal final approval"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "test_id": "R03",
+  "date": "2026-10-21",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown; exact model not exposed",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "corporate-governance", "legal-source-verification", "legal-validity-verification", "corporate-governance application", "legal-quality-audit"],
+  "matter_brief": {"known": ["User requests Delaware practice as basis to conclude Vietnamese board authority"], "unknown": ["specific power/action", "entity form", "charter", "ownership", "event date", "delegation", "signatory", "Delaware rule and source"], "assumptions": []},
+  "source_ledger": [],
+  "source_ledger_note": "No legal source supplied or retrieved; plugin instructions are workflow guidance, not substantive legal authority. No identifiers or URLs invented.",
+  "claim_ledger": [
+    {"claim_id":"C1","proposition":"Delaware practice alone does not establish Vietnamese corporate authority","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"jurisdictional analytical boundary under professional protocol","applicability_date":null,"status":"bounded methodological statement; no specific Vietnamese-law opinion verified","confidence_basis":"No domestic source or specific foreign practice supplied"},
+    {"claim_id":"C2","proposition":"The board has the unspecified authority","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"requested legal conclusion","applicability_date":null,"status":"CHƯA XÁC MINH; withheld","confidence_basis":"Missing action, law, charter, event date and representation evidence"}
+  ],
+  "validity_ledger": [{"provision":null,"version":null,"effective_interval":null,"event":null,"transition":null,"evidence":null,"status":"unknown; no operative instruments retrieved; amendment, repeal and transition checks unavailable offline"}],
+  "authority_analysis": {"competent_body":"unknown", "charter_vs_mandatory_law":"unverified", "signatory_authority":"unverified separately", "procedure":"unknown; documents required listed in answer"},
+  "audit": {"disposition":"LIMITED","performed":"Checked dispositive claims, unsupported authority conclusion removed, no fabricated citations or validity claims; missing facts and actionable verification sequence retained","remaining_blockers":["No specific power", "No operative legal text or company documents", "No event date"],"repair":"Bounded answer replaces requested categorical conclusion"},
+  "actual_tools": ["functions.exec orchestration", "tools.exec_command: local PowerShell reads, scoped file inventory, output writes and verification"],
+  "limitations": ["Controlled offline run; no network or external actions", "Access limited to R03 session folder", "No foreign-law opinion or domestic authority confirmation", "No independent audit or agents"]
+}

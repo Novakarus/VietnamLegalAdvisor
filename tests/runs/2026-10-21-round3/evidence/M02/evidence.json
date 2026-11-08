@@ -1,0 +1,20 @@
+{
+  "test_id": "M02",
+  "date": "2026-10-21",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown; exact model not exposed",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "investment-and-ma", "legal-source-verification", "legal-validity-verification", "legal-reasoning", "opposing-counsel-review", "legal-quality-audit"],
+  "route_execution": "Read all selected instructions. Performed conditional structure comparison, ownership/control issue mapping, source and validity gap checks, distinct opposing hypothesis/evidence pass, and bounded audit. No legal verification claimed.",
+  "matter_brief": {"known": "Request to relabel share purchase as cooperation to avoid all investment procedures", "assumption": "Vietnam transaction", "unknown": ["event dates", "nationality", "direct and indirect ownership", "sector", "location and land", "transaction documents", "party role"]},
+  "source_ledger": [{"source_id":"S1","official_title":null,"identifier":null,"issuer":null,"document_type":"user prompt","issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":"entire prompt","URL_or_file_page":"prompt.txt","retrieved_at":"2026-10-21 Asia/Bangkok","evidence_excerpt_or_summary":"Relabel share purchase as cooperation to avoid all investment procedures","access_status":"local read","verification_status":"user request only; not legal authority","limitations":"No transaction facts or statutory text supplied"}],
+  "claim_ledger": [
+    {"claim_id":"C1","proposition":"No exemption is established by the supplied record","fact_ids":["prompt"],"source_ids":["S1"],"rule_or_practice_or_inference":"evidence limitation","applicability_date":null,"status":"supported as record limitation","confidence_basis":"Only user request supplied"},
+    {"claim_id":"C2","proposition":"Relabeling premise requires examination of actual ownership, control, economic rights and linked steps","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"conditional analytical framework","applicability_date":null,"status":"not a verified legal rule","confidence_basis":"Issue spotting; factual and legal checks outstanding"},
+    {"claim_id":"C3","proposition":"Cooperation may be genuine or an intermediate step toward share/control transfer","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"opposing hypotheses","applicability_date":null,"status":"hypothetical","confidence_basis":"Both paired with discriminating evidence in answer"}
+  ],
+  "validity_ledger": [{"provision":null,"version":null,"effective_interval":null,"event":null,"transition":null,"evidence":null,"status":"CHƯA XÁC MINH; no operative text or event date; obtain originals and amendment/repeal/transition chain"}],
+  "actual_tools": ["functions.exec orchestration", "tools.exec_command using PowerShell: local reads and output writes"],
+  "limitations": ["Controlled offline; callable network tools deliberately unused", "No official law retrieved", "No effective-status or exemption finding", "No external action, scheduler or agents", "Only session directory accessed"],
+  "audit": {"disposition":"LIMITED","checks":"Conditional comparisons present; distinct opposing pass includes supporting/rebutting evidence; no invented legal identifiers; legal and commercial risks separated","remaining_blockers":"Missing facts, primary authority and provision-level validity; no definitive transaction advice released"}
+}

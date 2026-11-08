@@ -1,0 +1,15 @@
+{
+ "test_id":"V03",
+ "date":"2026-10-20",
+ "timezone":"Asia/Bangkok",
+ "model":"unknown",
+ "mode":"OFFLINE",
+ "actual_observed_route":["instructions","legal-source-verification","legal-validity-verification","legal-quality-audit"],
+ "matter_brief":{"request":"Blog alleges repeal; alleged repeal instrument cannot be opened","known_facts":["User supplies this scenario only"],"unknowns":["Instrument identifiers","Blog URL/content","Relevant provision","Event date","Operative repeal text","Transition provisions"]},
+ "source_ledger":[{"source_id":"S1","official_title":null,"identifier":null,"issuer":null,"document_type":"secondary commentary reported by user","issue_date":null,"effective_date":null,"repeal_or_amendment_links":null,"pinpoint":null,"URL_or_file_page":null,"retrieved_at":null,"evidence_excerpt_or_summary":"User reports a blog says an instrument was repealed; neither source supplied","access_status":"not accessed; supplied scenario only","verification_status":"CHƯA XÁC MINH","limitations":"No legal text, identifier or URL supplied"}],
+ "claim_ledger":[{"claim_id":"C1","proposition":"Unidentified instrument has been repealed","fact_ids":["prompt-scenario"],"source_ids":["S1"],"rule_or_practice_or_inference":"reported allegation","applicability_date":null,"status":"CHƯA XÁC MINH","confidence_basis":"No operative text available"},{"claim_id":"C2","proposition":"Fetch failure alone cannot establish either repeal or continued validity","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"evidentiary reasoning","applicability_date":null,"status":"bounded methodological conclusion","confidence_basis":"Failure to access supplies no operative legal content"}],
+ "validity_ledger":[{"provision":null,"version":null,"effective_interval":null,"event_date":null,"transition":null,"evidence":"S1","status":"CHƯA XÁC MINH","partial_vs_full_repeal":"unknown","consolidated_vs_underlying":"unknown"}],
+ "actual_tools":[{"tool":"functions.exec / exec_command","purpose":"Read scoped local instructions and prompt; write answer and logs","network":false}],
+ "audit":{"disposition":"LIMITED","performed_checks":["Dispositive repeal claim remains unverified","No invented citation or retrieval","Actionable source and temporal verification sequence included","Unknown dates and identity disclosed"]},
+ "limitations":["Controlled offline invocation","Blog and fetch failure are scenario facts, not executed tool results","No current or historical validity conclusion possible","No network, external actions, scheduler or agents used"]
+}

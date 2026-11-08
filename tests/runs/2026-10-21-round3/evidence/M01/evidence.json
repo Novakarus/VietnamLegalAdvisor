@@ -1,0 +1,21 @@
+{
+  "test_id": "M01",
+  "date": "2026-10-21",
+  "timezone": "Asia/Bangkok",
+  "exact_model": "unknown; not exposed",
+  "mode": "OFFLINE",
+  "actual_observed_route": ["instructions", "investment-and-ma", "legal-source-verification", "legal-validity-verification", "legal-reasoning", "opposing-counsel-review", "legal-quality-audit"],
+  "matter_brief": {"known": ["foreign investor", "purchase described as 60% of project"], "assumption": "Vietnam jurisdiction", "unknown": ["sector", "nationality", "location", "transaction object", "ownership and beneficial control", "land", "event date"]},
+  "source_ledger": [],
+  "source_gate": {"status": "CHƯA XÁC MINH", "reason": "No legal authority or transaction records supplied or retrieved; controlled offline invocation", "retrieval": "none"},
+  "claim_ledger": [
+    {"claim_id":"C1","proposition":"No certain exemption can be selected on supplied facts","fact_ids":["prompt"],"source_ids":[],"rule_or_practice_or_inference":"inference about evidence sufficiency","applicability_date":null,"status":"bounded conclusion","confidence_basis":"Material facts and operative sources absent"},
+    {"claim_id":"C2","proposition":"Three alternative transaction structures require different evidence and conditional approval checks","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"issue spotting; no operative legal requirement asserted","applicability_date":null,"status":"provisional","confidence_basis":"Conditional comparison only"},
+    {"claim_id":"C3","proposition":"Asset label alone does not establish exemption","fact_ids":[],"source_ids":[],"rule_or_practice_or_inference":"hypothesis to test","applicability_date":null,"status":"CHƯA XÁC MINH","confidence_basis":"Requires transaction scope, control, land and license evidence"}
+  ],
+  "validity_ledger": [{"provision":null,"version":null,"effective_interval":null,"event":null,"transition":null,"evidence":null,"status":"unknown; no operative instruments and event date"}],
+  "opposing_pass": {"position":"choose a route certainly without approval","challenge":"Asset or other labels may not match transferred project/control rights","support_to_seek":"Contracts, steps, voting/economic rights, land and license records","rebuttal_to_seek":"Evidence of independent asset scope and verified applicable conditions","status":"conditional hypotheses only; no adverse fact or rule established"},
+  "audit": {"disposition":"LIMITED","checks":["No exemption, numerical threshold or approval obligation presented as verified", "Three-way comparison includes rights, evidence, approval questions and closing dependencies", "Opposing hypothesis paired with supporting and rebutting evidence", "Legal and commercial risks separated", "No source or validity verification claimed"],"remaining_limitations":["No official law text", "No transaction documents", "No event date"]},
+  "actual_tools": ["functions.exec orchestrating tools.exec_command", "tools.exec_command: local PowerShell reads and writes only"],
+  "limitations": ["Controlled OFFLINE; available web capabilities not used", "No external actions or agents", "No current-law certification", "No preferred transaction structure supported"]
+}

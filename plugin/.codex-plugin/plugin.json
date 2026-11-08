@@ -17,7 +17,7 @@
     "shortDescription": "Vietnamese legal workflows"
   },
   "name": "gpt-20c5e24b4c10dd0e31dd8b7cb4f7bfe6",
-  "version": "0.69.3",
+  "version": "0.70.0",
   "description": "Modular Vietnamese legal research, review, drafting and verification for professional teams.",
   "author": {
     "name": "Thanh Nguyen"

@@ -1,0 +1,52 @@
+{
+  "test_id": "M01",
+  "date": "2026-11-04",
+  "timezone": "Asia/Bangkok",
+  "model": "claude-sonnet-5-5",
+  "runner": "Claude (phiên con Claude Code, một phiên riêng cho mỗi ca)",
+  "mode": "OFFLINE",
+  "actual_observed_route": [
+    "instructions",
+    "investment-and-ma",
+    "legal-reasoning",
+    "opposing-counsel-review",
+    "legal-source-verification",
+    "legal-validity-verification",
+    "legal-quality-audit"
+  ],
+  "self_reported_route": [
+    "instructions",
+    "investment-and-ma",
+    "legal-reasoning",
+    "opposing-counsel-review",
+    "legal-source-verification",
+    "legal-validity-verification",
+    "legal-quality-audit"
+  ],
+  "self_reported_mode": "OFFLINE",
+  "tools_available": [
+    "Read",
+    "Edit"
+  ],
+  "tools_called": [
+    "Read"
+  ],
+  "n_tool_calls": 9,
+  "files_read": [
+    "plugin/skills/instructions/SKILL.md",
+    "plugin/skills/instructions/references/professional-protocol.md",
+    "plugin/skills/instructions/references/source-access.md",
+    "plugin/skills/investment-and-ma/SKILL.md",
+    "plugin/skills/legal-reasoning/SKILL.md",
+    "plugin/skills/opposing-counsel-review/SKILL.md",
+    "plugin/skills/legal-source-verification/SKILL.md",
+    "plugin/skills/legal-validity-verification/SKILL.md",
+    "plugin/skills/legal-quality-audit/SKILL.md"
+  ],
+  "transcript_sha256": "72f0228f2b84b513660b7950e90a630b47fe1eabb5445b80f3c9a125e8ed9470",
+  "limitations": [
+    "Người chạy và người chấm cùng họ mô hình (Claude)",
+    "Không chạy trên host sản phẩm thật; plugin được cài dưới dạng thư mục file",
+    "Phiên con thuộc loại có sẵn prompt hệ thống riêng của Claude Code (cấu hình status line), khác prompt của host sản phẩm"
+  ]
+}

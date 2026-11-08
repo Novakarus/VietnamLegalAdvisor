@@ -1,0 +1,25 @@
+{
+  "test_id": "V01",
+  "date": "2026-10-20",
+  "timezone": "Asia/Bangkok",
+  "model": "unknown",
+  "mode": "DOCUMENT_ONLY",
+  "actual_observed_route": ["instructions", "legal-source-verification", "legal-validity-verification", "legal-quality-audit"],
+  "matter": {"filing_date": "2030-02-15", "review_date": "2030-03-15", "evidence_type": "synthetic fictional instruments, not Vietnamese law"},
+  "source_ledger": [
+    {"source_id":"F-A","official_title":null,"identifier":"F-A","issuer":null,"document_type":"fictional instrument","issue_date":"2030-01-01","effective_date":"2030-02-01","repeal_or_amendment_links":["F-B Article 1 replaces only Article 2"],"pinpoint":"Articles 2 and 3","URL_or_file_page":"fixtures.md, F-A paragraphs","retrieved_at":"2026-10-20 Asia/Bangkok","evidence_excerpt_or_summary":"X and Y; retain record two years","access_status":"local supplied text read","verification_status":"supported in fixture only; public authenticity unverified","limitations":"invented source; no full original or consolidated text"},
+    {"source_id":"F-B","official_title":null,"identifier":"F-B","issuer":null,"document_type":"fictional instrument","issue_date":"2030-02-10","effective_date":"2030-03-01","repeal_or_amendment_links":["F-A Article 2"],"pinpoint":"Articles 1 and 2","URL_or_file_page":"fixtures.md, F-B paragraphs","retrieved_at":"2026-10-20 Asia/Bangkok","evidence_excerpt_or_summary":"X Y Z; applications filed before 2030-03-01 continue under former Article 2","access_status":"local supplied text read","verification_status":"supported in fixture only; public authenticity unverified","limitations":"invented source; no official URL or precedent relevant"}
+  ],
+  "claim_ledger": [
+    {"claim_id":"C1","proposition":"Filed application requires X and Y at review, under transition","fact_ids":["prompt filing 2030-02-15","prompt review 2030-03-15"],"source_ids":["F-A","F-B"],"rule_or_practice_or_inference":"application of fictional rules","applicability_date":"2030-03-15","status":"supported within fixtures only","confidence_basis":"filing predates transition cutoff"},
+    {"claim_id":"C2","proposition":"Article 3 continues within supplied model; no whole-instrument repeal","fact_ids":[],"source_ids":["F-A","F-B"],"rule_or_practice_or_inference":"bounded inference from partial replacement","applicability_date":"2030-03-15","status":"supported within fixtures only","confidence_basis":"F-B replaces only Article 2; no Article 3 repeal supplied"}
+  ],
+  "validity_ledger": [
+    {"provision":"F-A Article 2 old","interval":"2030-02-01 to 2030-02-28 generally; continues for pre-2030-03-01 filings","event":"filed 2030-02-15; reviewed 2030-03-15","transition":"eligible","status":"applies within fixture"},
+    {"provision":"F-A Article 2 as replaced by F-B","interval":"from 2030-03-01 subject to transition","event":"same filing/review","transition":"former rule preserved","status":"Z does not apply to this application within fixture"},
+    {"provision":"F-A Article 3","interval":"from 2030-02-01; no end supplied","event":"review 2030-03-15","transition":"no change supplied","status":"continues within fixture; retention start date unknown"}
+  ],
+  "tools": ["exec_command: local Get-Content reads", "apply_patch: local deliverables"],
+  "limitations": ["No live verification performed under controlled DOCUMENT_ONLY mode", "Fixtures are fictional and cannot establish Vietnamese law", "No consolidated or full underlying instruments supplied", "Retention commencement date absent"],
+  "quality_audit": {"disposition":"LIMITED","checks":"All dispositive dates, transition, partial replacement, synthetic-source labels and limits checked against supplied text; no independent reviewer or public verification claimed"}
+}
