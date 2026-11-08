@@ -1,8 +1,8 @@
 {
-  "status": "FAIL",
+  "status": "PASS",
   "scope": "Static structure and consistency only; no legal/model execution or deployment",
   "candidate": "0.70.0",
-  "generated_at": "2026-11-08T14:12:11.218764+00:00",
+  "generated_at": "2026-11-08T14:48:52.971731+00:00",
   "checks": [
     {
       "check": "plugin directory exists",
@@ -306,91 +306,91 @@
     },
     {
       "check": "R01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "R02 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "R03 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "C01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "C02 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "C03 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "D01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "D02 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "M01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "M02 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "V01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "V02 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "V03 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "S01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "S02 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "G01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "F01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "L01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "P01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "Q01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "O01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "A01 pass evidence",
-      "passed": false
+      "passed": true
     },
     {
       "check": "fixtures exist",
@@ -687,7 +687,7 @@
     },
     {
       "path": "LICENSE.md",
-      "sha256": "f52252e8b40ae657a25778eeedeb0a28ef9fd90bdae35b50d19bfac187459697"
+      "sha256": "99c6ed3617b32611fc77edb9d681f115cbbbc9601aac0e5807d0ddfd0acab33e"
     },
     {
       "path": "assets/vietnam-legal-advisor-icon-v4.png",

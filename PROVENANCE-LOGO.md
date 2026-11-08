@@ -25,4 +25,4 @@ Cập nhật 2026-11-04 theo xác nhận của Nhà phát hành (Thanh Nguyen). 
 
 ## Quyết định
 
-Nhà phát hành quyết định (2026-11-04): không cấp phép biểu trưng; chỉ dùng làm nhãn nhận diện của dự án. Mục này đã đóng. Nếu bản v4 được chỉnh sửa hoặc tạo lại từ `logo.png`, bổ sung cách làm vào bảng trên.
+Nhà phát hành quyết định (2026-11-08): cấp phép biểu trưng theo CC BY 4.0 trong phạm vi Nhà phát hành có quyền; không cấp quyền nhãn hiệu hay quyền ngụ ý bảo trợ. Quyền đối với đầu ra AI có thể không tồn tại hoặc chưa rõ (xem mục điều khoản OpenAI ở trên). Mục này đã đóng. Nếu bản v4 được chỉnh sửa hoặc tạo lại từ `logo.png`, bổ sung cách làm vào bảng trên.

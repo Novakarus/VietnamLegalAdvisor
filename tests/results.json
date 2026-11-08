@@ -1521,5 +1521,14 @@
       ],
       "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
     }
-  ]
+  ],
+  "tested_archive": "tests/runs/2026-11-04-round4/Vietnam-Legal-Advisor-0.70.0.zip",
+  "post_test_changes": {
+    "files": [
+      "LICENSE.md"
+    ],
+    "current_zip_sha256": "6c6ae79991c88ed8b86cdfe99bc5ab87ef8c8e6d5393bd64548ac92f49da9648",
+    "date": "2026-11-08",
+    "reason": "Chỉ sửa plugin/LICENSE.md (cấp phép biểu trưng theo CC BY 4.0). Không đổi kỹ năng, hướng dẫn hay manifest. Bằng chứng vòng 4 chạy trên ZIP đã kiểm thử (candidate_zip_sha256)."
+  }
 }

@@ -28,8 +28,9 @@ Chỉ chuyển trạng thái bằng cách sửa file này cùng `release.json`. 
 
 ## Trạng thái bản 0.70.0
 
-- Ứng viên (2026-11-04): Nhà phát hành đánh số lại từ 0.69.4 thành 0.70.0. Thêm `plugin/LICENSE.md` (thông báo giấy phép CC BY 4.0, có hiệu lực từ 2026-11-04). Không đổi nội dung kỹ năng. Xem `history/history/CHANGES-0.70.0.md`. Thứ tự thực tế: 0.69.3 (đóng băng) → 0.70.0 (hiện hành); không còn bản nào mang số 0.69.4.
+- Ứng viên (2026-11-04): Thêm `plugin/LICENSE.md` (thông báo giấy phép CC BY 4.0, có hiệu lực từ 2026-11-04). Không đổi nội dung kỹ năng. Xem `history/CHANGES-0.70.0.md`.
 - Đã đóng gói: `dist/Vietnam-Legal-Advisor-0.70.0.zip` (SHA-256 trong file `.sha256` cạnh nó). Kiểm tra tĩnh đạt.
+- Thay đổi sau vòng 4 (2026-11-08): chỉ sửa `plugin/LICENSE.md` (biểu trưng cũng CC BY 4.0 trong phạm vi Nhà phát hành có quyền); ZIP đóng gói lại, SHA-256 hiện tại `6c6ae79991c88ed8b86cdfe99bc5ab87ef8c8e6d5393bd64548ac92f49da9648`. Bằng chứng vòng 4 (và vòng 5 nếu có) chạy trên ZIP trước đó, SHA-256 `ebbd7e606fe3d4c0de6a74194ede4f4726b3e6d5607aed39fed37c001eedb839`, giữ ở `tests/runs/2026-11-04-round4/`. Hai ZIP chỉ khác file giấy phép; kỹ năng, hướng dẫn và manifest giống nhau. `tests/results.json` ghi rõ trong `post_test_changes`; `validate.py` đối chiếu từng file. Cần xác nhận lại trên host thật khi chạy vòng chính thức.
 - Kiểm thử hành vi: **chưa chạy** (22 ca NOT_RUN).
 - Nghiệm thu chính thức: chưa.
 

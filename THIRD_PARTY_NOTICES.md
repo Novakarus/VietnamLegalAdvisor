@@ -14,10 +14,10 @@ Tìm kiếm các từ khóa bản quyền, giấy phép, "third-party", "©" tro
 
 ## Những điều chưa xác nhận (Nhà phát hành cần trả lời)
 
-1. **Biểu trưng** `vietnam-legal-advisor-icon-v4.png`: chi tiết nguồn gốc, lời nhắc, tài khoản cá nhân tại Việt Nam, điều khoản OpenAI ngày 2026-10-16 (bản lưu Wayback kèm hash) nằm trong [PROVENANCE-LOGO.md](PROVENANCE-LOGO.md). Do GPT-6 Astra tạo qua ChatGPT của OpenAI. Chưa cấp phép.
+1. **Biểu trưng** `vietnam-legal-advisor-icon-v4.png`: chi tiết nguồn gốc, lời nhắc, tài khoản cá nhân tại Việt Nam, điều khoản OpenAI ngày 2026-10-16 (bản lưu Wayback kèm hash) nằm trong [PROVENANCE-LOGO.md](PROVENANCE-LOGO.md). Do GPT-6 Astra tạo qua ChatGPT của OpenAI. Cấp phép CC BY 4.0 trong phạm vi Nhà phát hành có quyền.
 2. **Nội dung có hỗ trợ AI**: plugin được đóng gói cho nền tảng có manifest `com.openai`, và các lượt kiểm thử dùng subagent Codex. Cần xác nhận điều khoản của nhà cung cấp mô hình về quyền đối với đầu ra khi cấp phép lại.
 3. **Văn bản pháp luật Việt Nam**: plugin không đóng gói văn bản pháp luật (`knowledge-index.json` rỗng). Nếu sau này đóng gói, cần kiểm chứng quy định hiện hành về quyền tác giả đối với văn bản quy phạm pháp luật trước khi tuyên bố trạng thái.
-4. **Bằng chứng kiểm thử** (`tests/runs/`): chứa đầu ra mô hình và gói zip; chưa cấp phép.
+4. **Bằng chứng kiểm thử** (`tests/runs/`): chứa đầu ra mô hình và gói zip; cấp phép CC BY 4.0 trong phạm vi Nhà phát hành có quyền.
 
 ## Rà soát mã (2026-11-04)
 

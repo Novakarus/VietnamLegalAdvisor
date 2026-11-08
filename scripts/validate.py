@@ -69,22 +69,37 @@ def valid_pass(case, results, root, pkg, version):
     if not isinstance(route, list) or not route or not all(isinstance(x, str) and x in EXPECTED for x in route):
         return False
     digest = results.get('candidate_zip_sha256')
-    archive = root/'dist'/('Vietnam-Legal-Advisor-'+version+'.zip')
+    tested = results.get('tested_archive')
+    archive = (root/tested) if tested else root/'dist'/('Vietnam-Legal-Advisor-'+version+'.zip')
     if not isinstance(digest, str) or not re.fullmatch(r'[0-9a-f]{64}', digest):
         return False
     if not archive.is_file():
         # dist/ là sản phẩm dựng cục bộ, không nằm trong Git (xem .gitignore): môi trường CI không có ZIP.
-        # Bỏ qua phép so ZIP, nhưng báo cảnh báo; kiểm tra đầy đủ chạy được khi có dist/.
+        # Bỏ qua phép so ZIP, nhưng báo cảnh báo; kiểm tra đầy đủ chạy được khi có ZIP.
         if archive.name not in ZIP_NOT_CHECKED:
             ZIP_NOT_CHECKED.append(archive.name)
         return True
     if hashlib.sha256(archive.read_bytes()).hexdigest() != digest:
         return False
     import zipfile
+    post = results.get('post_test_changes') or {}
+    changed = set(post.get('files', []))
     try:
         with zipfile.ZipFile(archive) as z:
             current = {p.relative_to(pkg).as_posix(): p for p in pkg.rglob('*') if p.is_file()}
-            return len(z.namelist()) == len(current) and set(z.namelist()) == set(current) and all(z.read(n) == p.read_bytes() for n,p in current.items())
+            if len(z.namelist()) != len(current) or set(z.namelist()) != set(current):
+                return False
+            # Mọi file phải trùng ZIP đã kiểm thử, trừ các file đã ghi trong post_test_changes.
+            if not all(z.read(n) == p.read_bytes() for n, p in current.items() if n not in changed):
+                return False
+        if changed:
+            cur = root/'dist'/('Vietnam-Legal-Advisor-'+version+'.zip')
+            want = post.get('current_zip_sha256')
+            if not (isinstance(want, str) and re.fullmatch(r'[0-9a-f]{64}', want)):
+                return False
+            if cur.is_file() and hashlib.sha256(cur.read_bytes()).hexdigest() != want:
+                return False
+        return True
     except (OSError, ValueError, zipfile.BadZipFile, RuntimeError):
         return False
 
