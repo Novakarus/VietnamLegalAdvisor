@@ -28,7 +28,7 @@ Chỉ chuyển trạng thái bằng cách sửa file này cùng `release.json`. 
 
 ## Trạng thái bản 0.70.0
 
-- Ứng viên (2026-11-04): Nhà phát hành đánh số lại từ 0.69.4 qua 0.7.1 thành 0.70.0 (0.70.0 lớn hơn 0.69.3 theo semver). Thêm `plugin/LICENSE.md` (thông báo giấy phép CC BY 4.0, có hiệu lực từ 2026-11-04). Không đổi nội dung kỹ năng. Xem `CHANGES-0.70.0.md`. Thứ tự thực tế: 0.69.3 (đóng băng) → 0.70.0 (hiện hành); không còn bản nào mang số 0.69.4 hoặc 0.7.1.
+- Ứng viên (2026-11-04): Nhà phát hành đánh số lại từ 0.69.4 qua 0.7.1 thành 0.70.0 (0.70.0 lớn hơn 0.69.3 theo semver). Thêm `plugin/LICENSE.md` (thông báo giấy phép CC BY 4.0, có hiệu lực từ 2026-11-04). Không đổi nội dung kỹ năng. Xem `history/history/CHANGES-0.70.0.md`. Thứ tự thực tế: 0.69.3 (đóng băng) → 0.70.0 (hiện hành); không còn bản nào mang số 0.69.4 hoặc 0.7.1.
 - Đã đóng gói: `dist/Vietnam-Legal-Advisor-0.70.0.zip` (SHA-256 trong file `.sha256` cạnh nó). Kiểm tra tĩnh đạt.
 - Kiểm thử hành vi: **chưa chạy** (22 ca NOT_RUN).
 - Nghiệm thu chính thức: chưa.

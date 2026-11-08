@@ -13,7 +13,7 @@ Cập nhật 2026-11-04 theo xác nhận của Nhà phát hành (Thanh Nguyen). 
 Xác nhận "chỉ ChatGPT và Codex" ở trên không bao gồm các file dưới đây. Chúng được Claude (Anthropic) viết trong phiên làm việc này theo yêu cầu của Nhà phát hành, nên phải khai báo riêng:
 
 - Mã: `scripts/check_consistency.py`, `tests/run_integrity.py` (có dòng `SPDX-License-Identifier: Apache-2.0`).
-- Tài liệu: `STATUS.md`, `LICENSE.md`, `NOTICE`, `LICENSE-CC-BY-4.0.md`, `THIRD_PARTY_NOTICES.md`, `PROVENANCE-LOGO.md`, `PROVENANCE-AI-CONTENT.md`, phần "Protocol v2" cuối `tests/EVALUATION.md`, `tests/templates/run_manifest.template.json`, dòng cảnh báo đầu `CHANGES-0.69.2.md` và `CHANGES-0.69.3.md`, phần License và Status trong `README.md`, dòng mới trong `tests/README.md`.
+- Tài liệu: `STATUS.md`, `LICENSE.md`, `NOTICE`, `LICENSE-CC-BY-4.0.md`, `THIRD_PARTY_NOTICES.md`, `PROVENANCE-LOGO.md`, `PROVENANCE-AI-CONTENT.md`, phần "Protocol v2" cuối `tests/EVALUATION.md`, `tests/templates/run_manifest.template.json`, dòng cảnh báo đầu `history/CHANGES-0.69.2.md` và `history/CHANGES-0.69.3.md`, phần License và Status trong `README.md`, dòng mới trong `tests/README.md`.
 - Website: Điều 5 trong `docs/terms/index.html` và nội dung `docs/terms/source-license.html`.
 - Văn bản giấy phép công cộng chép nguyên văn: `LICENSE-Apache-2.0.txt` (từ gói giấy phép Debian `common-licenses`, SHA-256 `cfc7749b…3d30`) và `LICENSE-CC-BY-4.0.txt` (từ kho SPDX `license-list-data`, SHA-256 `d557539d…3744`). Đây là văn bản giấy phép chuẩn, không phải sáng tác.
 

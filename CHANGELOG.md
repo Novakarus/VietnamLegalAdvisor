@@ -15,3 +15,7 @@ Bổ sung so sánh cấu trúc có điều kiện khi thiếu dữ kiện; quy t
 ## Công bố nguồn và website — 22/10/2026
 
 Công khai nguồn, tài liệu và kiểm thử tóm tắt. Giấy phép và website được công bố riêng; gói plugin 0.69.3 đã kiểm thử giữ nguyên, không thêm giấy phép vào ZIP lịch sử. Nguồn plugin/LICENSE.md là tài liệu mới bên cạnh 20 tệp gốc, không thay đổi chỉ dẫn kỹ năng.
+
+## Chi tiết từng lần sửa
+
+Bản ghi chi tiết (chỉ là lịch sử, không phải trạng thái hiện hành; trạng thái nằm trong `STATUS.md`): [0.69.2](history/CHANGES-0.69.2.md) · [0.69.3](history/CHANGES-0.69.3.md) · [0.70.0](history/CHANGES-0.70.0.md).

@@ -17,3 +17,9 @@ terms-archive/*
 
 # Bản sao plugin cục bộ dùng để thử trên host (trùng plugin/)
 tests/round5-local-marketplace/
+
+# Vòng 5 (chạy trên host thật) đang thực hiện, chưa chấm: chưa công khai
+tests/runs/2026-11-05-round5/
+
+# ZIP trong thư mục lượt chạy cũ chỉ để đối chiếu cục bộ (hash đã nằm trong manifest)
+tests/runs/2026-10-*/Vietnam-Legal-Advisor-*.zip
