@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Static repository checks only. No network, deployment or model execution.
+"""Static repository checks only. No network, deployment or model execution. Standard library only.
 
 Skill frontmatter and agent YAML in this project use the JSON subset of YAML.
 Run from any directory: python path/to/scripts/validate.py
@@ -7,12 +7,10 @@ Run from any directory: python path/to/scripts/validate.py
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
-import argparse
 import hashlib
 import json
 import re
-import warnings
-from datetime import datetime, timezone
+from datetime import datetime
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED = {'instructions', 'vietnam-legal-research', 'legal-validity-verification',
@@ -22,19 +20,15 @@ EXPECTED = {'instructions', 'vietnam-legal-research', 'legal-validity-verificati
     'legal-quality-audit'}
 
 def valid_png(path):
+    """Complete square PNG, 256-4096 px, at most 5 MiB (header and end marker only; pixels are not decoded)."""
     try:
-        from PIL import Image
-        with warnings.catch_warnings():
-            warnings.simplefilter('error', Image.DecompressionBombWarning)
-            with Image.open(path) as img:
-                if img.format != 'PNG' or not (256 <= img.width == img.height <= 4096):
-                    return False
-                img.verify()
-            with Image.open(path) as img:
-                img.load()
-        return path.stat().st_size <= 5*1024*1024
-    except (ImportError, OSError, ValueError, SyntaxError, Warning):
+        data = path.read_bytes()
+    except OSError:
         return False
+    if len(data) > 5*1024*1024 or data[:8] != b'\x89PNG\r\n\x1a\n' or data[12:16] != b'IHDR':
+        return False
+    width, height = int.from_bytes(data[16:20], 'big'), int.from_bytes(data[20:24], 'big')
+    return 256 <= width == height <= 4096 and data[-12:-4] == b'\x00\x00\x00\x00IEND'
 
 ZIP_NOT_CHECKED = []
 
@@ -106,7 +100,7 @@ def valid_pass(case, results, root, pkg, version):
 def read_json(path):
     return json.loads(path.read_text(encoding='utf-8-sig'))
 
-def validate(root=ROOT, write_report=True):
+def validate(root=ROOT):
     root = Path(root).resolve()
     pkg = root / 'plugin'
     checks, warnings = [], []
@@ -137,7 +131,7 @@ def validate(root=ROOT, write_report=True):
             check(key + ' path exists inside plugin', valid)
             check(key + ' canonical filename', Path(rel).name == 'vietnam-legal-advisor-icon-v4.png')
             if valid:
-                check(key + ' fully decoded square PNG (requires Pillow)', valid_png(pkg / rel))
+                check(key + ' complete square PNG', valid_png(pkg / rel))
         skills = list((pkg/'skills').glob('*/SKILL.md'))
         check('13 required skills', {p.parent.name for p in skills} == EXPECTED)
         for p in skills:
@@ -175,6 +169,11 @@ def validate(root=ROOT, write_report=True):
         if ZIP_NOT_CHECKED:
             warnings.append('The ZIP SHA-256/content was not compared with the test record because ' + ZIP_NOT_CHECKED[0] + ' is missing (dist/ is not in Git). Rerun locally after building the ZIP for the full check.')
         check('fixtures exist', (root/'tests/fixtures.md').is_file())
+        status = re.search(r'^Current version:\s*(\S+)', (root/'STATUS.md').read_text(encoding='utf-8'), re.M)
+        check('STATUS.md version matches manifest', status and status.group(1) == version)
+        check('README title has current version', version in (root/'README.md').read_text(encoding='utf-8').splitlines()[0])
+        for name in ['LICENSE.md','LICENSE-Apache-2.0.txt','LICENSE-CC-BY-4.0.txt','NOTICE','THIRD_PARTY_NOTICES.md']:
+            check('license file '+name, (root/name).is_file())
         docs = root/'docs'
         class Links(HTMLParser):
             def handle_starttag(self, tag, attrs):
@@ -192,27 +191,16 @@ def validate(root=ROOT, write_report=True):
         for p in docs.rglob('*.html'):
             parser = Links(); parser.path = p
             parser.feed(p.read_text(encoding='utf-8'))
-        if 'publication-status" content="draft' in (docs/'terms/index.html').read_text(encoding='utf-8'):
-            warnings.append('Terms remain a draft; package checks do not establish public-submission readiness.')
     except (OSError, ValueError, KeyError, TypeError, IndexError) as exc:
         check('validation completed: '+str(exc), False)
-    files = []
-    if pkg.exists():
-        files = [{'path':p.relative_to(pkg).as_posix(), 'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(pkg.rglob('*')) if p.is_file() and not p.is_symlink()]
-    report = {'status':'PASS' if all(c['passed'] for c in checks) else 'FAIL',
+    return {'status':'PASS' if all(c['passed'] for c in checks) else 'FAIL',
         'scope':'Static structure and consistency only; no legal/model execution or deployment',
-        'candidate':version,'generated_at':datetime.now(timezone.utc).isoformat(),
-        'checks':checks,'warnings':warnings,'plugin_files':files}
-    if write_report:
-        (root/'tests/validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    return report
+        'candidate':version,'checks':checks,'warnings':warnings}
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--no-write', action='store_true', help='Do not write tests/validation.json')
-    args = parser.parse_args()
-    report = validate(write_report=not args.no_write)
+    report = validate()
     print(json.dumps({k:report[k] for k in ['status','scope','candidate','warnings']},ensure_ascii=False,indent=2))
+    print(str(sum(c['passed'] for c in report['checks']))+'/'+str(len(report['checks']))+' checks passed')
     for item in report['checks']:
         if not item['passed']: print('FAIL: '+item['check'])
     raise SystemExit(0 if report['status']=='PASS' else 1)

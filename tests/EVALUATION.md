@@ -15,31 +15,16 @@ cases.json contains 22 behavioral test specifications. NOT_RUN means not execute
 9. Live acceptance: add fresh cases for all five core categories (research, contracts, project diligence, transaction structures, validity). Record actual official documents and a lawyer-verified answer key with review date. Do not freeze today's law as a permanent truth. Verify primary-source chains, not just home-page reachability.
 10. After approval and publication, verify discovery of all 13 skills, instruction routing, direct specialist invocation and graceful no-tool behavior in the actual host.
 
-## Current execution status
-Structural validation is performed separately by `python scripts/validate.py` from the repository root (Python 3.10+). `tests/validate.py` is a compatibility entrypoint only. No production-host/model behavioral suite has been executed in this preparation step. Current-law legal accuracy, independent lawyer review and host selection behavior remain acceptance gates.
+## PASS record format
 
-## Repository commands
+`scripts/validate.py` enforces the format of every PASS in `results.json`:
+- Scores use exactly these six keys: evidence_fidelity, temporal_applicability, legal_reasoning, task_coverage, risk_actionability, disclosure.
+- Evidence locations name existing nonempty files relative to the repository root.
+- Reviewer, model, tool_mode, ISO date/time and observed_route are mandatory.
+- Defects are empty or contain only minor items with severity and description.
+- The top-level candidate_zip_sha256 matches the tested ZIP, and its contents match the current plugin files (apart from files listed in post_test_changes). Package before behavioral execution and keep the tested ZIP with its evidence.
 
-```text
-python scripts/validate.py
-python scripts/package.py
-```
-
-The validator discovers paths relative to its own file, checks `plugin/` and `docs/`, and writes `tests/validation.json`. It exits with code 1 on a failed check. `--no-write` prints checks without replacing the report. It does not require a `review/` folder or a hard-coded version.
-
-The packager runs static validation first, then writes only the contents of `plugin/` to `dist/Vietnam-Legal-Advisor-<version>.zip`, plus a SHA-256 file. Its ZIP entries have fixed timestamps for reproducibility. It does not include website files, tests or scripts, and does not upload or deploy anything. An existing same-version ZIP is replaced; preserve released artifacts before changing source.
-
-`cases.json` contains specifications, not executed results; its NOT_RUN fields describe the initial specification state. Record execution in `results.json`, with the exact candidate version and ZIP hash. Never copy a prior PASS report as evidence for a new candidate. Fixtures and expected outcomes are unchanged by the repository migration. Static PASS does not mean that the 22 behavioral cases passed or that public release is ready.
-
-## PASS record format and latest changes
-
-The latest script fixes passed technical regression checks (see TECHNICAL_REVIEW.md). Install scripts/requirements.txt before validation.
-Scores must use exactly these six keys: evidence_fidelity, temporal_applicability, legal_reasoning, task_coverage, risk_actionability, disclosure.
-Evidence locations must name existing nonempty files relative to the repository root.
-Reviewer, model, tool_mode, ISO date/time and observed_route are mandatory.
-Defects must be empty or contain only minor items with severity and description; critical/major defects must be resolved before PASS.
-The top-level candidate_zip_sha256 must match the existing ZIP and its contents must match current plugin files. Package before behavioral execution and preserve the candidate ZIP with its evidence.
-These checks do not independently verify the truth or adequacy of recorded evidence.
+These checks do not verify the truth or adequacy of the recorded evidence. Never copy a prior PASS as evidence for a new candidate.
 
 ## Protocol v2 (mandatory from test round 4)
 
@@ -54,4 +39,4 @@ Protocol v2 adds the conditions below. The provisions above still apply. Rounds 
 7. **One candidate, one package, one record.** The ZIP's SHA-256 must match across the manifest, `results.json` and the run folder. Do not carry a PASS from one version to another.
 8. **Check before grading.** Run `python tests/run_integrity.py <run_folder>` (add `--formal` for formal acceptance). A run with FAIL errors must not be used to claim PASS.
 
-Manifest template: `tests/templates/run_manifest.template.json`. The script only checks the accompanying evidence; it does not verify the legal correctness of the answers.
+`scripts/import_host_run.py` writes `run_manifest.json` for a host run. The script only checks the accompanying evidence; it does not verify the legal correctness of the answers.

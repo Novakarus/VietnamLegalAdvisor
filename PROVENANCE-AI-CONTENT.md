@@ -12,8 +12,8 @@ Updated 2026-11-08 per the Publisher's (Thanh Nguyen's) confirmation. This recor
 
 The "only ChatGPT and Codex" confirmation above does not cover the files below. They were written by Claude (Anthropic) in these working sessions at the Publisher's request, so they are declared separately:
 
-- Code: `scripts/check_consistency.py`, `scripts/import_host_run.py`, `tests/run_integrity.py`, and the edit to `scripts/validate.py` that skips the ZIP comparison when `dist/` is absent and compares the tested archive (`SPDX-License-Identifier: Apache-2.0` headers).
-- Documents: `STATUS.md`, `LICENSE.md`, `NOTICE`, `LICENSE-CC-BY-4.0.md`, `THIRD_PARTY_NOTICES.md`, `PROVENANCE-LOGO.md`, `PROVENANCE-AI-CONTENT.md`, `CHANGELOG.md`, the "Protocol v2" section at the end of `tests/EVALUATION.md`, `tests/HOST_RUNBOOK.md`, `tests/templates/run_manifest.template.json`, the warning line at the top of `history/CHANGES-0.69.2.md` and `history/CHANGES-0.69.3.md`, the License and Status sections of `README.md`, new lines in `tests/README.md`, and the English translation of the repository documents carried out on 2026-11-08.
+- Code: `scripts/import_host_run.py`, `tests/run_integrity.py`, and the edits to `scripts/validate.py` (skipping the ZIP comparison when `dist/` is absent, comparing the tested archive, and the 2026-11-10 simplification that replaced the Pillow image check and absorbed the former `scripts/check_consistency.py`) (`SPDX-License-Identifier: Apache-2.0` headers).
+- Documents: `STATUS.md`, `LICENSE.md`, `NOTICE`, `LICENSE-CC-BY-4.0.md`, `THIRD_PARTY_NOTICES.md`, `PROVENANCE-LOGO.md`, `PROVENANCE-AI-CONTENT.md`, `CHANGELOG.md`, the "Protocol v2" section at the end of `tests/EVALUATION.md`, `tests/HOST_RUNBOOK.md`, the warning line at the top of `history/CHANGES-0.69.2.md` and `history/CHANGES-0.69.3.md`, the License and Status sections of `README.md`, new lines in `tests/README.md`, and the English translation of the repository documents carried out on 2026-11-08.
 - Website: Article 5 in `docs/terms/index.html` and `docs/terms/vi/index.html` (the Vietnamese pages restore the Publisher-approved text with the Article 5 update), the content of `docs/terms/source-license.html`, and the English translation of the `docs/` pages.
 - Verbatim public license texts: `LICENSE-Apache-2.0.txt` (from the Debian `common-licenses` package, SHA-256 `cfc7749b…3d30`) and `LICENSE-CC-BY-4.0.txt` (from the SPDX `license-list-data` repository, SHA-256 `d557539d…3744`). These are standard license texts, not original writing.
 
@@ -43,7 +43,7 @@ Anthropic's terms: the Claude account is **Claude Pro** (personal; confirmed 202
 
 - [x] The Terms of Use PDF of 2026-10-16 is stored in `terms-archive/` (see `terms-archive/INDEX.md`).
 - [x] The OpenAI Service Terms PDF was stored and cross-checked: section 4 "Codex and Code Generation" matches what was recorded.
-- [x] Review of code written by ChatGPT/Codex (`scripts/validate.py`, `scripts/package.py`, `tests/run_technical.py`, `tests/validate.py`): see `THIRD_PARTY_NOTICES.md`. Done 2026-11-04.
+- [x] Review of code written by ChatGPT/Codex (`scripts/validate.py`, `scripts/package.py`, and the since-removed `tests/run_technical.py` and `tests/validate.py`): see `THIRD_PARTY_NOTICES.md`. Done 2026-11-04.
 - [x] Anthropic's terms (Consumer Terms, Claude Pro account) were read on the official page and the hash recorded above.
 - [x] The Consumer Terms PDF was stored (`terms-archive/anthropic-terms.pdf`, 14 pages, SHA-256 `7222642462bf559fa450982aa75ad4c7d3c1ed5c24e6e1517d7b4cf9f22806d4`); the sentence "we assign to you all of our right, title, and interest—if any—in Outputs" was cross-checked in the PDF.
 

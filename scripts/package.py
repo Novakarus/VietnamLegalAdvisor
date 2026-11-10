@@ -21,8 +21,6 @@ def package():
             raise SystemExit('Unsafe package path: '+rel)
         if rel not in allowed and not rel.startswith(('skills/','assets/')):
             raise SystemExit('Unexpected package file; review before inclusion: '+rel)
-        if any(part.lower() in {'.git','__pycache__','.env'} or part.lower().startswith('.env.') for part in p.relative_to(pkg).parts) or p.suffix in {'.pyc','.zip','.gz'}:
-            raise SystemExit('Unexpected generated/private file: '+rel)
         if rel.startswith('assets/') and p.suffix.lower() != '.png':
             raise SystemExit('Asset type not approved: '+rel)
         if rel.startswith('skills/') and p.suffix.lower() not in {'.md','.json','.yaml'}:

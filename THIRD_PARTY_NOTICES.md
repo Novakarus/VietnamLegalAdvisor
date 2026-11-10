@@ -1,12 +1,10 @@
 # Third-Party Notices
 
-Updated 2026-11-08; approved by the Publisher. This is not a legal confirmation.
+Updated 2026-11-10; approved by the Publisher. This is not a legal confirmation.
 
 ## Dependencies
 
-| Component | Where used | Distributed with the plugin? | License |
-|---|---|---|---|
-| Pillow (`scripts/requirements.txt`: `Pillow>=11.0.0,<13`) | `scripts/validate.py` (PNG image checks) | No. A development dependency only, not part of `plugin/` | Pillow's own license (HPND / MIT-CMU style). See the Pillow package at install time |
+None. The scripts use only the Python standard library (the Pillow dependency of `scripts/validate.py` was removed on 2026-11-10).
 
 ## Screening result for `plugin/`
 
@@ -27,7 +25,9 @@ Read in full: `scripts/validate.py` (189 lines), `scripts/package.py` (49), `tes
 - There are two common techniques, both ordinary idioms: opening an image with Pillow, calling `verify()` and reloading to check a PNG; and packaging a ZIP with a fixed timestamp (1980-01-01) and fixed file permissions so the ZIP is reproducible.
 - No copyright headers, license notes, other author names or code that looks copied wholesale were found.
 
-Limitation: this was a manual read, without an open-source code-matching tool. It cannot prove there is no coincidence; it shows only that there is no obvious sign. Code written by Claude (`scripts/check_consistency.py`, `tests/run_integrity.py`, `scripts/import_host_run.py`) is not part of this review and is declared in `PROVENANCE-AI-CONTENT.md`.
+Since this review, `tests/run_technical.py`, `tests/validate.py` and the Pillow-based image check were removed (2026-11-10); the review above describes the files as they were on 2026-11-04.
+
+Limitation: this was a manual read, without an open-source code-matching tool. It cannot prove there is no coincidence; it shows only that there is no obvious sign. Code written by Claude (`tests/run_integrity.py`, `scripts/import_host_run.py`, and the 2026-11-10 simplification of `scripts/validate.py`) is not part of this review and is declared in `PROVENANCE-AI-CONTENT.md`.
 
 ## License texts reproduced verbatim
 

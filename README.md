@@ -1,36 +1,26 @@
 # Vietnam Legal Advisor — 0.70.0
 
-Local candidate: Core Skill Router plus twelve specialist skills. Vietnamese is the default language.
+A plugin for Vietnamese legal research and professional workflows: a core skill router plus twelve specialist skills. Vietnamese is the default language. Current status: [STATUS.md](STATUS.md) (candidate, not public, not formally accepted).
 
 ## Structure
 
-- STATUS.md: single source of truth for project status. LICENSE.md: license map.
-- docs/: website, support, privacy, terms and website assets.
-- plugin/: manifests, assets and thirteen skills.
-- tests/: 22 behavioral specifications, fixtures and evaluation records.
-- history/: historical change records (not the current status).
-- scripts/: validation and packaging utilities.
-- dist/: generated ZIPs, excluded from Git.
-- tests/runs/: version-bound test reports and evidence for all three rounds.
+- `plugin/`: the product: manifests, logo and thirteen skills. Only this folder is packaged.
+- `tests/`: 22 behavioral case specifications, the evaluation protocol and the evidence of each test round.
+- `scripts/`: validation, packaging and host-run import.
+- `docs/`: the website (GitHub Pages serves this folder): guide, support, privacy, terms.
+- `STATUS.md`: single source of truth for status. `CHANGELOG.md` and `history/`: history. `LICENSE.md`: license map.
 
 ## Commands
 
-Requires Python 3.10+ and Pillow:
+Python 3.10+, standard library only:
 
 ```text
-python -m pip install -r scripts/requirements.txt
-python scripts/validate.py
-python scripts/package.py
+python scripts/validate.py    # static checks of manifests, skills, test records and website links
+python scripts/package.py     # validate, then write dist/Vietnam-Legal-Advisor-<version>.zip and its .sha256
 ```
 
-Canonical image: vietnam-legal-advisor-icon-v4.png. Packaging includes only plugin/ contents. Same-version ZIPs are replaced; preserve released archives separately.
-
-## Status
-
-Single source of truth: [STATUS.md](STATUS.md). Summary: version 0.70.0 is a packaged candidate (license notice added to the package; skill content unchanged); behavioral tests are not yet run for this version. Version 0.69.3 was removed from the repository on 2026-11-08; only its round 1-3 test records (run by Codex) are kept as history. Formal acceptance and public-release approval are pending. Nothing was uploaded or deployed.
-
-Local metadata does not confirm current hosted release or visibility. These scripts do not upload or deploy anything.
+The ZIP contains only the contents of `plugin/` and is reproducible (fixed timestamps). `dist/` is not in Git. Neither script uploads or deploys anything. Static checks do not certify legal quality; behavioral testing is described in [tests/EVALUATION.md](tests/EVALUATION.md).
 
 ## License
 
-Approved by the publisher on 2026-11-04 (users are responsible for their own use). Code (`scripts/`) is under Apache-2.0 and documents/skill content under CC BY 4.0; see [LICENSE.md](LICENSE.md) for the path map. The logo, test evidence, release bundles and AI-generated output are also under CC BY 4.0, to the extent the publisher holds rights.
+Code (`scripts/`, `tests/run_integrity.py`) is under Apache-2.0; documents and skill content are under CC BY 4.0. The logo, test evidence and AI-generated output are also under CC BY 4.0, to the extent the publisher holds rights. See [LICENSE.md](LICENSE.md) for the path map and limits.

@@ -1,30 +1,33 @@
 # Project Status — single source of truth
 
-This is the only place that records the current status. `history/CHANGES-*.md`, `releases/*/RELEASE.md` and `tests/runs/*` are historical records as of the time they were created; if they conflict with this file, this file prevails. `scripts/check_consistency.py` checks that the figures below match the manifests, `release.json` and `tests/results.json`.
+This is the only place that records the current status. `CHANGELOG.md`, `history/` and `tests/runs/` are historical records as of the time they were created; if they conflict with this file, this file prevails. `scripts/validate.py` checks that the version below matches the manifests and `tests/results.json`.
 
 Current version: 0.70.0
 Status: CANDIDATE
 Ready for public release: no
-Updated: 2026-11-08
+Updated: 2026-11-10
 
-## Statuses and transition conditions
+## Statuses
 
-| Status | Meaning | Condition to enter |
-|---|---|---|
-| DRAFT | Being edited; behavioral tests not yet run | There is a change in `plugin/` |
-| CANDIDATE | Packaged; a new round of behavioral tests is run | Version bumped, `validate.py` passes, ZIP packaged and SHA-256 recorded |
-| FROZEN_LOCAL_RELEASE_CANDIDATE | The tested ZIP is preserved byte for byte | A results record and `release.json` exist |
-| ACCEPTED | Meets the acceptance conditions, not yet published | All of the "acceptance gates" below |
-| RELEASED | Published | ACCEPTED + the Publisher approves the Terms and the license |
+| Status | Meaning |
+|---|---|
+| DRAFT | `plugin/` is being edited; not packaged or tested |
+| CANDIDATE | Version bumped, `validate.py` passes, ZIP packaged, behavioral tests run or in progress |
+| ACCEPTED | All acceptance gates below are met; not yet published |
+| RELEASED | Published by decision of the Publisher |
 
-Change the status only by editing this file together with `release.json`. Do not raise the status on the basis of preliminary AI scoring.
+Do not raise the status on the basis of provisional AI grading.
+
+## Acceptance gates
+
+1. `python tests/run_integrity.py <run folder> --formal` passes for a run of the current ZIP (see `tests/EVALUATION.md`, Protocol v2): real host, raw transcripts, exact model ID, grader from a different vendor.
+2. A lawyer has reviewed the results, including live cases with answer keys.
 
 ## Versioning rules
 
-1. Any change in `plugin/` (including an instruction-only edit) creates a new version, and the affected cases plus one control case must be retested. Do not carry a PASS over from a previous version.
-2. Changes outside `plugin/` (documentation, scripts, licenses, website) do not raise the plugin version and do not change the SHA-256 of a frozen package. Record them in the Git history, not in `history/CHANGES-*.md`.
-3. `CHANGES-<version>.md` is written once, at the time of the edit, and is not edited afterwards; add a "Test results" section in another historical record if needed.
-4. Do not repackage the ZIP of a frozen version. To change the package, create a new version.
+1. Any change in `plugin/` (including an instruction-only edit) creates a new version; the affected cases plus one control case must be retested. A PASS is not carried over from a previous version.
+2. Changes outside `plugin/` (documentation, scripts, licenses, website) do not raise the plugin version. They are recorded in the Git history.
+3. A tested ZIP is not repackaged; to change the package, create a new version. The one recorded exception is the `plugin/LICENSE.md` change of 2026-11-08 described below.
 
 ## Status of version 0.70.0
 
@@ -34,15 +37,10 @@ Change the status only by editing this file together with `release.json`. Do not
 - Behavioral tests: round 4 ran on 2026-11-04 (22/22 provisional PASS, AI-graded; see the Protocol v2 gap section below). Round 5 on a real host is in preparation and has not been graded.
 - Formal acceptance: not yet.
 
-## Version 0.69.3 (removed from the repository, 2026-11-08)
+## Earlier versions
 
-- The Publisher decided to remove the package, release page and report of 0.69.3 from the repository; only the round 1–3 test records (run by Codex) are kept as history. The frozen ZIP had SHA-256 `40120521e43173191ab4babbc93180445fef33fb819f9d24ed2c25fb31dd7fa6`.
-- Round 3 behavioral tests: 22/22 PASS, provisionally AI-graded; static checks 109/109 (before the record was imported) and 131/131 (after); technical regression 14/14. Records are at `tests/history/0.69.3/round3-results.json` and `tests/runs/2026-10-21-round3/`.
+Versions 0.69.1–0.69.3 were tested in rounds 1–3 (run and graded by Codex, 2026-10-20 and 2026-10-21) and were removed from the repository on 2026-11-08. Their test records are kept under `tests/runs/` as history; they do not meet Protocol v2 and must not be used for acceptance.
 
 ## Gap against Protocol v2
 
 Round 4 (Claude, 2026-11-04) was rerun with 22 isolated Claude Code subagent sessions (one session per case; Read/Edit tools only, no web or shell, so OFFLINE was enforced technically; model ID `claude-sonnet-5-5` as reported by the host; raw transcripts and a SHA-256 per case; the runner was not given `must_include`/`must_not`). Result: 22/22 provisional PASS; `run_integrity.py` still FAILs with 2 errors: (1) the grader is Claude, the same model family as the runner; (2) the plugin has not been run on a real production host with the plugin installed. A lawyer review and live cases with answer keys are also still missing. Limitations: the subagents used the system prompt of the agent type that configures the status line; the coordinator had previously seen `cases.json`.
-
-Round 3 (Codex):
-
-Result of running `python tests/run_integrity.py tests/runs/2026-10-21-round3` on 2026-11-03: **FAIL**. Round 3 fails because there is no `run_manifest.json`, no exact model ID, the grader is in the same model family as the runner (both Codex/OpenAI), OFFLINE was enforced only by instruction, it did not run on a real host, and there are no raw transcripts. The candidate ZIP matches its SHA-256. Round 4 had to meet Protocol v2 (see `tests/EVALUATION.md`).
