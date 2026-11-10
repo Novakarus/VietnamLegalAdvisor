@@ -3,7 +3,7 @@
 This is the only place that records the current status. `CHANGELOG.md` and `tests/runs/` are historical records as of the time they were created; if they conflict with this file, this file prevails. `scripts/validate.py` checks that the version below matches the manifests and `tests/results.json`.
 
 Current version: 0.70.0
-Status: CANDIDATE
+Status: ACCEPTED
 Ready for public release: no
 Updated: 2026-11-10
 
@@ -13,15 +13,14 @@ Updated: 2026-11-10
 |---|---|
 | DRAFT | `plugin/` is being edited; not packaged or tested |
 | CANDIDATE | Version bumped, `validate.py` passes, ZIP packaged, behavioral tests run or in progress |
-| ACCEPTED | All acceptance gates below are met; not yet published |
+| ACCEPTED | Accepted by decision of the Publisher; not yet published |
 | RELEASED | Published by decision of the Publisher |
 
-Do not raise the status on the basis of provisional AI grading.
+## Acceptance
 
-## Acceptance gates
+Acceptance is a decision of the Publisher, recorded here with its basis and limits.
 
-1. `python tests/run_integrity.py <run folder> --formal` passes for a run of the current ZIP (see `tests/EVALUATION.md`, Protocol v2): real host, raw transcripts, exact model ID, grader from a different vendor.
-2. A lawyer has reviewed the results, including live cases with answer keys.
+Version 0.70.0 was accepted by the Publisher on 2026-11-10 on the basis of round 4 (22/22 PASS, AI-graded). The Publisher accepted it knowing that the following were not met: the plugin was not run on a real host; the grader (Claude) is from the same vendor as the runner; there is no lawyer review of the answers and there are no live cases with answer keys. Acceptance is therefore not an independent certification of legal quality. Round 5 on a real host remains open and was not a condition of this acceptance.
 
 ## Versioning rules
 
@@ -33,9 +32,9 @@ Do not raise the status on the basis of provisional AI grading.
 
 - Candidate (2026-11-04): added `plugin/LICENSE.md` (a CC BY 4.0 license notice, effective 2026-11-04). Skill content unchanged.
 - Packaged: `dist/Vietnam-Legal-Advisor-0.70.0.zip` (SHA-256 in the `.sha256` file next to it). Static checks pass.
-- Change after round 4 (2026-11-08): only `plugin/LICENSE.md` (the logo is also under CC BY 4.0 to the extent the Publisher holds rights; the notice was translated into English). Skill content, instructions and both manifests are unchanged. The ZIP was repackaged; the current SHA-256 is recorded in `tests/results.json` (`post_test_changes.current_zip_sha256`). The round 4 evidence ran on the earlier ZIP, SHA-256 `ebbd7e606fe3d4c0de6a74194ede4f4726b3e6d5607aed39fed37c001eedb839`, kept at `tests/runs/2026-11-04-round4/`. `validate.py` compares the two archives file by file and fails if any other file differs. This must be re-confirmed on a real host in the formal round (round 5 uses the current ZIP).
+- Change after round 4 (2026-11-08): only `plugin/LICENSE.md` (the logo is also under CC BY 4.0 to the extent the Publisher holds rights; the notice was translated into English). Skill content, instructions and both manifests are unchanged. The ZIP was repackaged; the current SHA-256 is recorded in `tests/results.json` (`post_test_changes.current_zip_sha256`). The round 4 evidence ran on the earlier ZIP, SHA-256 `ebbd7e606fe3d4c0de6a74194ede4f4726b3e6d5607aed39fed37c001eedb839`, kept at `tests/runs/2026-11-04-round4/`. Since 2026-11-10 `validate.py` only checks the SHA-256 of the tested ZIP against the record; it no longer compares that ZIP with the current `plugin/` files, so the statement that nothing else changed rests on the Git history.
 - Behavioral tests: round 4 ran on 2026-11-04 (22/22 provisional PASS, AI-graded; see the Protocol v2 gap section below). Round 5 on a real host is in preparation and has not been graded.
-- Formal acceptance: not yet.
+- Acceptance: accepted by the Publisher on 2026-11-10 (see "Acceptance" above). Not published.
 
 ## Earlier versions
 

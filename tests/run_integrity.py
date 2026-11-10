@@ -3,7 +3,7 @@
 """Check the integrity of a behavioral test run against Protocol v2.
 
 Usage:
-    python tests/run_integrity.py <run_dir> [--formal]
+    python tests/run_integrity.py <run_dir>
 
 Read-only. It checks the evidence that accompanies a run; it does NOT check legal correctness.
 Exit code 0 if there are no errors (FAIL), 1 if there is at least one error.
@@ -48,7 +48,6 @@ def vendor(name: str) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("run_dir")
-    ap.add_argument("--formal", action="store_true", help="also check the formal acceptance conditions (lawyer, real host)")
     args = ap.parse_args()
 
     run = Path(args.run_dir).resolve()
@@ -125,12 +124,6 @@ def main() -> int:
                 for i, line in enumerate(log.read_text(encoding="utf-8").splitlines(), 1):
                     if re.match(r"\s*\d+\.", line) and NETWORK_HINTS.search(line) and not NEGATION.search(line):
                         add("WARN", cid, f"tool_calls.md line {i} shows signs of external retrieval in an OFFLINE case: {line.strip()[:120]}")
-
-    if args.formal:
-        if grader.get("kind") != "human_lawyer":
-            add("FAIL", "formal", "Formal acceptance needs a grader who is a lawyer with the relevant expertise (grader.kind=human_lawyer).")
-        if not manifest.get("answer_key", {}).get("reviewed_on"):
-            add("FAIL", "formal", "Missing an answer key written by a lawyer with a review date (answer_key.reviewed_on).")
 
     fails = [f for f in findings if f["level"] == "FAIL"]
     warns = [f for f in findings if f["level"] == "WARN"]

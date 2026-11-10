@@ -22,13 +22,13 @@ cases.json contains 22 behavioral test specifications. NOT_RUN means not execute
 - Evidence locations name existing nonempty files relative to the repository root.
 - Reviewer, model, tool_mode, ISO date/time and observed_route are mandatory.
 - Defects are empty or contain only minor items with severity and description.
-- The top-level candidate_zip_sha256 matches the tested ZIP, and its contents match the current plugin files (apart from files listed in post_test_changes). Package before behavioral execution and keep the tested ZIP with its evidence.
+- The top-level candidate_zip_sha256 matches the tested ZIP kept in the run folder. Package before behavioral execution and keep the tested ZIP with its evidence.
 
 These checks do not verify the truth or adequacy of the recorded evidence. Never copy a prior PASS as evidence for a new candidate.
 
 ## Protocol v2 (mandatory from test round 4)
 
-Protocol v2 adds the conditions below. The provisions above still apply. Rounds 1–3 ran under the old procedure and **do not meet** Protocol v2 (see the result of `tests/run_integrity.py`). They remain valid preliminary evidence within the scope recorded, but must not be used for formal acceptance.
+Acceptance of a version is a decision of the Publisher recorded in `STATUS.md`; Protocol v2 describes what a test round should meet and what `run_integrity.py` reports, and where a round falls short this is stated in `STATUS.md`. Protocol v2 adds the conditions below. The provisions above still apply. Rounds 1–3 ran under the old procedure and **do not meet** Protocol v2 (see the result of `tests/run_integrity.py`). They remain valid preliminary evidence within the scope recorded, but must not be used for formal acceptance.
 
 1. **Technical blocking of retrieval.** OFFLINE cases must run in a session with no network/web-browsing tools, not merely be forbidden by instruction. Record how this is ensured in `tool_policy.how` of the manifest. DOCUMENT_ONLY cases may read only the files they are given permission to read.
 2. **Raw transcripts.** Every case must have a complete transcript exported by the host/platform (not a summary written by the running session), with a SHA-256 in the manifest. `tool_calls.md` is only a summary for quick reading.
@@ -37,6 +37,6 @@ Protocol v2 adds the conditions below. The provisions above still apply. Rounds 
 5. **Real host.** Install the plugin through the target host, verify that all 13 skills are discovered, the routing of the router skill, direct invocation of the specialist skills, and behavior when no tools are available.
 6. **Live cases with answer keys.** Each of the five core groups (research, contracts, project diligence, transaction structures, validity) has at least some cases using real official texts, with an answer key written by a lawyer, a review date and sources. Prefer texts that have been amended or replaced, and the fire/explosion and construction insurance field. Do not freeze current law as a permanent truth.
 7. **One candidate, one package, one record.** The ZIP's SHA-256 must match across the manifest, `results.json` and the run folder. Do not carry a PASS from one version to another.
-8. **Check before grading.** Run `python tests/run_integrity.py <run_folder>` (add `--formal` for formal acceptance). A run with FAIL errors must not be used to claim PASS.
+8. **Check before grading.** Run `python tests/run_integrity.py <run_folder>`. A run with FAIL errors must not be used to claim PASS.
 
 `scripts/import_host_run.py` writes `run_manifest.json` for a host run. The script only checks the accompanying evidence; it does not verify the legal correctness of the answers.

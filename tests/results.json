@@ -1530,5 +1530,16 @@
     "current_zip_sha256": "0458b5e0ee5c6fbe14c4a5401c9ff434c89c5ac090dcb679818e58002f322009",
     "date": "2026-11-08",
     "reason": "Only plugin/LICENSE.md changed (logo also under CC BY 4.0; notice translated into English). No change to skills, instructions or manifests. Round 4 evidence ran on the tested ZIP (candidate_zip_sha256)."
+  },
+  "publisher_acceptance": {
+    "date": "2026-11-10",
+    "decided_by": "Thanh Nguyen (Publisher)",
+    "basis": "Round 4: 22/22 PASS, AI-graded (provisional).",
+    "not_met": [
+      "Run on a real host with the plugin installed",
+      "Grader from a different vendor than the runner",
+      "Lawyer review and live cases with answer keys"
+    ],
+    "note": "The per-case formal_acceptance fields record the position at the time of round 4 and are left unchanged."
   }
 }
