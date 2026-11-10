@@ -1,9 +1,0 @@
-# Actual execution record — R01
-
-1. functions.exec -> tools.exec_command, PowerShell `Get-Content -LiteralPath 'work/sessions/R01/plugin/skills/instructions/SKILL.md' -Raw`. Exit 0; router text returned.
-2. functions.exec -> tools.exec_command, PowerShell `Get-Content -LiteralPath` with the following four paths and `-Raw`: `work/sessions/R01/plugin/skills/instructions/references/professional-protocol.md`, `work/sessions/R01/plugin/skills/instructions/references/source-access.md`, `work/sessions/R01/prompt.txt`, `work/sessions/R01/fixtures.md`. Exit 0; protocol, adapter, prompt and synthetic fixtures returned.
-3. functions.exec -> tools.exec_command, PowerShell `Get-Content -LiteralPath` with `work/sessions/R01/plugin/skills/` plus each of `vietnam-legal-research/SKILL.md`, `legal-reasoning/SKILL.md`, `legal-source-verification/SKILL.md`, `legal-validity-verification/SKILL.md`, `legal-quality-audit/SKILL.md`, and `-Raw`. Exit 0; five specialist instructions returned in that order.
-4. functions.exec -> tools.exec_command, PowerShell assigned the complete answer to `$answer`, then `Set-Content -LiteralPath 'work/sessions/R01/answer.md' -Value $answer -Encoding utf8`; built an ordered evidence object and used `$evidence | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath 'work/sessions/R01/evidence.json' -Encoding utf8`. Exit 0, no output. No network request or outside-session file access occurred.
-5. This record is written through functions.exec -> tools.exec_command, PowerShell `Set-Content -LiteralPath 'work/sessions/R01/tool_calls.md' -Value $log -Encoding utf8`. Its result is recorded in the tool response; no prior independent readback of deliverables was performed.
-
-This is a concise record of requests/results visible in this session, not a claim of separate telemetry collection. No additional searches were performed retrospectively.

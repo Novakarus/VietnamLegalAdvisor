@@ -20,6 +20,3 @@ tests/round5-local-marketplace/
 
 # Round 5 (real-host run) in progress, not yet graded: not public
 tests/runs/2026-11-05-round5/
-
-# ZIPs in old run folders are for local comparison only (hashes are in the manifests)
-tests/runs/2026-10-*/Vietnam-Legal-Advisor-*.zip

@@ -8,7 +8,7 @@ A plugin for Vietnamese legal research and professional workflows: a core skill 
 - `tests/`: 22 behavioral case specifications, the evaluation protocol and the evidence of each test round.
 - `scripts/`: validation, packaging and host-run import.
 - `docs/`: the website (GitHub Pages serves this folder): guide, support, privacy, terms.
-- `STATUS.md`: single source of truth for status. `CHANGELOG.md` and `history/`: history. `LICENSE.md`: license map.
+- `STATUS.md`: single source of truth for status. `CHANGELOG.md`: history. `LICENSE.md`: license map.
 
 ## Commands
 

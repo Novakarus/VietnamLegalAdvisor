@@ -1,6 +1,6 @@
 # Project Status — single source of truth
 
-This is the only place that records the current status. `CHANGELOG.md`, `history/` and `tests/runs/` are historical records as of the time they were created; if they conflict with this file, this file prevails. `scripts/validate.py` checks that the version below matches the manifests and `tests/results.json`.
+This is the only place that records the current status. `CHANGELOG.md` and `tests/runs/` are historical records as of the time they were created; if they conflict with this file, this file prevails. `scripts/validate.py` checks that the version below matches the manifests and `tests/results.json`.
 
 Current version: 0.70.0
 Status: CANDIDATE
@@ -31,7 +31,7 @@ Do not raise the status on the basis of provisional AI grading.
 
 ## Status of version 0.70.0
 
-- Candidate (2026-11-04): added `plugin/LICENSE.md` (a CC BY 4.0 license notice, effective 2026-11-04). Skill content unchanged. See `history/CHANGES-0.70.0.md`.
+- Candidate (2026-11-04): added `plugin/LICENSE.md` (a CC BY 4.0 license notice, effective 2026-11-04). Skill content unchanged.
 - Packaged: `dist/Vietnam-Legal-Advisor-0.70.0.zip` (SHA-256 in the `.sha256` file next to it). Static checks pass.
 - Change after round 4 (2026-11-08): only `plugin/LICENSE.md` (the logo is also under CC BY 4.0 to the extent the Publisher holds rights; the notice was translated into English). Skill content, instructions and both manifests are unchanged. The ZIP was repackaged; the current SHA-256 is recorded in `tests/results.json` (`post_test_changes.current_zip_sha256`). The round 4 evidence ran on the earlier ZIP, SHA-256 `ebbd7e606fe3d4c0de6a74194ede4f4726b3e6d5607aed39fed37c001eedb839`, kept at `tests/runs/2026-11-04-round4/`. `validate.py` compares the two archives file by file and fails if any other file differs. This must be re-confirmed on a real host in the formal round (round 5 uses the current ZIP).
 - Behavioral tests: round 4 ran on 2026-11-04 (22/22 provisional PASS, AI-graded; see the Protocol v2 gap section below). Round 5 on a real host is in preparation and has not been graded.
@@ -39,7 +39,7 @@ Do not raise the status on the basis of provisional AI grading.
 
 ## Earlier versions
 
-Versions 0.69.1–0.69.3 were tested in rounds 1–3 (run and graded by Codex, 2026-10-20 and 2026-10-21) and were removed from the repository on 2026-11-08. Their test records are kept under `tests/runs/` as history; they do not meet Protocol v2 and must not be used for acceptance.
+Versions 0.69.1–0.69.3 were tested in rounds 1–3 (run and graded by Codex, 2026-10-20 and 2026-10-21) and were removed from the repository on 2026-11-08; their test records were removed on 2026-11-10 (they did not meet Protocol v2 and could not be used for acceptance). Everything removed remains in the Git history.
 
 ## Gap against Protocol v2
 

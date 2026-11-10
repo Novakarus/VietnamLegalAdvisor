@@ -16,6 +16,4 @@ Added conditional structure comparison when facts are missing; an in-answer veri
 
 Published the source, documents and a summary of the tests. The license and website were published separately; the tested 0.69.3 plugin package was kept unchanged, and no license was added to the historical ZIP. The source file plugin/LICENSE.md is a new document alongside the 20 original files and does not change the skill instructions.
 
-## Details of each change
-
-Detailed records (history only, not the current status; the status is in `STATUS.md`): [0.69.2](history/CHANGES-0.69.2.md) · [0.69.3](history/CHANGES-0.69.3.md) · [0.70.0](history/CHANGES-0.70.0.md).
+Earlier per-version change records and the test records of rounds 1–3 were removed from the repository on 2026-11-10; they remain in the Git history.

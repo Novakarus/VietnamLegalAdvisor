@@ -7,4 +7,3 @@
 - `runs/`: one folder per test round with its report and evidence. Current status and the meaning of each round are in `../STATUS.md`.
 - `run_integrity.py`: checks a run folder against Protocol v2.
 - `HOST_RUNBOOK.md`: how to run the 22 cases on a real host and import the transcripts with `scripts/import_host_run.py`.
-- `history/`: earlier source-state records.

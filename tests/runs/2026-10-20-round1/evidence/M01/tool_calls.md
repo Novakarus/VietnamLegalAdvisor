@@ -1,6 +1,0 @@
-# M01 actual tool calls
-
-1. functions.exec -> exec_command, working directory M01: `Get-ChildItem -Recurse -File | Select-Object -ExpandProperty FullName`. Exit 0. Returned prompt and plugin file inventory; no external access.
-2. functions.exec -> exec_command, working directory M01: `Get-Content -Raw prompt.txt,plugin/skills/instructions/SKILL.md,plugin/skills/instructions/references/professional-protocol.md,plugin/skills/instructions/references/source-access.md`. Exit 0. Read prompt, router, protocol and source adapter. Router requires bounded conclusions and offline labeling.
-3. functions.exec -> exec_command, working directory M01: `Get-Content -Raw` for legal-due-diligence, investment-and-ma, opposing-counsel-review, legal-source-verification, legal-validity-verification and legal-quality-audit SKILL.md. Exit 0. Read selected specialist instructions. No legal text or project evidence supplied.
-4. functions.exec -> exec_command, working directory M01: PowerShell UTF-8 here-string writes of answer.md, evidence.json and tool_calls.md. These contain the bounded Vietnamese answer and observed process evidence. No network, filing, messaging, external verification or candidate modification.

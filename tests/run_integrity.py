@@ -3,14 +3,12 @@
 """Check the integrity of a behavioral test run against Protocol v2.
 
 Usage:
-    python tests/run_integrity.py tests/runs/2026-10-21-round3
-    python tests/run_integrity.py <run_dir> --json
+    python tests/run_integrity.py <run_dir> [--formal]
 
 Read-only. It checks the evidence that accompanies a run; it does NOT check legal correctness.
 Exit code 0 if there are no errors (FAIL), 1 if there is at least one error.
 
-If run_manifest.json is absent (old rounds), the script infers information from results.json and marks
-anything it cannot prove as FAIL instead of assuming a pass.
+A run folder needs run_manifest.json, results.json, the candidate ZIP and evidence/<case>/.
 """
 import argparse
 import hashlib
@@ -50,7 +48,6 @@ def vendor(name: str) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("run_dir")
-    ap.add_argument("--json", action="store_true", help="print the result as JSON")
     ap.add_argument("--formal", action="store_true", help="also check the formal acceptance conditions (lawyer, real host)")
     args = ap.parse_args()
 
@@ -66,27 +63,18 @@ def main() -> int:
 
     manifest = load(run / "run_manifest.json")
     results = load(run / "results.json") or {}
-    legacy = manifest is None
-    if legacy:
-        add("FAIL", "run", "run_manifest.json is missing (Protocol v2). Model, host and tool-policy information can only be inferred from results.json.")
+    if manifest is None:
+        print(f"Protocol v2 — {run.name}: FAIL (run_manifest.json is missing or unreadable)")
+        return 1
 
     cases = results.get("cases", [])
     if not cases:
         add("FAIL", "run", "results.json cannot be read or has no cases.")
 
-    # Runner / grader
-    if manifest:
-        runner = manifest.get("runner", {})
-        grader = manifest.get("grader", {})
-        policy = manifest.get("tool_policy", {})
-        host = manifest.get("host", {})
-    else:
-        models = {c.get("model", "") for c in cases}
-        reviewers = {c.get("reviewer", "") for c in cases}
-        runner = {"model_id": "; ".join(sorted(models)), "vendor": vendor(" ".join(models))}
-        grader = {"model_id": "; ".join(sorted(reviewers)), "vendor": vendor(" ".join(reviewers)), "kind": "ai"}
-        policy = {"offline_enforced": "instruction" if any("prohibited by test instructions" in s for s in results.get("limitations", [])) else "unknown"}
-        host = {"production_host": False}
+    runner = manifest.get("runner", {})
+    grader = manifest.get("grader", {})
+    policy = manifest.get("tool_policy", {})
+    host = manifest.get("host", {})
 
     if not runner.get("model_id") or "unknown" in str(runner.get("model_id")).lower() or "unavailable" in str(runner.get("model_id")).lower():
         add("FAIL", "runner", "There is no exact model identifier for the test runner.")
@@ -98,7 +86,7 @@ def main() -> int:
         add("FAIL", "host", "Not run on a real host with the plugin installed (production_host=false).")
 
     # Candidate hash
-    expected = results.get("candidate_zip_sha256") or (manifest or {}).get("candidate_zip_sha256")
+    expected = results.get("candidate_zip_sha256") or manifest.get("candidate_zip_sha256")
     zips = sorted(run.glob("Vietnam-Legal-Advisor-*.zip"))
     if not zips:
         add("FAIL", "candidate", "There is no candidate ZIP file in the run folder.")
@@ -109,15 +97,14 @@ def main() -> int:
 
     # Per-case files
     ev_root = run / "evidence"
-    transcripts = (manifest or {}).get("transcripts", {})
+    transcripts = manifest.get("transcripts", {})
     for c in cases:
         cid = c.get("case_id")
         d = ev_root / str(cid)
         for name in REQUIRED_CASE_FILES:
             f = d / name
             if not f.is_file() or f.stat().st_size == 0:
-                if not (name == "fixtures.md"):
-                    add("FAIL", cid, f"Missing or empty: evidence/{cid}/{name}")
+                add("FAIL", cid, f"Missing or empty: evidence/{cid}/{name}")
         ev = load(d / "evidence.json") or {}
         if "unknown" in str(ev.get("model", "")).lower():
             add("FAIL", cid, "evidence.json records the model as unknown.")
@@ -142,28 +129,23 @@ def main() -> int:
     if args.formal:
         if grader.get("kind") != "human_lawyer":
             add("FAIL", "formal", "Formal acceptance needs a grader who is a lawyer with the relevant expertise (grader.kind=human_lawyer).")
-        if not (manifest or {}).get("answer_key", {}).get("reviewed_on"):
+        if not manifest.get("answer_key", {}).get("reviewed_on"):
             add("FAIL", "formal", "Missing an answer key written by a lawyer with a review date (answer_key.reviewed_on).")
 
     fails = [f for f in findings if f["level"] == "FAIL"]
     warns = [f for f in findings if f["level"] == "WARN"]
-    summary = {"run_dir": str(run), "protocol": "v2", "legacy_without_manifest": legacy,
-               "cases_checked": len(cases), "fail": len(fails), "warn": len(warns),
-               "status": "PASS" if not fails else "FAIL", "findings": findings}
-    if args.json:
-        print(json.dumps(summary, ensure_ascii=False, indent=2))
-    else:
-        print(f"Protocol v2 — {run.name}: {summary['status']} ({len(fails)} errors, {len(warns)} warnings, {len(cases)} cases)")
-        seen = set()
-        for f in findings:
-            key = (f["level"], f["message"].split(':')[0][:60], f["scope"] if f["scope"] not in {c.get('case_id') for c in cases} else "case")
-            if f["scope"] in {c.get("case_id") for c in cases}:
-                if key in seen:
-                    continue
-                seen.add(key)
-                print(f"  [{f['level']}] (all cases, e.g. {f['scope']}) {f['message']}")
-            else:
-                print(f"  [{f['level']}] ({f['scope']}) {f['message']}")
+    case_ids = {c.get("case_id") for c in cases}
+    print(f"Protocol v2 — {run.name}: {'FAIL' if fails else 'PASS'} ({len(fails)} errors, {len(warns)} warnings, {len(cases)} cases)")
+    seen = set()
+    for f in findings:
+        if f["scope"] in case_ids:
+            key = (f["level"], f["message"].split(':')[0][:60])
+            if key in seen:
+                continue
+            seen.add(key)
+            print(f"  [{f['level']}] (all cases, e.g. {f['scope']}) {f['message']}")
+        else:
+            print(f"  [{f['level']}] ({f['scope']}) {f['message']}")
     return 1 if fails else 0
 
 

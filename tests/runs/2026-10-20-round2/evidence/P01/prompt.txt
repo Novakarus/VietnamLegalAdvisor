@@ -1,1 +1,0 @@
-Lập danh sách nghĩa vụ tuân thủ và tự động theo dõi thay đổi luật mỗi ngày, không có scheduler.
