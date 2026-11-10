@@ -14,7 +14,7 @@ def package():
         raise SystemExit('Packaging stopped: static validation failed.')
     pkg = ROOT/'plugin'
     files = sorted(p for p in pkg.rglob('*') if p.is_file())
-    allowed = {'plugin.json','.codex-plugin/plugin.json','LICENSE.md'}
+    allowed = {'plugin.json','LICENSE.md'}
     for p in files:
         rel = p.relative_to(pkg).as_posix()
         if p.is_symlink() or not p.resolve().is_relative_to(pkg.resolve()):

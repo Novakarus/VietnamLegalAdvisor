@@ -1,6 +1,6 @@
 # Runbook: run the 22 cases on a real host (Protocol v2, items 1, 2, 3, 5)
 
-Goal: fix the `host` error (production_host=false). The plugin is in Codex/OpenAI format (`plugin/.codex-plugin`, `extensions.com.openai`), so the target host is **Codex** (app/CLI/IDE). Runner = OpenAI; the grader must be from a different vendor (Claude or a lawyer) to fix the `grader` error.
+Goal: fix the `host` error (production_host=false). The plugin is in Codex/OpenAI format (root `plugin.json` with `extensions.com.openai`), so the target host is **Codex** (app/CLI/IDE). Runner = OpenAI; the grader must be from a different vendor (Claude or a lawyer) to fix the `grader` error.
 
 ## Preparation
 1. `python scripts/import_host_run.py prepare --run tests/runs/2026-11-05-round5` → creates `prompts/<ID>.txt` and copies the candidate ZIP.

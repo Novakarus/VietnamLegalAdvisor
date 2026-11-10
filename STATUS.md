@@ -2,7 +2,7 @@
 
 This is the only place that records the current status. `CHANGELOG.md` and `tests/runs/` are historical records as of the time they were created; if they conflict with this file, this file prevails. `scripts/validate.py` checks that the version below matches the manifests and `tests/results.json`.
 
-Current version: 0.70.0
+Current version: 0.70.1
 Status: ACCEPTED
 Ready for public release: no
 Updated: 2026-11-10
@@ -26,9 +26,16 @@ Version 0.70.0 was accepted by the Publisher on 2026-11-10 on the basis of round
 
 1. Any change in `plugin/` (including an instruction-only edit) creates a new version; the affected cases plus one control case must be retested. A PASS is not carried over from a previous version.
 2. Changes outside `plugin/` (documentation, scripts, licenses, website) do not raise the plugin version. They are recorded in the Git history.
-3. A tested ZIP is not repackaged; to change the package, create a new version. The one recorded exception is the `plugin/LICENSE.md` change of 2026-11-08 described below.
+3. A tested ZIP is not repackaged; to change the package, create a new version. The one recorded exception is the `plugin/LICENSE.md` change of 2026-11-08 described below. Rule 1 was also set aside once, for 0.70.1 (see below).
 
-## Status of version 0.70.0
+## Status of version 0.70.1
+
+- Packaging-only change from 0.70.0 (2026-11-10): removed the redundant `.codex-plugin/plugin.json` (Codex reads the root `plugin.json` when it has `extensions.com.openai`), removed the empty `skills/instructions/lookup/knowledge-index.json` (not referenced by any skill), resized the logo to 512×512, and updated `plugin/LICENSE.md` (version number; reference to `PROVENANCE.md`). No `SKILL.md`, reference file or agent file changed.
+- **Not behaviorally tested.** By decision of the Publisher (2026-11-10), version 0.70.1 was not retested and keeps the ACCEPTED status of 0.70.0; this is an exception to versioning rule 1. `tests/results.json` remains the round 4 record for 0.70.0, and `validate.py` prints a warning to that effect.
+- Install check (2026-11-10, Codex CLI 0.163.0 on the Publisher's computer): the 0.70.1 ZIP (SHA-256 `2d6bdad8971510252f12403b53cda784eef92a7103460c9dc6871943b66fc9b3`) installed from a temporary local marketplace with only the root manifest, and all 13 skills appeared in the model-visible skill list (`codex debug prompt-input`). This checks discovery only, not behavior. The temporary install was removed afterwards.
+- The copy uploaded earlier to the ChatGPT plugin system is still 0.70.0 with the older `LICENSE.md` and duplicate logo files; it has not been updated.
+
+## Status of version 0.70.0 (superseded)
 
 - Candidate (2026-11-04): added `plugin/LICENSE.md` (a CC BY 4.0 license notice, effective 2026-11-04). Skill content unchanged.
 - Packaged: `dist/Vietnam-Legal-Advisor-0.70.0.zip` (SHA-256 in the `.sha256` file next to it). Static checks pass.

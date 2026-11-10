@@ -12,9 +12,9 @@ A search of `plugin/` for the keywords copyright, license, "third-party" and "©
 
 ## Items not yet confirmed (the Publisher needs to answer)
 
-1. **Logo** `vietnam-legal-advisor-icon-v4.png`: details of origin, prompt, personal account in Vietnam, and the OpenAI terms of 2026-10-16 (Wayback copy with hash) are in [PROVENANCE-LOGO.md](PROVENANCE-LOGO.md). Created by GPT-6 Astra through OpenAI's ChatGPT. Licensed under CC BY 4.0 to the extent the Publisher holds rights.
+1. **Logo** `vietnam-legal-advisor-icon-v4.png`: details of origin, prompt, personal account in Vietnam, and the OpenAI terms of 2026-10-16 (Wayback copy with hash) are in [PROVENANCE.md](PROVENANCE.md) (Part 1). Created by GPT-6 Astra through OpenAI's ChatGPT. Licensed under CC BY 4.0 to the extent the Publisher holds rights.
 2. **AI-assisted content**: the plugin is packaged for platforms with a `com.openai` manifest, and the test runs used Codex subagents. The model providers' terms on rights in output need to be confirmed when sublicensing.
-3. **Vietnamese legal texts**: the plugin does not package legal texts (`knowledge-index.json` is empty). If any are packaged later, the current rules on copyright in normative legal documents must be verified before any status is asserted.
+3. **Vietnamese legal texts**: the plugin does not package legal texts (the empty `knowledge-index.json` was removed in 0.70.1). If any are packaged later, the current rules on copyright in normative legal documents must be verified before any status is asserted.
 4. **Test evidence** (`tests/runs/`): contains model output and zip packages; licensed under CC BY 4.0 to the extent the Publisher holds rights.
 
 ## Code review (2026-11-04)
@@ -27,7 +27,7 @@ Read in full: `scripts/validate.py` (189 lines), `scripts/package.py` (49), `tes
 
 Since this review, `tests/run_technical.py`, `tests/validate.py` and the Pillow-based image check were removed (2026-11-10); the review above describes the files as they were on 2026-11-04.
 
-Limitation: this was a manual read, without an open-source code-matching tool. It cannot prove there is no coincidence; it shows only that there is no obvious sign. Code written by Claude (`tests/run_integrity.py`, `scripts/import_host_run.py`, and the 2026-11-10 simplification of `scripts/validate.py`) is not part of this review and is declared in `PROVENANCE-AI-CONTENT.md`.
+Limitation: this was a manual read, without an open-source code-matching tool. It cannot prove there is no coincidence; it shows only that there is no obvious sign. Code written by Claude (`tests/run_integrity.py`, `scripts/import_host_run.py`, and the 2026-11-10 simplification of `scripts/validate.py`) is not part of this review and is declared in `PROVENANCE.md` (Part 2).
 
 ## License texts reproduced verbatim
 

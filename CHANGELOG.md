@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.70.1 — 2026-11-10, not public
+
+Packaging only: removed `.codex-plugin/plugin.json` (the root `plugin.json` is the manifest Codex reads) and the empty `knowledge-index.json`; logo resized to 512×512; `plugin/LICENSE.md` updated; the two provenance files merged into `PROVENANCE.md`. Skill content unchanged. Not retested, by decision of the Publisher; status stays ACCEPTED (see `STATUS.md`).
+
 ## 0.70.0 — accepted by the Publisher 2026-11-10, not public — candidate 2026-11-04
 
 Renumbered from 0.69.3 (frozen). License update (Apache-2.0 for code; CC BY 4.0 for documents and plugin content; the logo, test evidence and AI output are also CC BY 4.0 to the extent the Publisher holds rights), records of the provenance of AI content and of the logo, and archiving of third-party terms. Protocol v2 test round 4: 22 isolated Claude sessions, 22/22 provisional PASS graded by AI; `tests/run_integrity.py` still has 2 errors (grader from the same vendor, not yet run on a real host), so there is no formal acceptance. Added `scripts/import_host_run.py` and `tests/HOST_RUNBOOK.md` for the real-host round. `validate.py` skips the ZIP comparison when `dist/` is absent (CI) and prints a warning. The website now has a single source, `docs/` (GitHub Pages serves from /docs); the root copy, `sync_site.py` and the `release.yml` workflow were removed. Version 0.69.3 (package, release page, report) was removed from the repository; the round 1–3 test records are kept. All repository documents and the plugin manifests/license notice were translated into English on 2026-11-08 (the skills and the test evidence remain in Vietnamese). The Terms of Use and source-license pages are also published in Vietnamese (`docs/terms/vi/`), which is the official text; Terms version stays 1.0.
