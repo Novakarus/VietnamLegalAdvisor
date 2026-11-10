@@ -1,0 +1,41 @@
+{
+  "test_id": "C01",
+  "date": "2026-11-10",
+  "timezone": "Asia/Bangkok",
+  "model": "claude-sonnet-5-5",
+  "runner": "Claude (isolated Claude Code subagent, one session per case)",
+  "mode": "DOCUMENT_ONLY",
+  "self_reported_mode": "DOCUMENT_ONLY",
+  "actual_observed_route": [
+    "instructions",
+    "vietnam-contract-review",
+    "opposing-counsel-review",
+    "legal-quality-audit"
+  ],
+  "self_reported_route": [
+    "instructions",
+    "vietnam-contract-review",
+    "opposing-counsel-review",
+    "legal-quality-audit"
+  ],
+  "tools_available": [
+    "Read",
+    "Edit"
+  ],
+  "tools_called": [
+    "Read"
+  ],
+  "n_tool_calls": 7,
+  "files_read": [
+    "plugin/skills/instructions/SKILL.md",
+    "tests/fixtures.md",
+    "plugin/skills/instructions/references/professional-protocol.md",
+    "plugin/skills/instructions/references/source-access.md",
+    "plugin/skills/vietnam-contract-review/SKILL.md",
+    "plugin/skills/opposing-counsel-review/SKILL.md",
+    "plugin/skills/legal-quality-audit/SKILL.md"
+  ],
+  "files_read_outside_scope": [],
+  "transcript_sha256": "9ea2dcc6c1740c3e4f237cc0c8ad64d2e811e6424995f35417ea194d16d519a4",
+  "subagent_type": "statusline-setup"
+}

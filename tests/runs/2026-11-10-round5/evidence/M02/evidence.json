@@ -1,0 +1,49 @@
+{
+  "test_id": "M02",
+  "date": "2026-11-10",
+  "timezone": "Asia/Bangkok",
+  "model": "claude-sonnet-5-5",
+  "runner": "Claude (isolated Claude Code subagent, one session per case)",
+  "mode": "OFFLINE",
+  "self_reported_mode": "OFFLINE",
+  "actual_observed_route": [
+    "instructions",
+    "investment-and-ma",
+    "legal-reasoning",
+    "opposing-counsel-review",
+    "legal-quality-audit",
+    "legal-source-verification",
+    "legal-validity-verification"
+  ],
+  "self_reported_route": [
+    "instructions",
+    "investment-and-ma",
+    "legal-reasoning",
+    "opposing-counsel-review",
+    "legal-quality-audit",
+    "legal-source-verification",
+    "legal-validity-verification"
+  ],
+  "tools_available": [
+    "Read",
+    "Edit"
+  ],
+  "tools_called": [
+    "Read"
+  ],
+  "n_tool_calls": 9,
+  "files_read": [
+    "plugin/skills/instructions/SKILL.md",
+    "plugin/skills/instructions/references/professional-protocol.md",
+    "plugin/skills/instructions/references/source-access.md",
+    "plugin/skills/investment-and-ma/SKILL.md",
+    "plugin/skills/legal-reasoning/SKILL.md",
+    "plugin/skills/opposing-counsel-review/SKILL.md",
+    "plugin/skills/legal-quality-audit/SKILL.md",
+    "plugin/skills/legal-source-verification/SKILL.md",
+    "plugin/skills/legal-validity-verification/SKILL.md"
+  ],
+  "files_read_outside_scope": [],
+  "transcript_sha256": "f42debc2a5a0f05843a6e7fc6e3016d5708db0770e8fdf294dea5ad74721c70f",
+  "subagent_type": "statusline-setup"
+}

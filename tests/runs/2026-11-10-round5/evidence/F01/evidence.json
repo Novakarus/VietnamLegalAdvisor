@@ -1,0 +1,46 @@
+{
+  "test_id": "F01",
+  "date": "2026-11-10",
+  "timezone": "Asia/Bangkok",
+  "model": "claude-sonnet-5-5",
+  "runner": "Claude (isolated Claude Code subagent, one session per case)",
+  "mode": "OFFLINE",
+  "self_reported_mode": "OFFLINE",
+  "actual_observed_route": [
+    "instructions",
+    "legal-document-drafting",
+    "corporate-governance",
+    "legal-quality-audit",
+    "legal-source-verification",
+    "legal-validity-verification"
+  ],
+  "self_reported_route": [
+    "instructions",
+    "legal-document-drafting",
+    "corporate-governance",
+    "legal-quality-audit",
+    "legal-source-verification",
+    "legal-validity-verification"
+  ],
+  "tools_available": [
+    "Read",
+    "Edit"
+  ],
+  "tools_called": [
+    "Read"
+  ],
+  "n_tool_calls": 8,
+  "files_read": [
+    "plugin/skills/instructions/SKILL.md",
+    "plugin/skills/instructions/references/professional-protocol.md",
+    "plugin/skills/instructions/references/source-access.md",
+    "plugin/skills/legal-document-drafting/SKILL.md",
+    "plugin/skills/corporate-governance/SKILL.md",
+    "plugin/skills/legal-quality-audit/SKILL.md",
+    "plugin/skills/legal-source-verification/SKILL.md",
+    "plugin/skills/legal-validity-verification/SKILL.md"
+  ],
+  "files_read_outside_scope": [],
+  "transcript_sha256": "ea5901b85dd3b326c76869c9901063cbc6badf5b9ee76d725f1d61f967579479",
+  "subagent_type": "statusline-setup"
+}

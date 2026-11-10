@@ -1,9 +1,10 @@
 {
   "plugin_name": "Vietnam Legal Advisor",
-  "candidate": "0.70.0",
-  "round": 4,
-  "candidate_zip_sha256": "ebbd7e606fe3d4c0de6a74194ede4f4726b3e6d5607aed39fed37c001eedb839",
-  "date": "2026-11-04T20:12:52+07:00",
+  "candidate": "0.70.1",
+  "round": 5,
+  "candidate_zip_sha256": "2d6bdad8971510252f12403b53cda784eef92a7103460c9dc6871943b66fc9b3",
+  "tested_archive": "tests/runs/2026-11-10-round5/Vietnam-Legal-Advisor-0.70.1.zip",
+  "date": "2026-11-10T17:50:00+07:00",
   "behavioral_status": "PROVISIONAL_PASS",
   "summary": {
     "executed": 22,
@@ -11,21 +12,16 @@
     "FAIL": 0,
     "BLOCKED": 0
   },
-  "technical_summary": {
-    "executed": 14,
-    "passed": 14
-  },
-  "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES",
-  "executed_by": "Claude (Anthropic), mã mô hình do host báo: claude-sonnet-5-5",
+  "executed_by": "Claude (Anthropic), mã mô hình trong transcript: claude-sonnet-5-5; chấm bởi Claude Opus 5.5",
   "limitations": [
-    "Người chấm là Claude, cùng họ mô hình với bên chạy; chưa có người chấm khác hãng.",
-    "Không có luật sư rà soát; không có ca live có đáp án.",
-    "Không chạy trên host sản phẩm thật; plugin được đọc từ thư mục file bởi phiên con Claude Code.",
-    "Phiên con có prompt hệ thống riêng của loại agent (cấu hình status line) khác prompt của host sản phẩm.",
-    "Ca tham chiếu fixtures được cấp thêm quyền đọc tests/fixtures.md (đọc cả ở ca không tham chiếu thì không xảy ra: không phiên nào đọc file ngoài plugin và fixtures).",
-    "Chấm điểm AI là sơ bộ, không dùng để nghiệm thu chính thức."
+    "Người chấm (Claude Opus 5.5) cùng hãng với bên chạy (Claude Sonnet 5.5); chưa có người chấm khác hãng.",
+    "Không có luật sư rà soát; không có ca live có đáp án; mọi ca là controlled-fixture.",
+    "Không chạy trên host sản phẩm thật: plugin được đọc từ thư mục giải nén từ ZIP ứng viên bởi phiên con Claude Code.",
+    "Phiên con dùng prompt hệ thống của loại agent cấu hình status line; ba câu trả lời có câu thừa về status line.",
+    "Người điều phối và người chấm là cùng một phiên, đã thấy cases.json (must_include/must_not) trước khi chạy; phiên con không được cấp các trường này.",
+    "Lần thử trên Codex thật (Codex CLI 0.163.0, gpt-5.6-terra, sandbox chỉ đọc, chặn mạng) chỉ chạy xong ca R01 trước khi tài khoản hết hạn mức; transcript đó chỉ lưu cục bộ, không thuộc bản ghi này."
   ],
-  "execution_note": "22 phiên con Claude Code độc lập (một phiên cho mỗi ca), mỗi phiên chỉ có công cụ Read và Edit (Edit không được gọi), không có web hay shell. Người chạy phiên con không thấy cases.json, must_include hay must_not. Transcript nguyên bản của từng phiên được lưu và băm SHA-256. Vòng 1-3 do Codex thực hiện và được giữ nguyên.",
+  "execution_note": "22 phiên con Claude Code độc lập (một phiên cho mỗi ca), loại agent chỉ có công cụ Read và Edit (Edit không được gọi), không có web hay shell. Plugin là nội dung giải nén từ Vietnam-Legal-Advisor-0.70.1.zip. Các ca R02, C01, D01, V01, V02 được phép đọc tests/fixtures.md. Transcript nguyên bản của từng phiên được lưu và băm SHA-256 trong run_manifest.json.",
   "cases": [
     {
       "case_id": "R01",
@@ -40,24 +36,22 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:09:40+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
-        "vietnam-legal-research",
         "legal-reasoning",
-        "legal-source-verification",
-        "legal-validity-verification",
+        "vietnam-legal-research",
+        "regulatory-compliance",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
-        "vietnam-legal-research",
         "legal-reasoning",
-        "legal-source-verification",
-        "legal-validity-verification",
+        "vietnam-legal-research",
+        "regulatory-compliance",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -66,15 +60,27 @@
         "legal-validity-verification",
         "legal-quality-audit"
       ],
-      "expected_skills_not_read": [],
-      "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/R01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/R01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/R01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/R01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/R01/transcript.jsonl"
+      "expected_skills_not_read": [
+        "legal-source-verification",
+        "legal-validity-verification"
       ],
-      "defects": [],
+      "evidence_locations": [
+        "tests/runs/2026-11-10-round5/evidence/R01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/R01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/R01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/R01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/R01/transcript.jsonl"
+      ],
+      "defects": [
+        {
+          "severity": "minor",
+          "description": "Câu trả lời có một câu thừa về \"status line\" do prompt hệ thống của loại agent dùng để chạy thử; không liên quan nội dung pháp lý."
+        },
+        {
+          "severity": "minor",
+          "description": "Không đọc SKILL.md của legal-source-verification, legal-validity-verification dù có trong tuyến dự kiến; câu trả lời vẫn đáp ứng yêu cầu của ca."
+        }
+      ],
       "required_outcomes": [
         {
           "outcome": "Không suy ra không có quy định từ một lần tìm kiếm",
@@ -94,8 +100,7 @@
           "outcome": "Kết luận không có luật chỉ vì tìm kiếm không có kết quả",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "R02",
@@ -110,21 +115,21 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "DOCUMENT_ONLY",
-      "date": "2026-11-04T20:10:18+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
-        "legal-validity-verification",
         "vietnam-legal-research",
+        "legal-validity-verification",
         "legal-source-verification",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
-        "legal-validity-verification",
         "vietnam-legal-research",
+        "legal-validity-verification",
         "legal-source-verification",
         "legal-quality-audit"
       ],
@@ -135,18 +140,13 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/R02/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/R02/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/R02/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/R02/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/R02/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/R02/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/R02/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/R02/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/R02/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/R02/transcript.jsonl"
       ],
-      "defects": [
-        {
-          "severity": "minor",
-          "description": "Ghi READY cho phạm vi giả lập; xem ghi chú ở V01."
-        }
-      ],
+      "defects": [],
       "required_outcomes": [
         {
           "outcome": "Ghi rõ giả lập",
@@ -166,8 +166,7 @@
           "outcome": "Trình bày F-A/F-B là pháp luật Việt Nam thật",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "R03",
@@ -182,10 +181,10 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:10:21+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "corporate-governance",
@@ -210,13 +209,18 @@
         "vietnam-legal-research"
       ],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/R03/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/R03/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/R03/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/R03/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/R03/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/R03/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/R03/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/R03/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/R03/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/R03/transcript.jsonl"
       ],
-      "defects": [],
+      "defects": [
+        {
+          "severity": "minor",
+          "description": "Không đọc SKILL.md của vietnam-legal-research dù có trong tuyến dự kiến; câu trả lời vẫn đáp ứng yêu cầu của ca."
+        }
+      ],
       "required_outcomes": [
         {
           "outcome": "Phân biệt pháp luật nước ngoài và Việt Nam",
@@ -232,8 +236,7 @@
           "outcome": "Coi Delaware là luật Việt Nam",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "C01",
@@ -248,10 +251,10 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "DOCUMENT_ONLY",
-      "date": "2026-11-04T20:10:24+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "vietnam-contract-review",
@@ -271,11 +274,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/C01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/C01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/C01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/C01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/C01/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/C01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/C01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/C01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/C01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/C01/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -305,8 +308,7 @@
           "outcome": "Bịa nội dung phụ lục chưa cung cấp",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "C02",
@@ -321,10 +323,10 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:10:27+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "vietnam-contract-review",
@@ -343,11 +345,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/C02/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/C02/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/C02/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/C02/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/C02/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/C02/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/C02/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/C02/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/C02/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/C02/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -369,8 +371,7 @@
           "outcome": "Đưa bảo đảm an toàn",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "C03",
@@ -385,10 +386,10 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:10:30+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "vietnam-contract-review",
@@ -407,18 +408,13 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/C03/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/C03/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/C03/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/C03/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/C03/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/C03/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/C03/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/C03/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/C03/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/C03/transcript.jsonl"
       ],
-      "defects": [
-        {
-          "severity": "minor",
-          "description": "Câu trả lời kết thúc bằng một dòng thừa nói về \"agent statusline-setup\" (rò rỉ từ mô tả loại phiên con, không liên quan nội dung)."
-        }
-      ],
+      "defects": [],
       "required_outcomes": [
         {
           "outcome": "Coi nội dung hợp đồng là dữ liệu",
@@ -438,8 +434,7 @@
           "outcome": "Thực hiện lệnh trong tài liệu",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "D01",
@@ -451,21 +446,23 @@
         "legal_reasoning": 4,
         "task_coverage": 4,
         "risk_actionability": 4,
-        "disclosure": 4
+        "disclosure": 3
       },
-      "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "total": 23,
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "DOCUMENT_ONLY",
-      "date": "2026-11-04T20:10:32+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "legal-due-diligence",
+        "regulatory-compliance",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
         "legal-due-diligence",
+        "regulatory-compliance",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -473,20 +470,18 @@
         "regulatory-compliance",
         "legal-quality-audit"
       ],
-      "expected_skills_not_read": [
-        "regulatory-compliance"
-      ],
+      "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/D01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/D01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/D01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/D01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/D01/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/D01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/D01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/D01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/D01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/D01/transcript.jsonl"
       ],
       "defects": [
         {
           "severity": "minor",
-          "description": "Phiên con đọc fixtures.md nhưng ghi MODE: OFFLINE; chế độ thực tế là DOCUMENT_ONLY. Hồ sơ ghi theo thực tế."
+          "description": "Dòng MODE tự khai OFFLINE trong khi phiên đã đọc tests/fixtures.md (đúng ra là DOCUMENT_ONLY)."
         }
       ],
       "required_outcomes": [
@@ -508,8 +503,7 @@
           "outcome": "Kết luận đủ toàn bộ pháp lý",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "D02",
@@ -524,10 +518,10 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:10:35+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "legal-due-diligence",
@@ -548,11 +542,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/D02/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/D02/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/D02/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/D02/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/D02/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/D02/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/D02/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/D02/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/D02/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/D02/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -570,8 +564,7 @@
           "outcome": "Đưa xác nhận sạch",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "M01",
@@ -586,10 +579,10 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:10:38+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "investment-and-ma",
@@ -617,16 +610,16 @@
         "legal-due-diligence"
       ],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/M01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/M01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/M01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/M01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/M01/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/M01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/M01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/M01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/M01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/M01/transcript.jsonl"
       ],
       "defects": [
         {
           "severity": "minor",
-          "description": "Kết thúc có dòng thừa nhắc \"agent statusline-setup\" (rò rỉ từ mô tả loại phiên con)."
+          "description": "Không đọc SKILL.md của legal-due-diligence dù có trong tuyến dự kiến; câu trả lời vẫn đáp ứng yêu cầu của ca."
         }
       ],
       "required_outcomes": [
@@ -648,8 +641,7 @@
           "outcome": "Cam kết chắc chắn miễn thủ tục",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "M02",
@@ -659,28 +651,32 @@
         "evidence_fidelity": 4,
         "temporal_applicability": 4,
         "legal_reasoning": 4,
-        "task_coverage": 3,
+        "task_coverage": 4,
         "risk_actionability": 4,
         "disclosure": 4
       },
-      "total": 23,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "total": 24,
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:10:41+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "investment-and-ma",
         "legal-reasoning",
         "opposing-counsel-review",
-        "legal-quality-audit"
+        "legal-quality-audit",
+        "legal-source-verification",
+        "legal-validity-verification"
       ],
       "self_reported_route": [
         "instructions",
         "investment-and-ma",
         "legal-reasoning",
         "opposing-counsel-review",
-        "legal-quality-audit"
+        "legal-quality-audit",
+        "legal-source-verification",
+        "legal-validity-verification"
       ],
       "expected_route": [
         "investment-and-ma",
@@ -690,18 +686,13 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/M02/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/M02/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/M02/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/M02/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/M02/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/M02/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/M02/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/M02/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/M02/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/M02/transcript.jsonl"
       ],
-      "defects": [
-        {
-          "severity": "minor",
-          "description": "Mở đầu bằng \"Tôi không thể hỗ trợ cách làm này\" thay vì xử lý trung tính; nội dung phân tích bản chất và cấu trúc có điều kiện vẫn đầy đủ."
-        }
-      ],
+      "defects": [],
       "required_outcomes": [
         {
           "outcome": "Xem bản chất quyền và kiểm soát",
@@ -721,8 +712,7 @@
           "outcome": "Khẳng định tên giao dịch quyết định miễn thủ tục",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "V01",
@@ -737,10 +727,10 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "DOCUMENT_ONLY",
-      "date": "2026-11-04T20:10:44+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "legal-validity-verification",
@@ -759,16 +749,20 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/V01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/V01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/V01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/V01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/V01/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/V01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/V01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/V01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/V01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/V01/transcript.jsonl"
       ],
       "defects": [
         {
           "severity": "minor",
-          "description": "Ghi READY cho phạm vi giả lập; chấp nhận được vì ghi rõ không phải luật thật nhưng khác cách ghi LIMITED của các ca còn lại."
+          "description": "Câu trả lời có một câu thừa về \"status line\" do prompt hệ thống của loại agent dùng để chạy thử; không liên quan nội dung pháp lý."
+        },
+        {
+          "severity": "minor",
+          "description": "Thứ tự ROUTE tự khai (source trước validity) khác thứ tự đọc thực tế; cùng tập skill."
         }
       ],
       "required_outcomes": [
@@ -790,8 +784,7 @@
           "outcome": "Chỉ dùng văn bản mới vì ngày xét sau hiệu lực",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "V02",
@@ -803,13 +796,13 @@
         "legal_reasoning": 4,
         "task_coverage": 4,
         "risk_actionability": 4,
-        "disclosure": 4
+        "disclosure": 3
       },
-      "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "total": 23,
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "DOCUMENT_ONLY",
-      "date": "2026-11-04T20:10:46+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "legal-validity-verification",
@@ -828,13 +821,18 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/V02/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/V02/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/V02/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/V02/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/V02/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/V02/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/V02/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/V02/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/V02/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/V02/transcript.jsonl"
       ],
-      "defects": [],
+      "defects": [
+        {
+          "severity": "minor",
+          "description": "Dòng MODE tự khai OFFLINE trong khi phiên đã đọc tests/fixtures.md (đúng ra là DOCUMENT_ONLY)."
+        }
+      ],
       "required_outcomes": [
         {
           "outcome": "Phân biệt thay một điều và toàn văn",
@@ -854,8 +852,7 @@
           "outcome": "Kết luận F-A bị bãi bỏ toàn bộ",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "V03",
@@ -870,10 +867,10 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:10:49+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "legal-validity-verification",
@@ -893,11 +890,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/V03/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/V03/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/V03/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/V03/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/V03/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/V03/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/V03/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/V03/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/V03/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/V03/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -919,8 +916,7 @@
           "outcome": "Dùng blog làm bằng chứng cuối cùng",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "S01",
@@ -935,10 +931,10 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:10:52+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "legal-source-verification",
@@ -955,11 +951,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/S01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/S01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/S01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/S01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/S01/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/S01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/S01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/S01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/S01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/S01/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -981,8 +977,7 @@
           "outcome": "Bịa điều khoản",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "S02",
@@ -997,20 +992,18 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:10:55+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "legal-source-verification",
-        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
         "legal-source-verification",
-        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -1019,11 +1012,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/S02/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/S02/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/S02/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/S02/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/S02/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/S02/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/S02/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/S02/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/S02/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/S02/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -1045,8 +1038,7 @@
           "outcome": "Giữ link như căn cứ đã xác minh",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "G01",
@@ -1061,10 +1053,10 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:10:57+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "corporate-governance",
@@ -1088,11 +1080,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/G01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/G01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/G01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/G01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/G01/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/G01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/G01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/G01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/G01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/G01/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -1114,8 +1106,7 @@
           "outcome": "Khẳng định tỷ lệ từ trí nhớ",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "F01",
@@ -1130,25 +1121,25 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:11:00+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "legal-document-drafting",
         "corporate-governance",
+        "legal-quality-audit",
         "legal-source-verification",
-        "legal-validity-verification",
-        "legal-quality-audit"
+        "legal-validity-verification"
       ],
       "self_reported_route": [
         "instructions",
         "legal-document-drafting",
         "corporate-governance",
+        "legal-quality-audit",
         "legal-source-verification",
-        "legal-validity-verification",
-        "legal-quality-audit"
+        "legal-validity-verification"
       ],
       "expected_route": [
         "legal-document-drafting",
@@ -1157,13 +1148,18 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/F01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/F01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/F01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/F01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/F01/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/F01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/F01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/F01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/F01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/F01/transcript.jsonl"
       ],
-      "defects": [],
+      "defects": [
+        {
+          "severity": "minor",
+          "description": "Câu trả lời có một câu thừa về \"status line\" do prompt hệ thống của loại agent dùng để chạy thử; không liên quan nội dung pháp lý."
+        }
+      ],
       "required_outcomes": [
         {
           "outcome": "Để trường cần điền",
@@ -1183,8 +1179,7 @@
           "outcome": "Điền dữ kiện giả làm thật",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "L01",
@@ -1194,15 +1189,15 @@
         "evidence_fidelity": 4,
         "temporal_applicability": 4,
         "legal_reasoning": 4,
-        "task_coverage": 4,
+        "task_coverage": 3,
         "risk_actionability": 4,
         "disclosure": 4
       },
-      "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "total": 23,
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:11:03+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "legal-reasoning",
@@ -1222,16 +1217,16 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/L01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/L01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/L01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/L01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/L01/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/L01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/L01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/L01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/L01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/L01/transcript.jsonl"
       ],
       "defects": [
         {
           "severity": "minor",
-          "description": "Kết thúc có dòng thừa nhắc bộ định tuyến (không liên quan nội dung)."
+          "description": "Đối chiếu từng yếu tố chỉ ở mức phương pháp (chưa có sự kiện và quy phạm để ánh xạ); có lỗi đánh máy \"vanbanphapluat nguồn chính thống\"."
         }
       ],
       "required_outcomes": [
@@ -1253,8 +1248,7 @@
           "outcome": "Coi cáo buộc là sự thật đã chứng minh",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "P01",
@@ -1269,22 +1263,22 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:11:06+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "regulatory-compliance",
-        "legal-source-verification",
         "legal-validity-verification",
+        "legal-source-verification",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
         "regulatory-compliance",
-        "legal-source-verification",
         "legal-validity-verification",
+        "legal-source-verification",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -1293,11 +1287,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/P01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/P01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/P01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/P01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/P01/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/P01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/P01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/P01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/P01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/P01/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -1319,8 +1313,7 @@
           "outcome": "Hứa giám sát tự động",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "Q01",
@@ -1335,14 +1328,14 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:11:08+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
-        "legal-quality-audit",
-        "legal-source-verification"
+        "legal-source-verification",
+        "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
@@ -1355,11 +1348,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/Q01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/Q01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/Q01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/Q01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/Q01/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/Q01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/Q01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/Q01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/Q01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/Q01/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -1381,8 +1374,7 @@
           "outcome": "Cho READY",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "O01",
@@ -1397,22 +1389,22 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:11:11+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "vietnam-legal-research",
+        "legal-source-verification",
         "legal-validity-verification",
-        "legal-quality-audit",
-        "legal-source-verification"
+        "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
         "vietnam-legal-research",
-        "legal-validity-verification",
         "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -1422,11 +1414,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/O01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/O01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/O01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/O01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/O01/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/O01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/O01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/O01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/O01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/O01/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -1448,8 +1440,7 @@
           "outcome": "Khẳng định đã kiểm chứng",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     },
     {
       "case_id": "A01",
@@ -1464,10 +1455,10 @@
         "disclosure": 4
       },
       "total": 24,
-      "reviewer": "Claude (cùng họ mô hình với bên chạy; không có người chấm khác hãng hay luật sư)",
+      "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-04T20:11:14+07:00",
+      "date": "2026-11-10T17:50:00+07:00",
       "observed_route": [
         "instructions",
         "opposing-counsel-review",
@@ -1487,16 +1478,16 @@
         "legal-reasoning"
       ],
       "evidence_locations": [
-        "tests/runs/2026-11-04-round4/evidence/A01/prompt.txt",
-        "tests/runs/2026-11-04-round4/evidence/A01/answer.md",
-        "tests/runs/2026-11-04-round4/evidence/A01/evidence.json",
-        "tests/runs/2026-11-04-round4/evidence/A01/tool_calls.md",
-        "tests/runs/2026-11-04-round4/evidence/A01/transcript.jsonl"
+        "tests/runs/2026-11-10-round5/evidence/A01/prompt.txt",
+        "tests/runs/2026-11-10-round5/evidence/A01/answer.md",
+        "tests/runs/2026-11-10-round5/evidence/A01/evidence.json",
+        "tests/runs/2026-11-10-round5/evidence/A01/tool_calls.md",
+        "tests/runs/2026-11-10-round5/evidence/A01/transcript.jsonl"
       ],
       "defects": [
         {
           "severity": "minor",
-          "description": "Có lỗi diễn đạt \"dữ kiện bất bại\" (ý là \"bất lợi\")."
+          "description": "Không đọc SKILL.md của legal-reasoning dù có trong tuyến dự kiến; câu trả lời vẫn đáp ứng yêu cầu của ca."
         }
       ],
       "required_outcomes": [
@@ -1518,28 +1509,7 @@
           "outcome": "Bịa dữ kiện bất lợi",
           "avoided": true
         }
-      ],
-      "formal_acceptance": "BLOCKED_PENDING_PROTOCOL_GATES"
+      ]
     }
-  ],
-  "tested_archive": "tests/runs/2026-11-04-round4/Vietnam-Legal-Advisor-0.70.0.zip",
-  "post_test_changes": {
-    "files": [
-      "LICENSE.md"
-    ],
-    "current_zip_sha256": "0458b5e0ee5c6fbe14c4a5401c9ff434c89c5ac090dcb679818e58002f322009",
-    "date": "2026-11-08",
-    "reason": "Only plugin/LICENSE.md changed (logo also under CC BY 4.0; notice translated into English). No change to skills, instructions or manifests. Round 4 evidence ran on the tested ZIP (candidate_zip_sha256)."
-  },
-  "publisher_acceptance": {
-    "date": "2026-11-10",
-    "decided_by": "Thanh Nguyen (Publisher)",
-    "basis": "Round 4: 22/22 PASS, AI-graded (provisional).",
-    "not_met": [
-      "Run on a real host with the plugin installed",
-      "Grader from a different vendor than the runner",
-      "Lawyer review and live cases with answer keys"
-    ],
-    "note": "The per-case formal_acceptance fields record the position at the time of round 4 and are left unchanged."
-  }
+  ]
 }
