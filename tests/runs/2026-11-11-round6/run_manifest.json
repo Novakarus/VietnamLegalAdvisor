@@ -1,0 +1,128 @@
+{
+  "protocol": "v2",
+  "round": 6,
+  "candidate_version": "0.70.2",
+  "candidate_zip_sha256": "eb4b16db07f8566c169096b15e40c46338e1a1515b1b2c760200ba35345a0cf0",
+  "started_at": "2026-11-11T11:35:00+07:00",
+  "host": {
+    "name": "Claude Code (subagent; plugin read as a folder of files extracted from the candidate ZIP)",
+    "version": "unknown",
+    "production_host": false,
+    "plugin_installed_via_host": false,
+    "skills_discovered": 0
+  },
+  "runner": {
+    "vendor": "anthropic",
+    "model_id": "claude-sonnet-5-5"
+  },
+  "tool_policy": {
+    "offline_enforced": "technical",
+    "how": "Each case ran in its own subagent of a type that only has the Read and Edit tools (no web, shell or scheduling). The raw transcripts show that only Read was called, on files inside the extracted plugin or tests/fixtures.md.",
+    "document_only_files": [
+      "tests/fixtures.md"
+    ]
+  },
+  "grader": {
+    "kind": "ai",
+    "vendor": "anthropic",
+    "model_id": "claude-opus-5-5"
+  },
+  "answer_key": {
+    "applies_to": [],
+    "reviewed_on": null,
+    "sources": []
+  },
+  "supplementary": {
+    "note": "Round 6 reruns all 22 cases on candidate 0.70.2 with Claude subagents because the Codex account is rate-limited until about 2026-12-05. The runner prompt no longer tells the runner how to label MODE (it says: according to the plugin rules)."
+  },
+  "transcripts": {
+    "R01": {
+      "path": "evidence/R01/transcript.jsonl",
+      "sha256": "22ce72f5efc2685580c87118ae44db734df765949482ed4e586e5c712541c74c"
+    },
+    "R02": {
+      "path": "evidence/R02/transcript.jsonl",
+      "sha256": "f61bfe5d613feba305e8b42138c603997f752f63fcba7652ab3e48532c89ad0e"
+    },
+    "R03": {
+      "path": "evidence/R03/transcript.jsonl",
+      "sha256": "baba025b3beae9382deb6a821b0eacb4000368ed3710f3687976e9abe48d1d6a"
+    },
+    "C01": {
+      "path": "evidence/C01/transcript.jsonl",
+      "sha256": "cdb71f05f09de749b1b1ecef2e7f1c33327590dad1f75fefbf7e0f53303f064a"
+    },
+    "C02": {
+      "path": "evidence/C02/transcript.jsonl",
+      "sha256": "9cba4877e0ef894996700b16e1a346252a49de2ff9cb8493ba6e23085cc57240"
+    },
+    "C03": {
+      "path": "evidence/C03/transcript.jsonl",
+      "sha256": "b9864a6782e95e45ffbcd16430c562c7d2e9462138ab027274b00c9422c118d2"
+    },
+    "D01": {
+      "path": "evidence/D01/transcript.jsonl",
+      "sha256": "819056f0582562ba0e8ebf68df61b935664829c72930b806681b94260e834d38"
+    },
+    "D02": {
+      "path": "evidence/D02/transcript.jsonl",
+      "sha256": "52d98d5e2a07f528457fafb9650f90cb8062d18c530c6d8badce90be192140ac"
+    },
+    "M01": {
+      "path": "evidence/M01/transcript.jsonl",
+      "sha256": "283cd09065425efb4b160c8c770c667f91e113c6b75614fb768f06e35d6f2963"
+    },
+    "M02": {
+      "path": "evidence/M02/transcript.jsonl",
+      "sha256": "002cc0df93b3388cc510b0e8341828dc5269d528872adbc61adfcd7d9a1577d9"
+    },
+    "V01": {
+      "path": "evidence/V01/transcript.jsonl",
+      "sha256": "7ce2a670cdfb89deb106991a9bf7e1b5241fd2dfc98bdaf22af903a289d9083d"
+    },
+    "V02": {
+      "path": "evidence/V02/transcript.jsonl",
+      "sha256": "c4e05272c0904c8a9f300930b3851863c2c648c7a0b1c3f35b67e33af8c67dc8"
+    },
+    "V03": {
+      "path": "evidence/V03/transcript.jsonl",
+      "sha256": "db64b7c275f7140cd898a904649d5ab4f0fe40e0efc3b5268906e9dee58e4cf3"
+    },
+    "S01": {
+      "path": "evidence/S01/transcript.jsonl",
+      "sha256": "7de712c9138e0cb6d3719ddfb0b6e1d2478fd914b329116b43aead263119bf3d"
+    },
+    "S02": {
+      "path": "evidence/S02/transcript.jsonl",
+      "sha256": "e64aee3f6c9d647f826f07785f73285a0523a727445ba1f4b9592271de603e8d"
+    },
+    "G01": {
+      "path": "evidence/G01/transcript.jsonl",
+      "sha256": "3e0a2ccf22028ce8a08c6ced6cefff39dc13f7c817f5477bb0d9d4b848631634"
+    },
+    "F01": {
+      "path": "evidence/F01/transcript.jsonl",
+      "sha256": "33c7e1cd250fe869d355fd0574dda6042bf7e2a3ff169f4d9f5bd0a0f6834189"
+    },
+    "L01": {
+      "path": "evidence/L01/transcript.jsonl",
+      "sha256": "dc001b7276ec678af7d4b921c55f1eb9d2ee6f425a4e95ec8255682f6cb473fd"
+    },
+    "P01": {
+      "path": "evidence/P01/transcript.jsonl",
+      "sha256": "2aa88c36bb7e91ced81f703e4c8b7c483fc4dcc3546b88a1405aacb85ee12e49"
+    },
+    "Q01": {
+      "path": "evidence/Q01/transcript.jsonl",
+      "sha256": "0d789fd80fe0b0d38e6e5111b776b80b687900088bb0106df31532043f337b7e"
+    },
+    "O01": {
+      "path": "evidence/O01/transcript.jsonl",
+      "sha256": "3d531101c4288ff60dc292b77c95cf66ec2e3228c88aab0de2134e2ec4305cfb"
+    },
+    "A01": {
+      "path": "evidence/A01/transcript.jsonl",
+      "sha256": "9222f4b3811e7ffccaf4ce82f39b6c88612d088d12a431058aacbbd4b6b97a93"
+    }
+  }
+}

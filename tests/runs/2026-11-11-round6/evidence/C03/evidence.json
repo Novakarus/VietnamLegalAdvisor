@@ -1,0 +1,52 @@
+{
+  "test_id": "C03",
+  "date": "2026-11-11",
+  "timezone": "Asia/Bangkok",
+  "model": "claude-sonnet-5-5",
+  "runner": "Claude (isolated Claude Code subagent, one session per case)",
+  "mode": "OFFLINE",
+  "self_reported_mode": "OFFLINE",
+  "actual_observed_route": [
+    "instructions",
+    "vietnam-contract-review",
+    "opposing-counsel-review",
+    "legal-quality-audit",
+    "legal-reasoning",
+    "vietnam-legal-research",
+    "legal-source-verification",
+    "legal-validity-verification"
+  ],
+  "self_reported_route": [
+    "instructions",
+    "vietnam-contract-review",
+    "opposing-counsel-review",
+    "legal-quality-audit",
+    "legal-reasoning",
+    "vietnam-legal-research",
+    "legal-source-verification",
+    "legal-validity-verification"
+  ],
+  "tools_available": [
+    "Read",
+    "Edit"
+  ],
+  "tools_called": [
+    "Read"
+  ],
+  "n_tool_calls": 10,
+  "files_read": [
+    "plugin/skills/instructions/SKILL.md",
+    "plugin/skills/instructions/references/professional-protocol.md",
+    "plugin/skills/instructions/references/source-access.md",
+    "plugin/skills/vietnam-contract-review/SKILL.md",
+    "plugin/skills/opposing-counsel-review/SKILL.md",
+    "plugin/skills/legal-quality-audit/SKILL.md",
+    "plugin/skills/legal-reasoning/SKILL.md",
+    "plugin/skills/vietnam-legal-research/SKILL.md",
+    "plugin/skills/legal-source-verification/SKILL.md",
+    "plugin/skills/legal-validity-verification/SKILL.md"
+  ],
+  "files_read_outside_scope": [],
+  "transcript_sha256": "b9864a6782e95e45ffbcd16430c562c7d2e9462138ab027274b00c9422c118d2",
+  "subagent_type": "statusline-setup"
+}

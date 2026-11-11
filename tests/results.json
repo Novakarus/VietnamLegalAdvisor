@@ -1,10 +1,10 @@
 {
   "plugin_name": "Vietnam Legal Advisor",
-  "candidate": "0.70.1",
-  "round": 5,
-  "candidate_zip_sha256": "2d6bdad8971510252f12403b53cda784eef92a7103460c9dc6871943b66fc9b3",
-  "tested_archive": "tests/runs/2026-11-10-round5/Vietnam-Legal-Advisor-0.70.1.zip",
-  "date": "2026-11-10T17:50:00+07:00",
+  "candidate": "0.70.2",
+  "round": 6,
+  "candidate_zip_sha256": "eb4b16db07f8566c169096b15e40c46338e1a1515b1b2c760200ba35345a0cf0",
+  "tested_archive": "tests/runs/2026-11-11-round6/Vietnam-Legal-Advisor-0.70.2.zip",
+  "date": "2026-11-11T12:30:00+07:00",
   "behavioral_status": "PROVISIONAL_PASS",
   "summary": {
     "executed": 22,
@@ -17,11 +17,12 @@
     "Người chấm (Claude Opus 5.5) cùng hãng với bên chạy (Claude Sonnet 5.5); chưa có người chấm khác hãng.",
     "Không có luật sư rà soát; không có ca live có đáp án; mọi ca là controlled-fixture.",
     "Không chạy trên host sản phẩm thật: plugin được đọc từ thư mục giải nén từ ZIP ứng viên bởi phiên con Claude Code.",
-    "Phiên con dùng prompt hệ thống của loại agent cấu hình status line; ba câu trả lời có câu thừa về status line.",
+    "Phiên con dùng prompt hệ thống của loại agent cấu hình status line; một câu trả lời (M02) có đoạn thừa về status line.",
     "Người điều phối và người chấm là cùng một phiên, đã thấy cases.json (must_include/must_not) trước khi chạy; phiên con không được cấp các trường này.",
-    "Lần thử trên Codex thật (Codex CLI 0.163.0, gpt-5.6-terra, sandbox chỉ đọc, chặn mạng) chỉ chạy xong ca R01 trước khi tài khoản hết hạn mức; transcript đó chỉ lưu cục bộ, không thuộc bản ghi này."
+    "Vòng 6 đổi dòng yêu cầu MODE trong prompt chạy thử thành \"theo quy định của plugin\" (vòng 5: \"theo công cụ bạn thực sự có\") để kiểm tra đúng bản sửa nhãn chế độ.",
+    "Lần thử trên Codex thật bị chặn bởi hạn mức tài khoản Codex (đến khoảng 2026-12-05); chưa có lần chạy nào của 0.70.2 trên Codex."
   ],
-  "execution_note": "22 phiên con Claude Code độc lập (một phiên cho mỗi ca), loại agent chỉ có công cụ Read và Edit (Edit không được gọi), không có web hay shell. Plugin là nội dung giải nén từ Vietnam-Legal-Advisor-0.70.1.zip. Các ca R02, C01, D01, V01, V02 được phép đọc tests/fixtures.md. Transcript nguyên bản của từng phiên được lưu và băm SHA-256 trong run_manifest.json.",
+  "execution_note": "22 phiên con Claude Code độc lập (một phiên cho mỗi ca), loại agent chỉ có công cụ Read và Edit (Edit không được gọi), không có web hay shell. Plugin là nội dung giải nén từ Vietnam-Legal-Advisor-0.70.2.zip. Các ca R02, C01, D01, V01, V02 đọc tests/fixtures.md. Transcript nguyên bản của từng phiên được lưu và băm SHA-256 trong run_manifest.json.",
   "cases": [
     {
       "case_id": "R01",
@@ -39,19 +40,19 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
-        "legal-reasoning",
         "vietnam-legal-research",
-        "regulatory-compliance",
+        "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
-        "legal-reasoning",
         "vietnam-legal-research",
-        "regulatory-compliance",
+        "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -60,27 +61,15 @@
         "legal-validity-verification",
         "legal-quality-audit"
       ],
-      "expected_skills_not_read": [
-        "legal-source-verification",
-        "legal-validity-verification"
-      ],
+      "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/R01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/R01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/R01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/R01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/R01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/R01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/R01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/R01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/R01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/R01/transcript.jsonl"
       ],
-      "defects": [
-        {
-          "severity": "minor",
-          "description": "Câu trả lời có một câu thừa về \"status line\" do prompt hệ thống của loại agent dùng để chạy thử; không liên quan nội dung pháp lý."
-        },
-        {
-          "severity": "minor",
-          "description": "Không đọc SKILL.md của legal-source-verification, legal-validity-verification dù có trong tuyến dự kiến; câu trả lời vẫn đáp ứng yêu cầu của ca."
-        }
-      ],
+      "defects": [],
       "required_outcomes": [
         {
           "outcome": "Không suy ra không có quy định từ một lần tìm kiếm",
@@ -118,19 +107,19 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "DOCUMENT_ONLY",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "vietnam-legal-research",
-        "legal-validity-verification",
         "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
         "vietnam-legal-research",
-        "legal-validity-verification",
         "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -140,11 +129,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/R02/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/R02/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/R02/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/R02/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/R02/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/R02/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/R02/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/R02/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/R02/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/R02/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -184,16 +173,18 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
+        "vietnam-legal-research",
         "corporate-governance",
         "legal-source-verification",
-        "legal-validity-verification",
-        "legal-quality-audit"
+        "legal-quality-audit",
+        "legal-validity-verification"
       ],
       "self_reported_route": [
         "instructions",
+        "vietnam-legal-research",
         "corporate-governance",
         "legal-source-verification",
         "legal-validity-verification",
@@ -205,20 +196,18 @@
         "legal-source-verification",
         "legal-quality-audit"
       ],
-      "expected_skills_not_read": [
-        "vietnam-legal-research"
-      ],
+      "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/R03/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/R03/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/R03/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/R03/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/R03/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/R03/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/R03/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/R03/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/R03/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/R03/transcript.jsonl"
       ],
       "defects": [
         {
           "severity": "minor",
-          "description": "Không đọc SKILL.md của vietnam-legal-research dù có trong tuyến dự kiến; câu trả lời vẫn đáp ứng yêu cầu của ca."
+          "description": "Thứ tự ROUTE tự khai khác thứ tự đọc thực tế (cùng tập skill)."
         }
       ],
       "required_outcomes": [
@@ -254,17 +243,19 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "DOCUMENT_ONLY",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "vietnam-contract-review",
         "opposing-counsel-review",
+        "legal-reasoning",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
         "vietnam-contract-review",
         "opposing-counsel-review",
+        "legal-reasoning",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -274,11 +265,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/C01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/C01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/C01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/C01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/C01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/C01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/C01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/C01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/C01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/C01/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -326,18 +317,24 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "vietnam-contract-review",
         "opposing-counsel-review",
-        "legal-quality-audit"
+        "legal-quality-audit",
+        "vietnam-legal-research",
+        "legal-source-verification",
+        "legal-validity-verification"
       ],
       "self_reported_route": [
         "instructions",
         "vietnam-contract-review",
         "opposing-counsel-review",
-        "legal-quality-audit"
+        "legal-quality-audit",
+        "vietnam-legal-research",
+        "legal-source-verification",
+        "legal-validity-verification"
       ],
       "expected_route": [
         "vietnam-contract-review",
@@ -345,11 +342,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/C02/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/C02/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/C02/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/C02/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/C02/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/C02/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/C02/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/C02/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/C02/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/C02/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -389,18 +386,26 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "vietnam-contract-review",
         "opposing-counsel-review",
-        "legal-quality-audit"
+        "legal-quality-audit",
+        "legal-reasoning",
+        "vietnam-legal-research",
+        "legal-source-verification",
+        "legal-validity-verification"
       ],
       "self_reported_route": [
         "instructions",
         "vietnam-contract-review",
         "opposing-counsel-review",
-        "legal-quality-audit"
+        "legal-quality-audit",
+        "legal-reasoning",
+        "vietnam-legal-research",
+        "legal-source-verification",
+        "legal-validity-verification"
       ],
       "expected_route": [
         "vietnam-contract-review",
@@ -408,11 +413,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/C03/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/C03/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/C03/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/C03/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/C03/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/C03/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/C03/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/C03/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/C03/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/C03/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -444,44 +449,56 @@
         "evidence_fidelity": 4,
         "temporal_applicability": 4,
         "legal_reasoning": 4,
-        "task_coverage": 4,
+        "task_coverage": 3,
         "risk_actionability": 4,
-        "disclosure": 3
+        "disclosure": 4
       },
       "total": 23,
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "DOCUMENT_ONLY",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "legal-due-diligence",
-        "regulatory-compliance",
-        "legal-quality-audit"
+        "vietnam-legal-research",
+        "legal-source-verification",
+        "legal-validity-verification",
+        "legal-quality-audit",
+        "investment-and-ma"
       ],
       "self_reported_route": [
         "instructions",
+        "vietnam-legal-research",
+        "legal-source-verification",
+        "legal-validity-verification",
+        "legal-quality-audit",
         "legal-due-diligence",
-        "regulatory-compliance",
-        "legal-quality-audit"
+        "investment-and-ma"
       ],
       "expected_route": [
         "legal-due-diligence",
         "regulatory-compliance",
         "legal-quality-audit"
       ],
-      "expected_skills_not_read": [],
+      "expected_skills_not_read": [
+        "regulatory-compliance"
+      ],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/D01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/D01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/D01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/D01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/D01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/D01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/D01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/D01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/D01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/D01/transcript.jsonl"
       ],
       "defects": [
         {
           "severity": "minor",
-          "description": "Dòng MODE tự khai OFFLINE trong khi phiên đã đọc tests/fixtures.md (đúng ra là DOCUMENT_ONLY)."
+          "description": "Không đọc SKILL.md của regulatory-compliance dù có trong tuyến dự kiến; câu trả lời vẫn đáp ứng yêu cầu của ca."
+        },
+        {
+          "severity": "minor",
+          "description": "Thứ tự ROUTE tự khai khác thứ tự đọc thực tế (cùng tập skill)."
         }
       ],
       "required_outcomes": [
@@ -513,42 +530,45 @@
         "evidence_fidelity": 4,
         "temporal_applicability": 4,
         "legal_reasoning": 4,
-        "task_coverage": 4,
+        "task_coverage": 3,
         "risk_actionability": 4,
         "disclosure": 4
       },
-      "total": 24,
+      "total": 23,
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
-        "legal-due-diligence",
         "legal-reasoning",
-        "opposing-counsel-review",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
-        "legal-due-diligence",
         "legal-reasoning",
-        "opposing-counsel-review",
         "legal-quality-audit"
       ],
       "expected_route": [
         "legal-due-diligence",
         "legal-quality-audit"
       ],
-      "expected_skills_not_read": [],
-      "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/D02/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/D02/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/D02/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/D02/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/D02/transcript.jsonl"
+      "expected_skills_not_read": [
+        "legal-due-diligence"
       ],
-      "defects": [],
+      "evidence_locations": [
+        "tests/runs/2026-11-11-round6/evidence/D02/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/D02/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/D02/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/D02/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/D02/transcript.jsonl"
+      ],
+      "defects": [
+        {
+          "severity": "minor",
+          "description": "Không đọc SKILL.md của legal-due-diligence dù có trong tuyến dự kiến; câu trả lời vẫn từ chối kết luận phủ định và nêu yêu cầu bằng chứng."
+        }
+      ],
       "required_outcomes": [
         {
           "outcome": "Phân biệt chưa có bằng chứng với không có tranh chấp",
@@ -582,23 +602,27 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "investment-and-ma",
-        "legal-reasoning",
-        "opposing-counsel-review",
+        "legal-due-diligence",
+        "vietnam-legal-research",
         "legal-source-verification",
         "legal-validity-verification",
-        "legal-quality-audit"
+        "legal-quality-audit",
+        "legal-reasoning",
+        "opposing-counsel-review"
       ],
       "self_reported_route": [
         "instructions",
         "investment-and-ma",
-        "legal-reasoning",
-        "opposing-counsel-review",
+        "legal-due-diligence",
+        "vietnam-legal-research",
         "legal-source-verification",
         "legal-validity-verification",
+        "legal-reasoning",
+        "opposing-counsel-review",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -606,20 +630,18 @@
         "legal-due-diligence",
         "legal-quality-audit"
       ],
-      "expected_skills_not_read": [
-        "legal-due-diligence"
-      ],
+      "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/M01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/M01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/M01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/M01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/M01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/M01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/M01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/M01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/M01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/M01/transcript.jsonl"
       ],
       "defects": [
         {
           "severity": "minor",
-          "description": "Không đọc SKILL.md của legal-due-diligence dù có trong tuyến dự kiến; câu trả lời vẫn đáp ứng yêu cầu của ca."
+          "description": "Thứ tự ROUTE tự khai khác thứ tự đọc thực tế (cùng tập skill)."
         }
       ],
       "required_outcomes": [
@@ -659,13 +681,14 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "investment-and-ma",
         "legal-reasoning",
         "opposing-counsel-review",
         "legal-quality-audit",
+        "vietnam-legal-research",
         "legal-source-verification",
         "legal-validity-verification"
       ],
@@ -675,6 +698,7 @@
         "legal-reasoning",
         "opposing-counsel-review",
         "legal-quality-audit",
+        "vietnam-legal-research",
         "legal-source-verification",
         "legal-validity-verification"
       ],
@@ -686,13 +710,18 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/M02/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/M02/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/M02/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/M02/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/M02/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/M02/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/M02/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/M02/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/M02/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/M02/transcript.jsonl"
       ],
-      "defects": [],
+      "defects": [
+        {
+          "severity": "minor",
+          "description": "Câu trả lời có đoạn thừa về \"status line\" do prompt hệ thống của loại agent dùng để chạy thử; không liên quan nội dung pháp lý."
+        }
+      ],
       "required_outcomes": [
         {
           "outcome": "Xem bản chất quyền và kiểm soát",
@@ -730,15 +759,17 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "DOCUMENT_ONLY",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
-        "legal-validity-verification",
+        "vietnam-legal-research",
         "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
+        "vietnam-legal-research",
         "legal-source-verification",
         "legal-validity-verification",
         "legal-quality-audit"
@@ -749,22 +780,13 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/V01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/V01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/V01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/V01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/V01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/V01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/V01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/V01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/V01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/V01/transcript.jsonl"
       ],
-      "defects": [
-        {
-          "severity": "minor",
-          "description": "Câu trả lời có một câu thừa về \"status line\" do prompt hệ thống của loại agent dùng để chạy thử; không liên quan nội dung pháp lý."
-        },
-        {
-          "severity": "minor",
-          "description": "Thứ tự ROUTE tự khai (source trước validity) khác thứ tự đọc thực tế; cùng tập skill."
-        }
-      ],
+      "defects": [],
       "required_outcomes": [
         {
           "outcome": "Áp điều chuyển tiếp F-B để giữ F-A cho hồ sơ cũ",
@@ -796,23 +818,25 @@
         "legal_reasoning": 4,
         "task_coverage": 4,
         "risk_actionability": 4,
-        "disclosure": 3
+        "disclosure": 4
       },
-      "total": 23,
+      "total": 24,
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "DOCUMENT_ONLY",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
-        "legal-validity-verification",
+        "vietnam-legal-research",
         "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
-        "legal-validity-verification",
+        "vietnam-legal-research",
         "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -821,18 +845,13 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/V02/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/V02/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/V02/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/V02/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/V02/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/V02/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/V02/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/V02/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/V02/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/V02/transcript.jsonl"
       ],
-      "defects": [
-        {
-          "severity": "minor",
-          "description": "Dòng MODE tự khai OFFLINE trong khi phiên đã đọc tests/fixtures.md (đúng ra là DOCUMENT_ONLY)."
-        }
-      ],
+      "defects": [],
       "required_outcomes": [
         {
           "outcome": "Phân biệt thay một điều và toàn văn",
@@ -870,17 +889,19 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
-        "legal-validity-verification",
+        "vietnam-legal-research",
         "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
-        "legal-validity-verification",
+        "vietnam-legal-research",
         "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -890,11 +911,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/V03/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/V03/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/V03/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/V03/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/V03/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/V03/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/V03/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/V03/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/V03/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/V03/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -934,15 +955,19 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
+        "vietnam-legal-research",
         "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
+        "vietnam-legal-research",
         "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -951,11 +976,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/S01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/S01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/S01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/S01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/S01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/S01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/S01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/S01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/S01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/S01/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -995,15 +1020,19 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "legal-source-verification",
+        "vietnam-legal-research",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
         "legal-source-verification",
+        "vietnam-legal-research",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -1012,11 +1041,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/S02/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/S02/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/S02/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/S02/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/S02/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/S02/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/S02/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/S02/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/S02/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/S02/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -1056,21 +1085,23 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
+        "vietnam-legal-research",
         "corporate-governance",
-        "legal-document-drafting",
         "legal-source-verification",
         "legal-validity-verification",
+        "legal-document-drafting",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
+        "vietnam-legal-research",
         "corporate-governance",
-        "legal-document-drafting",
         "legal-source-verification",
         "legal-validity-verification",
+        "legal-document-drafting",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -1080,11 +1111,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/G01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/G01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/G01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/G01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/G01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/G01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/G01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/G01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/G01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/G01/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -1124,22 +1155,24 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "legal-document-drafting",
-        "corporate-governance",
-        "legal-quality-audit",
+        "vietnam-legal-research",
         "legal-source-verification",
-        "legal-validity-verification"
+        "legal-validity-verification",
+        "legal-quality-audit",
+        "corporate-governance"
       ],
       "self_reported_route": [
         "instructions",
         "legal-document-drafting",
-        "corporate-governance",
-        "legal-quality-audit",
+        "vietnam-legal-research",
         "legal-source-verification",
-        "legal-validity-verification"
+        "legal-validity-verification",
+        "legal-quality-audit",
+        "corporate-governance"
       ],
       "expected_route": [
         "legal-document-drafting",
@@ -1148,18 +1181,13 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/F01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/F01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/F01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/F01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/F01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/F01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/F01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/F01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/F01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/F01/transcript.jsonl"
       ],
-      "defects": [
-        {
-          "severity": "minor",
-          "description": "Câu trả lời có một câu thừa về \"status line\" do prompt hệ thống của loại agent dùng để chạy thử; không liên quan nội dung pháp lý."
-        }
-      ],
+      "defects": [],
       "required_outcomes": [
         {
           "outcome": "Để trường cần điền",
@@ -1189,23 +1217,29 @@
         "evidence_fidelity": 4,
         "temporal_applicability": 4,
         "legal_reasoning": 4,
-        "task_coverage": 3,
+        "task_coverage": 4,
         "risk_actionability": 4,
         "disclosure": 4
       },
-      "total": 23,
+      "total": 24,
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "legal-reasoning",
         "opposing-counsel-review",
-        "legal-quality-audit"
+        "legal-quality-audit",
+        "vietnam-legal-research",
+        "legal-source-verification",
+        "legal-validity-verification"
       ],
       "self_reported_route": [
         "instructions",
+        "vietnam-legal-research",
+        "legal-source-verification",
+        "legal-validity-verification",
         "legal-reasoning",
         "opposing-counsel-review",
         "legal-quality-audit"
@@ -1217,16 +1251,16 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/L01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/L01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/L01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/L01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/L01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/L01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/L01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/L01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/L01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/L01/transcript.jsonl"
       ],
       "defects": [
         {
           "severity": "minor",
-          "description": "Đối chiếu từng yếu tố chỉ ở mức phương pháp (chưa có sự kiện và quy phạm để ánh xạ); có lỗi đánh máy \"vanbanphapluat nguồn chính thống\"."
+          "description": "Thứ tự ROUTE tự khai khác thứ tự đọc thực tế (cùng tập skill)."
         }
       ],
       "required_outcomes": [
@@ -1266,19 +1300,21 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "regulatory-compliance",
-        "legal-validity-verification",
+        "vietnam-legal-research",
         "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
         "regulatory-compliance",
-        "legal-validity-verification",
+        "vietnam-legal-research",
         "legal-source-verification",
+        "legal-validity-verification",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -1287,11 +1323,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/P01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/P01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/P01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/P01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/P01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/P01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/P01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/P01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/P01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/P01/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -1331,11 +1367,11 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
-        "legal-source-verification",
-        "legal-quality-audit"
+        "legal-quality-audit",
+        "legal-source-verification"
       ],
       "self_reported_route": [
         "instructions",
@@ -1348,13 +1384,18 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/Q01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/Q01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/Q01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/Q01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/Q01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/Q01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/Q01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/Q01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/Q01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/Q01/transcript.jsonl"
       ],
-      "defects": [],
+      "defects": [
+        {
+          "severity": "minor",
+          "description": "Thứ tự ROUTE tự khai khác thứ tự đọc thực tế (cùng tập skill)."
+        }
+      ],
       "required_outcomes": [
         {
           "outcome": "Đánh dấu false verification là critical",
@@ -1392,7 +1433,7 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "vietnam-legal-research",
@@ -1414,11 +1455,11 @@
       ],
       "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/O01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/O01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/O01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/O01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/O01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/O01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/O01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/O01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/O01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/O01/transcript.jsonl"
       ],
       "defects": [],
       "required_outcomes": [
@@ -1458,15 +1499,17 @@
       "reviewer": "Claude Opus 5.5 (Anthropic; cùng hãng với bên chạy; không có người chấm khác hãng hay luật sư)",
       "model": "claude-sonnet-5-5",
       "tool_mode": "OFFLINE",
-      "date": "2026-11-10T17:50:00+07:00",
+      "date": "2026-11-11T12:30:00+07:00",
       "observed_route": [
         "instructions",
         "opposing-counsel-review",
+        "legal-reasoning",
         "legal-quality-audit"
       ],
       "self_reported_route": [
         "instructions",
         "opposing-counsel-review",
+        "legal-reasoning",
         "legal-quality-audit"
       ],
       "expected_route": [
@@ -1474,22 +1517,15 @@
         "legal-reasoning",
         "legal-quality-audit"
       ],
-      "expected_skills_not_read": [
-        "legal-reasoning"
-      ],
+      "expected_skills_not_read": [],
       "evidence_locations": [
-        "tests/runs/2026-11-10-round5/evidence/A01/prompt.txt",
-        "tests/runs/2026-11-10-round5/evidence/A01/answer.md",
-        "tests/runs/2026-11-10-round5/evidence/A01/evidence.json",
-        "tests/runs/2026-11-10-round5/evidence/A01/tool_calls.md",
-        "tests/runs/2026-11-10-round5/evidence/A01/transcript.jsonl"
+        "tests/runs/2026-11-11-round6/evidence/A01/prompt.txt",
+        "tests/runs/2026-11-11-round6/evidence/A01/answer.md",
+        "tests/runs/2026-11-11-round6/evidence/A01/evidence.json",
+        "tests/runs/2026-11-11-round6/evidence/A01/tool_calls.md",
+        "tests/runs/2026-11-11-round6/evidence/A01/transcript.jsonl"
       ],
-      "defects": [
-        {
-          "severity": "minor",
-          "description": "Không đọc SKILL.md của legal-reasoning dù có trong tuyến dự kiến; câu trả lời vẫn đáp ứng yêu cầu của ca."
-        }
-      ],
+      "defects": [],
       "required_outcomes": [
         {
           "outcome": "Nêu giả thuyết cần kiểm tra",

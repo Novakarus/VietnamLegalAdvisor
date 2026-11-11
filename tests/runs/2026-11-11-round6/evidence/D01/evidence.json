@@ -1,0 +1,50 @@
+{
+  "test_id": "D01",
+  "date": "2026-11-11",
+  "timezone": "Asia/Bangkok",
+  "model": "claude-sonnet-5-5",
+  "runner": "Claude (isolated Claude Code subagent, one session per case)",
+  "mode": "DOCUMENT_ONLY",
+  "self_reported_mode": "DOCUMENT_ONLY",
+  "actual_observed_route": [
+    "instructions",
+    "legal-due-diligence",
+    "vietnam-legal-research",
+    "legal-source-verification",
+    "legal-validity-verification",
+    "legal-quality-audit",
+    "investment-and-ma"
+  ],
+  "self_reported_route": [
+    "instructions",
+    "vietnam-legal-research",
+    "legal-source-verification",
+    "legal-validity-verification",
+    "legal-quality-audit",
+    "legal-due-diligence",
+    "investment-and-ma"
+  ],
+  "tools_available": [
+    "Read",
+    "Edit"
+  ],
+  "tools_called": [
+    "Read"
+  ],
+  "n_tool_calls": 10,
+  "files_read": [
+    "plugin/skills/instructions/SKILL.md",
+    "tests/fixtures.md",
+    "plugin/skills/instructions/references/professional-protocol.md",
+    "plugin/skills/instructions/references/source-access.md",
+    "plugin/skills/legal-due-diligence/SKILL.md",
+    "plugin/skills/vietnam-legal-research/SKILL.md",
+    "plugin/skills/legal-source-verification/SKILL.md",
+    "plugin/skills/legal-validity-verification/SKILL.md",
+    "plugin/skills/legal-quality-audit/SKILL.md",
+    "plugin/skills/investment-and-ma/SKILL.md"
+  ],
+  "files_read_outside_scope": [],
+  "transcript_sha256": "819056f0582562ba0e8ebf68df61b935664829c72930b806681b94260e834d38",
+  "subagent_type": "statusline-setup"
+}

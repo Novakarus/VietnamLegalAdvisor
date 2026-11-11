@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.70.2 — 2026-11-11, candidate, not tested, not public
+## 0.70.2 — 2026-11-11, candidate, round 6 passed provisionally (22/22, AI-graded), not public
 
 Instruction fixes for the minor defects of round 5: the router now requires reading a skill before it counts as routed and sets minimum chains for four request types; the mode label reports the mode actually used (a supplied file makes it DOCUMENT_ONLY); `legal-reasoning` always gives an element table. Not yet tested (see `STATUS.md`).
 
