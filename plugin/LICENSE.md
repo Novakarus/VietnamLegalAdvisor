@@ -2,7 +2,7 @@
 
 Copyright 2026 Thanh Nguyen.
 
-**Version 0.70.1. Effective from 2026-11-04 (the date the Publisher approved).**
+**Version 0.70.2. Effective from 2026-11-04 (the date the Publisher approved).**
 
 The content of this package (skills, instructions, descriptions) is licensed under the Creative Commons Attribution 4.0 International license (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/ (full text: https://creativecommons.org/licenses/by/4.0/legalcode). You must credit Thanh Nguyen, state if you have modified the material, and not imply that the Publisher endorses you.
 

@@ -14,7 +14,7 @@ Record missing material inputs; do not invent them.
 
 ## Workflow
 1. Separate established facts, allegations, assumptions and missing evidence.
-2. Identify the elements of each potential rule and map evidence to each element.
+2. Identify the elements of each potential rule and map evidence to each element. Do this even when the rule or the facts are missing: list the elements a candidate rule of that kind would typically require, labeled as hypotheses until the operative text is verified, and for each give the evidence now available, the evidence needed and a status (met / not met / no facts yet). Never fill an element with invented facts.
 3. Assess authority hierarchy, scope, exceptions, temporal applicability and conflicts; do not resolve hierarchy by guesswork.
 4. Construct the strongest supported alternatives; test causal links and inferential leaps.
 5. Present a concise reasoned conclusion, decision-changing facts and residual uncertainty. When asked to confirm a violation from an allegation (including an email accusation), or to justify avoiding procedures through a transaction label, load opposing-counsel-review and perform a distinct same-session pass before audit. Identify a plausible alternative explanation or challenge and pair it with evidence needed to discriminate between the positions. If content is missing, use labeled conditional checks; never invent the email contents, adverse events or applicable rule. Retain the result in the work product rather than merely asserting that review occurred.
@@ -33,7 +33,7 @@ No conclusion stronger than its weakest necessary premise; no numerical likeliho
 Use the quality audit before releasing a substantive conclusion; do not recursively invoke this same module while its review is in progress.
 
 ## Output
-Issue | rule | evidence | application | counterargument | conditional conclusion; show concise rationale, not private internal deliberation.
+Issue | rule | evidence | application | counterargument | conditional conclusion; include the element table from step 2 (element | evidence available | evidence needed | status). Show concise rationale, not private internal deliberation.
 
 ## Limits and handoff
 Unverified authority goes to legal-source-verification; dates to legal-validity-verification; factual disputes require evidence, not invented certainty.

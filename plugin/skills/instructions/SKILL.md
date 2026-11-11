@@ -14,14 +14,20 @@ Matter objective, represented party, jurisdiction, event and review dates, secto
 
 ## Workflow
 1. Read [professional protocol](references/professional-protocol.md). Default to Vietnamese. Ask for only blocking facts.
-2. Read [source access](references/source-access.md); determine actual tool availability and record LIVE, DOCUMENT_ONLY or OFFLINE.
-3. Choose the smallest appropriate specialist set from the table below. Read each selected sibling SKILL.md. For ambiguous tasks state the assumed scope and proceed safely; ask if the alternatives materially change the work.
+2. Read [source access](references/source-access.md); determine actual tool availability and record LIVE, DOCUMENT_ONLY or OFFLINE. The mode follows what was actually used: if you read and rely on a file the user supplied (including a test fixture), the mode is DOCUMENT_ONLY even without search or browsing; OFFLINE means no retrieval and no supplied document was used.
+3. Choose the smallest appropriate specialist set from the table below, but never fewer than the minimum chain for the request type (step 8). Read each selected sibling SKILL.md before answering; naming a skill without reading it is not routing. For ambiguous tasks state the assumed scope and proceed safely; ask if the alternatives materially change the work.
 4. Use this dependency order: intake -> substantive issue framing/research -> source verification -> validity verification -> substantive application/drafting -> opposing review where material -> quality audit -> final response.
 5. Handoff a shared matter brief, source/claim ledgers, validity matrix, work product and unresolved items. Reuse completed gates for the same version/date; do not confuse existence of a source with validity.
 6. For material contracts use contract review -> opposing review -> audit. For project acquisitions use diligence -> investment/M&A -> governance or compliance as needed -> opposing review -> audit. Research and source/validity gates support these chains.
 7. For proposed transaction relabeling or procedure-avoidance claims, apply investment-and-ma -> legal-reasoning -> opposing-counsel-review -> audit, with source/validity gates before any legal application. For a requested violation finding based on allegations, apply legal-reasoning -> opposing-counsel-review -> audit. Perform an explicit same-session opposing pass; reading a skill or naming a route alone is not completion. Retain the objection, alternative explanation and evidence needed in the work product.
-8. Source/validity modules return to their caller rather than calling each other recursively. Quality audit requests one targeted repair cycle; if unresolved, deliver LIMITED/BLOCKED with specifics. Do not repeatedly route without new evidence.
-9. Never submit, publish, send or sign a document merely because it is drafted. The user's requested approval gates remain binding.
+8. Minimum chains (read every listed SKILL.md, even OFFLINE, and apply its offline rules; add others as needed):
+   - Any answer that states, denies or depends on what Vietnamese law provides, including a claim that no rule exists or that a search found nothing: vietnam-legal-research -> legal-source-verification -> legal-validity-verification -> audit.
+   - Foreign law, foreign practice or an analogy offered as the basis for a Vietnamese conclusion: vietnam-legal-research (to frame the Vietnamese rule) -> the subject specialist (for example corporate-governance) -> legal-source-verification -> audit.
+   - Acquisition of a project, assets or an interest in a project company, or a choice of structure for one: investment-and-ma -> legal-due-diligence (legal status of the project and target) -> audit.
+   - Opposing or adversarial review of a draft or position: opposing-counsel-review -> legal-reasoning (to test the position's premises and inferences) -> audit.
+   If you decide a listed skill does not apply, say which one and why in the answer.
+9. Source/validity modules return to their caller rather than calling each other recursively. Quality audit requests one targeted repair cycle; if unresolved, deliver LIMITED/BLOCKED with specifics. Do not repeatedly route without new evidence.
+10. Never submit, publish, send or sign a document merely because it is drafted. The user's requested approval gates remain binding.
 
 ## Routes
 | Skill | Trigger |

@@ -8,11 +8,11 @@ Only the latest released version is prioritized for security fixes. When a newer
 
 | Version / component | Security support |
 | --- | --- |
-| Plugin 0.70.1 — not yet public | :white_check_mark: |
-| Plugins before 0.70.1 | :x: |
+| Plugin 0.70.2 — candidate, not yet public | :white_check_mark: |
+| Plugins before 0.70.2 | :x: |
 | Website and tooling on the `main` branch | :white_check_mark: |
 
-"Supported" means that reports are received, assessed and handled with appropriate priority; it is not a safety certification or a commitment to a remediation deadline. Version 0.70.1 is not public.
+"Supported" means that reports are received, assessed and handled with appropriate priority; it is not a safety certification or a commitment to a remediation deadline. Version 0.70.2 is a candidate and is not public.
 
 ## Reporting a Vulnerability
 

@@ -2,10 +2,10 @@
 
 This is the only place that records the current status. `CHANGELOG.md` and `tests/runs/` are historical records as of the time they were created; if they conflict with this file, this file prevails. `scripts/validate.py` checks that the version below matches the manifests and `tests/results.json`.
 
-Current version: 0.70.1
-Status: ACCEPTED
+Current version: 0.70.2
+Status: CANDIDATE
 Ready for public release: no
-Updated: 2026-11-10
+Updated: 2026-11-11
 
 ## Statuses
 
@@ -20,7 +20,7 @@ Updated: 2026-11-10
 
 Acceptance is a decision of the Publisher, recorded here with its basis and limits.
 
-Version 0.70.0 was accepted by the Publisher on 2026-11-10 on the basis of round 4 (22/22 PASS, AI-graded). Version 0.70.1 keeps that acceptance and was retested the same day in round 5 (22/22 PASS, AI-graded, on the 0.70.1 package). In both rounds the following were not met: the plugin was not run on a real host; the grader (Claude) is from the same vendor as the runner; there is no lawyer review of the answers and there are no live cases with answer keys. Acceptance is therefore not an independent certification of legal quality.
+Version 0.70.0 was accepted by the Publisher on 2026-11-10 on the basis of round 4 (22/22 PASS, AI-graded). Version 0.70.1 keeps that acceptance and was retested the same day in round 5 (22/22 PASS, AI-graded, on the 0.70.1 package). In both rounds the following were not met: the plugin was not run on a real host; the grader (Claude) is from the same vendor as the runner; there is no lawyer review of the answers and there are no live cases with answer keys. Acceptance is therefore not an independent certification of legal quality. Version 0.70.2 (2026-11-11) is a candidate and has not been accepted.
 
 ## Versioning rules
 
@@ -28,7 +28,14 @@ Version 0.70.0 was accepted by the Publisher on 2026-11-10 on the basis of round
 2. Changes outside `plugin/` (documentation, scripts, licenses, website) do not raise the plugin version. They are recorded in the Git history.
 3. A tested ZIP is not repackaged; to change the package, create a new version. The one recorded exception is the `plugin/LICENSE.md` change of 2026-11-08 described below.
 
-## Status of version 0.70.1
+## Status of version 0.70.2
+
+- Candidate (2026-11-11): instruction changes to fix the minor defects found in round 5. Router (`skills/instructions/SKILL.md`): a skill must be read before it counts as routed, and a new step 8 sets minimum chains for four request types (statements about what Vietnamese law provides or does not provide; foreign law used as a basis; project or asset acquisitions; opposing review of a draft). Mode label (router step 2 and `references/source-access.md` step 1): report the mode actually used, so reading a user-supplied file makes it DOCUMENT_ONLY. `legal-reasoning`: always give an element table (element, evidence available, evidence needed, status), with candidate elements labeled as hypotheses when the rule or facts are missing. Also the version number in `plugin/plugin.json` and `plugin/LICENSE.md`.
+- Targets: R01, R03, M01, A01 (expected skills not read); D01, V02 (mode label); L01 (element mapping). The stray "status line" sentences in R01, V01 and F01 came from the test harness, not the plugin, and are not addressed in `plugin/`.
+- **Not behaviorally tested.** By decision of the Publisher (2026-11-11), testing is deferred. Under versioning rule 1, at least R01, R03, M01, A01, D01, V02 and L01 plus one control case must be rerun before acceptance; because the router changed, a full 22-case round is preferable. `tests/results.json` remains the round 5 record for 0.70.1, and `validate.py` prints a warning to that effect.
+- Packaged: `dist/Vietnam-Legal-Advisor-0.70.2.zip` (SHA-256 in the `.sha256` file next to it).
+
+## Status of version 0.70.1 (superseded; accepted)
 
 - Packaging-only change from 0.70.0 (2026-11-10): removed the redundant `.codex-plugin/plugin.json` (Codex reads the root `plugin.json` when it has `extensions.com.openai`), removed the empty `skills/instructions/lookup/knowledge-index.json` (not referenced by any skill), resized the logo to 512×512, and updated `plugin/LICENSE.md` (version number; reference to `PROVENANCE.md`). No `SKILL.md`, reference file or agent file changed.
 - Behavioral tests: round 5 ran on 2026-11-10 on the 0.70.1 ZIP (SHA-256 `2d6bdad8971510252f12403b53cda784eef92a7103460c9dc6871943b66fc9b3`, kept with the evidence at `tests/runs/2026-11-10-round5/`). All 22 cases ran in isolated Claude subagent sessions (runner model `claude-sonnet-5-5` per the transcripts; Read/Edit tools only, so OFFLINE was enforced technically; raw transcripts with SHA-256). Graded by Claude Opus 5.5: 22/22 provisional PASS, totals 23–24 of 24, no critical or major defects; 8 cases carry minor defects (expected skills not read in R01, R03, M01, A01; MODE mislabelled in D01 and V02; stray "status line" sentences in R01, V01 and F01; L01 element mapping only at method level). `tests/results.json` is now this record. `run_integrity.py`: FAIL with the same 2 errors as round 4 (same-vendor grader; not a real host).

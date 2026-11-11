@@ -2,7 +2,7 @@
 
 This is a capability-aware workflow, not a deployed connector. No MCP endpoint, API key, automatic synchronization or scheduler is packaged.
 
-1. At task start inspect actually callable Search, browsing or approved MCP tools. Record provider, time and mode: LIVE / DOCUMENT_ONLY / OFFLINE.
+1. At task start inspect actually callable Search, browsing or approved MCP tools. Record provider, time and mode: LIVE / DOCUMENT_ONLY / OFFLINE. Report the mode actually used, not only the tools available: reading and relying on a user-supplied file (including a test fixture) makes the mode DOCUMENT_ONLY; OFFLINE means neither retrieval nor a supplied document was used. Recheck the mode label before the final answer.
 2. For LIVE mode search official domains first using exact identifiers plus amendments, repeal and transitional terms. Open actual documents and attachments. Inspect scans/OCR for quotation accuracy; use visual checks for decisive passages if possible.
 3. For each claim populate the evidence and applicability ledgers in professional-protocol.md. Home-page reachability never proves completeness, current validity or retrieval of a particular law.
 4. If access fails, try another official publication channel or issuing authority. Secondary sources can identify leads. If no operative primary text can be retrieved, mark the result provisional and say exactly what is missing.

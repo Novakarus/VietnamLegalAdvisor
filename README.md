@@ -1,6 +1,6 @@
-# Vietnam Legal Advisor — 0.70.1
+# Vietnam Legal Advisor — 0.70.2
 
-A plugin for Vietnamese legal research and professional workflows: a core skill router plus twelve specialist skills. Vietnamese is the default language. Current status: [STATUS.md](STATUS.md) (accepted by the Publisher on the basis of AI-graded tests; not public).
+A plugin for Vietnamese legal research and professional workflows: a core skill router plus twelve specialist skills. Vietnamese is the default language. Current status: [STATUS.md](STATUS.md) (candidate, not yet tested; the previous version 0.70.1 was accepted by the Publisher on the basis of AI-graded tests; not public).
 
 ## Structure
 

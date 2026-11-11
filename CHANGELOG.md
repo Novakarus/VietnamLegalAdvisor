@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.70.2 — 2026-11-11, candidate, not tested, not public
+
+Instruction fixes for the minor defects of round 5: the router now requires reading a skill before it counts as routed and sets minimum chains for four request types; the mode label reports the mode actually used (a supplied file makes it DOCUMENT_ONLY); `legal-reasoning` always gives an element table. Not yet tested (see `STATUS.md`).
+
 ## 0.70.1 — 2026-11-10, not public
 
 Packaging only: removed `.codex-plugin/plugin.json` (the root `plugin.json` is the manifest Codex reads) and the empty `knowledge-index.json`; logo resized to 512×512; `plugin/LICENSE.md` updated; the two provenance files merged into `PROVENANCE.md`. Skill content unchanged. Retested in round 5 on 2026-11-10: 22/22 PASS, AI-graded (Claude subagents; a first attempt on the real Codex host stopped after one case at the account's usage limit). Status stays ACCEPTED (see `STATUS.md`).
